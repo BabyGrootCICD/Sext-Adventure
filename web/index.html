@@ -1647,11 +1647,25 @@
         const storyData = {
             "start": {
                 "title": "萬聖節靈異約會趴入口",
-                "description": "你站在一棟陰森的老宅前，門口掛著「歡迎參加萬聖節靈異約會趴」的牌子。月光透過烏雲灑下，南瓜燈在風中搖曳，發出詭異的光芒。\n\n你聽到屋內傳來笑聲、音樂聲，還有一些... 奇怪的聲音。門口站著一個穿著性感女巫裝的接待員，她對你眨了眨眼。",
+                "description": "你站在一個巨大的萬聖節莊園前，這裡有各種神秘的區域等待探索。月光透過烏雲灑下，南瓜燈在風中搖曳，發出詭異的光芒。\n\n一個穿著性感女巫裝的接待員手持地圖對你眨眼：「歡迎來到『萬聖節極樂莊園』！這裡有九個特別區域，每一個都有... 獨特的體驗。你想先去哪裡呢？」",
                 "choices": [
-                    {"option": "A: 對女巫說「你的掃帚真漂亮，能騎嗎？」", "next_scene": "witch_encounter"},
-                    {"option": "B: 直接進入鬼屋探險", "next_scene": "haunted_house"},
-                    {"option": "C: 先去南瓜田看看", "next_scene": "pumpkin_patch"}
+                    {"option": "A: 🧙‍♀️ 女巫塔 - 「你的掃帚真漂亮，能騎嗎？」", "next_scene": "witch_encounter"},
+                    {"option": "B: 👻 鬼屋探險 - 「看起來很刺激！」", "next_scene": "haunted_house"},
+                    {"option": "C: 🎃 南瓜田迷宮 - 「那些南瓜看起來很... 有趣」", "next_scene": "pumpkin_patch"},
+                    {"option": "D: 🧛‍♂️ 吸血鬼城堡 - 「我想要被咬...」", "next_scene": "vampire_castle"},
+                    {"option": "E: 🎉 地下派對 - 「音樂聽起來很棒！」", "next_scene": "underground_party"},
+                    {"option": "F: ⚰️ 古老墓地 - 「死亡也很性感」", "next_scene": "ancient_cemetery"},
+                    {"option": "G: 🏰 探索二樓更多區域 - 「還有更刺激的嗎？」", "next_scene": "entrance_second_floor"}
+                ]
+            },
+            "entrance_second_floor": {
+                "title": "莊園二樓探索",
+                "description": "接待員神秘地笑著：「看來你想要更深層的體驗。二樓還有三個特別區域，每個都比一樓更... 刺激。」\n\n樓梯上傳來各種誘人的聲音，你感覺到一陣魔法的氣息。",
+                "choices": [
+                    {"option": "A: 🌲 魔法森林 - 「那些樹在動嗎？」", "next_scene": "enchanted_forest"},
+                    {"option": "B: 📚 詛咒圖書館 - 「知識就是力量...」", "next_scene": "cursed_library"},
+                    {"option": "C: 🍷 巫師酒吧 - 「我需要一杯魔法雞尾酒」", "next_scene": "wizard_tavern"},
+                    {"option": "D: 🔄 返回一樓", "next_scene": "start"}
                 ]
             },
             "witch_encounter": {
