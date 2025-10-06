@@ -1,0 +1,378 @@
+{
+  "start": {
+    "title": "萬聖節靈異約會趴入口",
+    "description": "你站在一棟陰森的老宅前，門口掛著「歡迎參加萬聖節靈異約會趴」的牌子。月光透過烏雲灑下，南瓜燈在風中搖曳，發出詭異的光芒。\n\n你聽到屋內傳來笑聲、音樂聲，還有一些... 奇怪的聲音。門口站著一個穿著性感女巫裝的接待員，她對你眨了眨眼。",
+    "choices": [
+      {
+        "option": "A: 對女巫說「你的掃帚真漂亮，能騎嗎？」",
+        "next_scene": "witch_encounter"
+      },
+      {
+        "option": "B: 直接進入鬼屋探險",
+        "next_scene": "haunted_house"
+      },
+      {
+        "option": "C: 先去南瓜田看看",
+        "next_scene": "pumpkin_patch"
+      }
+    ]
+  },
+  
+  "witch_encounter": {
+    "title": "女巫的誘惑",
+    "description": "女巫咯咯笑著說：「當然可以騎，但你要小心不要被掃帚柄... 你知道的。」她揮了揮手，掃帚突然飛到你面前。\n\n「不過，」她神秘地笑著，「我的掃帚很挑剔，只有真正勇敢的人才能駕馭它。」",
+    "choices": [
+      {
+        "option": "A: 勇敢地跨上掃帚",
+        "next_scene": "broom_ride_success"
+      },
+      {
+        "option": "B: 說「我更想騎你」",
+        "next_scene": "witch_rejection"
+      },
+      {
+        "option": "C: 問「你的貓咪在哪裡？」",
+        "next_scene": "cat_encounter"
+      }
+    ]
+  },
+  
+  "broom_ride_success": {
+    "title": "掃帚飛行成功",
+    "description": "你成功跨上掃帚，它載著你在月光下飛翔！女巫在下面鼓掌：「太棒了！你是我見過最勇敢的騎士！」\n\n你們一起飛到屋頂，看著下面的派對。女巫靠近你，輕聲說：「現在... 讓我們做一些更刺激的事情。」",
+    "choices": [
+      {
+        "option": "A: 在屋頂上親吻女巫",
+        "next_scene": "rooftop_romance"
+      },
+      {
+        "option": "B: 提議一起飛到更遠的地方",
+        "next_scene": "moonlight_adventure"
+      }
+    ]
+  },
+  
+  "witch_rejection": {
+    "title": "女巫的拒絕",
+    "description": "女巫皺起眉頭：「你以為我是什麼？隨便的女巫嗎？」她揮動魔杖，你突然感覺身體變輕了...\n\n「既然你這麼無禮，就讓你體驗一下真正的『輕如羽毛』吧！」你開始飄浮在空中，無法控制方向。",
+    "choices": [
+      {
+        "option": "A: 道歉並請求原諒",
+        "next_scene": "apology_accepted"
+      },
+      {
+        "option": "B: 試圖抓住什麼東西",
+        "next_scene": "floating_mischief"
+      }
+    ]
+  },
+  
+  "cat_encounter": {
+    "title": "黑貓的出現",
+    "description": "一隻黑貓從陰影中走出，它的眼睛閃爍著神秘的光芒。女巫說：「這是我的夥伴，黑貓咪咪。它很聰明，知道誰是好人。」\n\n黑貓繞著你轉圈，然後突然開口說話：「這個人類看起來很有趣... 但有點緊張。」",
+    "choices": [
+      {
+        "option": "A: 對黑貓說「你好，咪咪」",
+        "next_scene": "cat_friendship"
+      },
+      {
+        "option": "B: 問「你會變成人形嗎？」",
+        "next_scene": "cat_transformation"
+      }
+    ]
+  },
+  
+  "haunted_house": {
+    "title": "鬼屋內部",
+    "description": "你走進鬼屋，裡面燈光昏暗，牆上掛著古老的畫像。突然，一個半透明的鬼魂從牆壁中飄出來！\n\n「歡迎來到我的家，」鬼魂說，「我是這裡的主人，已經死了 200 年了。但我還是很... 活躍。」他對你眨了眨眼。",
+    "choices": [
+      {
+        "option": "A: 說「你看起來很寂寞」",
+        "next_scene": "ghost_romance"
+      },
+      {
+        "option": "B: 問「你能觸摸實體嗎？」",
+        "next_scene": "ghost_touch"
+      },
+      {
+        "option": "C: 試圖逃跑",
+        "next_scene": "ghost_chase"
+      }
+    ]
+  },
+  
+  "ghost_romance": {
+    "title": "鬼魂的浪漫",
+    "description": "鬼魂嘆了口氣：「是的，我確實很寂寞。200 年來，沒有人願意和我... 你知道的。」他的聲音帶著渴望。\n\n「但是，」他突然興奮地說，「如果你願意，我可以教你一些鬼魂的... 特殊技巧。」",
+    "choices": [
+      {
+        "option": "A: 說「我很感興趣」",
+        "next_scene": "ghost_lessons"
+      },
+      {
+        "option": "B: 問「會不會很冷？」",
+        "next_scene": "cold_encounter"
+      }
+    ]
+  },
+  
+  "ghost_touch": {
+    "title": "鬼魂的觸摸",
+    "description": "鬼魂神秘地笑著：「我可以選擇是否觸摸實體。讓我示範給你看...」\n\n他伸出手，你能感覺到一陣涼意，但同時又有一種奇異的溫暖。他的手穿過你的衣服，直接觸摸到你的皮膚。",
+    "choices": [
+      {
+        "option": "A: 享受這種奇異的感覺",
+        "next_scene": "ghost_intimacy"
+      },
+      {
+        "option": "B: 說「這太奇怪了」",
+        "next_scene": "ghost_confusion"
+      }
+    ]
+  },
+  
+  "pumpkin_patch": {
+    "title": "南瓜田的誘惑",
+    "description": "你來到南瓜田，月光下的大南瓜看起來格外誘人。突然，一個穿著農夫裝的性感女郎從南瓜後面走出來。\n\n「歡迎來到我的南瓜田，」她說，「我是這裡的守護者。這些南瓜都很特別... 它們會回應你的慾望。」",
+    "choices": [
+      {
+        "option": "A: 問「南瓜會回應什麼慾望？」",
+        "next_scene": "pumpkin_magic"
+      },
+      {
+        "option": "B: 說「我更想了解你」",
+        "next_scene": "farmer_romance"
+      },
+      {
+        "option": "C: 試圖抱起一個大南瓜",
+        "next_scene": "pumpkin_lifting"
+      }
+    ]
+  },
+  
+  "pumpkin_magic": {
+    "title": "南瓜的魔法",
+    "description": "農夫女郎神秘地笑著：「這些南瓜會根據你的內心慾望改變形狀。看...」她輕撫一個南瓜，它開始變形，變成了... 一個非常誘人的形狀。\n\n「每個南瓜都代表不同的幻想，」她說，「你想要哪一個？」",
+    "choices": [
+      {
+        "option": "A: 選擇最大的南瓜",
+        "next_scene": "big_pumpkin_fun"
+      },
+      {
+        "option": "B: 說「我想要你」",
+        "next_scene": "farmer_seduction"
+      }
+    ]
+  },
+  
+  "rooftop_romance": {
+    "title": "屋頂浪漫",
+    "description": "在月光下，你和女巫在屋頂上擁吻。她的嘴唇溫暖而甜蜜，帶著魔法的味道。突然，她推開你，笑著說：「現在讓我們做一些真正的魔法！」\n\n她揮動魔杖，你們周圍出現了閃爍的星星，整個世界都變得浪漫起來。",
+    "is_ending": true,
+    "outcome": "🎉 完美結局！你和女巫在魔法星光下度過了難忘的萬聖節夜晚！\n\n你獲得了『魔法騎士』的稱號，並且學會了真正的愛情魔法。",
+    "score": 100
+  },
+  
+  "moonlight_adventure": {
+    "title": "月光冒險",
+    "description": "你們飛到更遠的地方，來到一個隱秘的月光湖。女巫說：「這裡是我的秘密花園，只有真正特別的人才能來到這裡。」\n\n在月光下，你們一起探索著彼此的內心，度過了最浪漫的夜晚。",
+    "is_ending": true,
+    "outcome": "🌙 浪漫結局！你和女巫在月光湖度過了最美好的時光！\n\n你獲得了『月光戀人』的稱號，並且永遠記住了這個神奇的夜晚。",
+    "score": 90
+  },
+  
+  "apology_accepted": {
+    "title": "道歉被接受",
+    "description": "女巫看到你真誠的道歉，表情軟化了。「好吧，我原諒你。但你要記住，對女巫要有禮貌！」\n\n她揮動魔杖，你重新回到地面。她笑著說：「現在，讓我們重新開始，用正確的方式。」",
+    "choices": [
+      {
+        "option": "A: 重新開始約會",
+        "next_scene": "witch_encounter"
+      },
+      {
+        "option": "B: 進入鬼屋",
+        "next_scene": "haunted_house"
+      }
+    ]
+  },
+  
+  "floating_mischief": {
+    "title": "漂浮惡作劇",
+    "description": "你試圖抓住什麼東西，但只能在空中飄浮。女巫在下面笑著：「這就是無禮的代價！」\n\n突然，你撞到了一個吊燈，燈泡爆裂，火花四濺。女巫驚叫：「我的天！快下來！」她揮動魔杖，你安全地降落到地面。",
+    "is_ending": true,
+    "outcome": "💥 搞笑結局！你因為無禮而漂浮，最後撞壞了吊燈！\n\n雖然結局有點尷尬，但至少你學會了對女巫要有禮貌。",
+    "score": 30
+  },
+  
+  "cat_friendship": {
+    "title": "黑貓的友誼",
+    "description": "黑貓咪咪對你的友善感到高興。「你是一個好人，」它說，「我願意幫助你。」\n\n女巫看到你們的友誼，也對你刮目相看。「既然咪咪喜歡你，那我也願意給你一個機會。」",
+    "choices": [
+      {
+        "option": "A: 和女巫重新開始",
+        "next_scene": "witch_encounter"
+      },
+      {
+        "option": "B: 和黑貓一起探險",
+        "next_scene": "cat_adventure"
+      }
+    ]
+  },
+  
+  "cat_transformation": {
+    "title": "黑貓變身",
+    "description": "黑貓神秘地笑著：「你確定想看嗎？」突然，一陣煙霧升起，黑貓變成了一個美麗的貓女！\n\n「我是貓女莉莉，」她說，「只有真正特別的人才能看到我的真面目。」她對你眨了眨眼。",
+    "choices": [
+      {
+        "option": "A: 讚美她的美麗",
+        "next_scene": "cat_lady_romance"
+      },
+      {
+        "option": "B: 問「你能變回貓嗎？」",
+        "next_scene": "cat_confusion"
+      }
+    ]
+  },
+  
+  "ghost_lessons": {
+    "title": "鬼魂的課程",
+    "description": "鬼魂興奮地說：「太好了！讓我教你一些鬼魂的技巧。首先，我們來學習如何穿牆...」\n\n他示範著穿過牆壁，然後回來。「現在輪到你了！但要注意，一旦你學會了，就永遠無法回頭了。」",
+    "choices": [
+      {
+        "option": "A: 學習穿牆技巧",
+        "next_scene": "ghost_transformation"
+      },
+      {
+        "option": "B: 說「我還是想保持人類身份」",
+        "next_scene": "ghost_respect"
+      }
+    ]
+  },
+  
+  "cold_encounter": {
+    "title": "冰冷的相遇",
+    "description": "鬼魂笑著說：「一開始會有點冷，但很快就會變暖的。讓我示範給你看...」\n\n他輕輕觸摸你的手，你感覺到一陣涼意，但同時又有一種奇異的溫暖。他的觸摸讓你感到既刺激又舒適。",
+    "is_ending": true,
+    "outcome": "❄️ 冰冷結局！你和鬼魂度過了奇異的夜晚！\n\n雖然有點冷，但你體驗到了前所未有的感覺。",
+    "score": 70
+  },
+  
+  "ghost_intimacy": {
+    "title": "鬼魂的親密",
+    "description": "你享受著鬼魂奇異的觸摸，他的手指穿過你的衣服，直接觸摸到你的皮膚。這種感覺既刺激又神秘。\n\n「這就是鬼魂的愛，」他輕聲說，「既冰冷又溫暖，既真實又虛幻。」",
+    "is_ending": true,
+    "outcome": "👻 神秘結局！你和鬼魂體驗了最奇異的親密！\n\n你獲得了『鬼魂戀人』的稱號，並且永遠記住了這種奇異的感覺。",
+    "score": 85
+  },
+  
+  "ghost_confusion": {
+    "title": "鬼魂的困惑",
+    "description": "鬼魂看起來有點失望。「我以為你會喜歡的，」他說，「但沒關係，每個人都有自己的喜好。」\n\n他禮貌地後退，說：「也許我們不適合。祝你在派對上玩得開心。」",
+    "is_ending": true,
+    "outcome": "😔 禮貌結局！你和鬼魂友好地分開了！\n\n雖然沒有發生什麼，但至少你們都保持了禮貌。",
+    "score": 40
+  },
+  
+  "farmer_romance": {
+    "title": "農夫的浪漫",
+    "description": "農夫女郎對你的直接感到驚訝，然後笑了。「你很有趣，」她說，「我喜歡直接的人。」\n\n她靠近你，輕聲說：「那麼，你想要了解我的哪個方面呢？」她的眼睛閃爍著誘惑的光芒。",
+    "choices": [
+      {
+        "option": "A: 說「我想了解你的心」",
+        "next_scene": "heart_to_heart"
+      },
+      {
+        "option": "B: 說「我想了解你的身體」",
+        "next_scene": "physical_attraction"
+      }
+    ]
+  },
+  
+  "pumpkin_lifting": {
+    "title": "舉起南瓜",
+    "description": "你試圖抱起一個大南瓜，但它比你想象的要重得多！你用力舉起它，但突然失去平衡，南瓜掉在地上摔碎了。\n\n農夫女郎笑著說：「看來你需要一些幫助！讓我教你正確的方法。」",
+    "is_ending": true,
+    "outcome": "🎃 搞笑結局！你摔碎了南瓜，但學到了寶貴的教訓！\n\n至少你嘗試了，這比什麼都不做要好。",
+    "score": 20
+  },
+  
+  "big_pumpkin_fun": {
+    "title": "大南瓜的樂趣",
+    "description": "你選擇了最大的南瓜，它開始變形，變成了一個巨大的... 你知道的。農夫女郎笑著說：「哇，你的想像力真豐富！」\n\n你們一起探索著這個奇異的南瓜，度過了有趣的時光。",
+    "is_ending": true,
+    "outcome": "🎃 創意結局！你和農夫女郎度過了充滿想像力的夜晚！\n\n你獲得了『南瓜大師』的稱號，並且學會了如何發揮創意。",
+    "score": 75
+  },
+  
+  "farmer_seduction": {
+    "title": "農夫的誘惑",
+    "description": "農夫女郎對你的直接感到興奮。「很好，」她說，「我喜歡誠實的人。」\n\n她拉著你的手，帶你到南瓜田的深處。「讓我們做一些真正有趣的事情，」她輕聲說。",
+    "is_ending": true,
+    "outcome": "🌾 熱情結局！你和農夫女郎在南瓜田度過了火熱的夜晚！\n\n你獲得了『田野戀人』的稱號，並且永遠記住了這個充滿激情的夜晚。",
+    "score": 95
+  },
+  
+  "cat_adventure": {
+    "title": "黑貓的冒險",
+    "description": "你和黑貓咪咪一起探險，它帶你到了一個隱秘的地方。「這裡是我的秘密基地，」它說，「只有我的朋友才能來到這裡。」\n\n你們一起度過了愉快的時光，咪咪教會了你很多關於魔法的知識。",
+    "is_ending": true,
+    "outcome": "🐱 友誼結局！你和黑貓咪咪建立了深厚的友誼！\n\n你獲得了『貓咪之友』的稱號，並且學會了真正的友誼魔法。",
+    "score": 60
+  },
+  
+  "cat_lady_romance": {
+    "title": "貓女的浪漫",
+    "description": "你讚美貓女莉莉的美麗，她感到很高興。「你是一個真正的紳士，」她說，「我願意和你分享我的秘密。」\n\n她帶你到了一個神秘的地方，在那裡你們度過了最浪漫的時光。",
+    "is_ending": true,
+    "outcome": "🐱 浪漫結局！你和貓女莉莉度過了最美好的時光！\n\n你獲得了『貓女戀人』的稱號，並且永遠記住了這個神奇的夜晚。",
+    "score": 80
+  },
+  
+  "cat_confusion": {
+    "title": "貓的困惑",
+    "description": "貓女莉莉看起來有點困惑。「你不想看到我的真面目嗎？」她問，「還是你更喜歡我作為貓的樣子？」\n\n她變回黑貓，說：「也許我們不適合。祝你在派對上玩得開心。」",
+    "is_ending": true,
+    "outcome": "😿 困惑結局！你和貓女莉莉因為誤解而分開了！\n\n雖然沒有發生什麼，但至少你們都保持了友好。",
+    "score": 35
+  },
+  
+  "ghost_transformation": {
+    "title": "鬼魂轉化",
+    "description": "你決定學習穿牆技巧，鬼魂開始教你。突然，你發現自己能夠穿過牆壁了！\n\n「恭喜你！」鬼魂說，「你現在是我們的一員了。但記住，一旦成為鬼魂，就永遠無法回頭了。」",
+    "is_ending": true,
+    "outcome": "👻 轉化結局！你學會了穿牆技巧，成為了鬼魂的一員！\n\n你獲得了『新鬼魂』的稱號，並且永遠記住了這個轉變的時刻。",
+    "score": 50
+  },
+  
+  "ghost_respect": {
+    "title": "鬼魂的尊重",
+    "description": "鬼魂對你的決定表示尊重。「我理解，」他說，「保持人類身份確實很重要。」\n\n他禮貌地後退，說：「也許我們可以成為朋友，而不是戀人。祝你在派對上玩得開心。」",
+    "is_ending": true,
+    "outcome": "🤝 友誼結局！你和鬼魂建立了友誼！\n\n雖然沒有發生什麼，但至少你們都保持了尊重和理解。",
+    "score": 45
+  },
+  
+  "heart_to_heart": {
+    "title": "心靈交流",
+    "description": "農夫女郎對你的回答感到感動。「你是一個真正的人，」她說，「我願意和你分享我的內心。」\n\n你們坐在南瓜田邊，分享著彼此的故事和夢想，度過了最美好的時光。",
+    "is_ending": true,
+    "outcome": "💕 心靈結局！你和農夫女郎建立了深厚的情感連接！\n\n你獲得了『心靈伴侶』的稱號，並且永遠記住了這個美好的夜晚。",
+    "score": 85
+  },
+  
+  "physical_attraction": {
+    "title": "身體吸引",
+    "description": "農夫女郎對你的直接感到興奮。「很好，」她說，「我喜歡誠實的人。」\n\n她拉著你的手，帶你到南瓜田的深處。「讓我們做一些真正有趣的事情，」她輕聲說。",
+    "is_ending": true,
+    "outcome": "🔥 激情結局！你和農夫女郎度過了火熱的夜晚！\n\n你獲得了『激情戀人』的稱號，並且永遠記住了這個充滿激情的夜晚。",
+    "score": 90
+  },
+  
+  "ghost_chase": {
+    "title": "鬼魂追逐",
+    "description": "你試圖逃跑，但鬼魂追了上來！「別跑！」他喊道，「我只是想和你做朋友！」\n\n你跑得氣喘吁吁，最後絆倒了。鬼魂停下來，關心地問：「你還好嗎？」",
+    "is_ending": true,
+    "outcome": "🏃 追逐結局！你被鬼魂追逐，最後絆倒了！\n\n雖然有點尷尬，但至少你嘗試了逃跑。",
+    "score": 25
+  }
+}

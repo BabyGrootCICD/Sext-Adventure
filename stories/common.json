@@ -1,0 +1,90 @@
+{
+  "common_puns": [
+    "Why don't witches wear panties? So they can grip the broom better!",
+    "I'm light as a feather, and I can see you're stiff as a board.",
+    "What do you call a ghost's favorite type of music? Soul music!",
+    "Why did the vampire break up with his girlfriend? She was too clingy!",
+    "What's a ghost's favorite type of candy? Boo-berry!",
+    "Why don't ghosts ever win at poker? Because they always fold!",
+    "What do you call a witch who lives at the beach? A sand-witch!",
+    "Why did the skeleton go to the party alone? Because he had no body to go with!",
+    "What's a vampire's favorite fruit? A blood orange!",
+    "Why don't zombies ever win at hide and seek? Because they always get caught!"
+  ],
+  
+  "halloween_pickup_lines": [
+    "Are you a witch? Because you've put a spell on me!",
+    "Is your name Halloween? Because you're giving me goosebumps!",
+    "Are you a ghost? Because I can see right through you!",
+    "Is your name Dracula? Because you're sucking the life out of me!",
+    "Are you a pumpkin? Because you're making me feel all warm inside!",
+    "Is your name Casper? Because you're the friendliest ghost I've ever met!",
+    "Are you a werewolf? Because you're making me howl with desire!",
+    "Is your name Frankenstein? Because you're electrifying!",
+    "Are you a zombie? Because you're making me feel alive!",
+    "Is your name Medusa? Because you're turning me to stone!"
+  ],
+  
+  "nsfw_puns": [
+    "Why don't witches wear panties? So they can grip the broom better!",
+    "What's a ghost's favorite position? The phantom!",
+    "Why did the vampire break up with his girlfriend? She was too clingy!",
+    "What do you call a witch's favorite drink? A screwdriver!",
+    "Why don't zombies ever win at hide and seek? Because they always get caught!",
+    "What's a vampire's favorite fruit? A blood orange!",
+    "Why did the skeleton go to the party alone? Because he had no body to go with!",
+    "What do you call a ghost's favorite type of music? Soul music!",
+    "Why don't ghosts ever win at poker? Because they always fold!",
+    "What's a witch's favorite type of candy? Lollipops!"
+  ],
+  
+  "ending_types": {
+    "romantic": "浪漫結局",
+    "funny": "搞笑結局", 
+    "sexy": "性感結局",
+    "mysterious": "神秘結局",
+    "friendship": "友誼結局",
+    "adventure": "冒險結局",
+    "magical": "魔法結局",
+    "spooky": "恐怖結局"
+  },
+  
+  "character_types": {
+    "witch": "女巫",
+    "ghost": "鬼魂",
+    "vampire": "吸血鬼",
+    "werewolf": "狼人",
+    "zombie": "殭屍",
+    "skeleton": "骷髏",
+    "demon": "惡魔",
+    "fairy": "仙女",
+    "cat": "黑貓",
+    "pumpkin": "南瓜"
+  },
+  
+  "locations": {
+    "haunted_house": "鬼屋",
+    "pumpkin_patch": "南瓜田",
+    "graveyard": "墓地",
+    "witch_cottage": "女巫小屋",
+    "vampire_castle": "吸血鬼城堡",
+    "werewolf_forest": "狼人森林",
+    "zombie_apocalypse": "殭屍末日",
+    "skeleton_dungeon": "骷髏地牢",
+    "demon_realm": "惡魔領域",
+    "fairy_garden": "仙女花園"
+  },
+  
+  "achievements": {
+    "magic_knight": "魔法騎士",
+    "moonlight_lover": "月光戀人", 
+    "ghost_lover": "鬼魂戀人",
+    "pumpkin_master": "南瓜大師",
+    "field_lover": "田野戀人",
+    "cat_friend": "貓咪之友",
+    "cat_lady_lover": "貓女戀人",
+    "new_ghost": "新鬼魂",
+    "soul_mate": "心靈伴侶",
+    "passion_lover": "激情戀人"
+  }
+}
