@@ -2,15 +2,31 @@
   "achievements": {
     "magic_knight": {
       "name": "魔法騎士",
-      "description": "與女巫達成完美結局",
+      "description": "與女巫達成完美的屋頂浪漫結局",
       "icon": "🧙‍♀️",
       "rarity": "legendary",
       "condition": "ending_rooftop_romance",
       "points": 100
     },
+    "broom_rider": {
+      "name": "掃帚騎士",
+      "description": "體驗了女巫無與倫比的『騎術』",
+      "icon": "🧹",
+      "rarity": "legendary",
+      "condition": "ending_witch_seduction",
+      "points": 110
+    },
+    "vampire_bride": {
+      "name": "血色新娘",
+      "description": "接受了吸血鬼的初擁，成為永生的伴侶",
+      "icon": "🧛‍♂️",
+      "rarity": "legendary",
+      "condition": "ending_vampire_bite_romance",
+      "points": 120
+    },
     "moonlight_lover": {
       "name": "月光戀人",
-      "description": "在月光湖度過浪漫夜晚",
+      "description": "在月光湖與女巫進行了一場浪漫的裸泳",
       "icon": "🌙",
       "rarity": "epic",
       "condition": "ending_moonlight_adventure",
@@ -18,7 +34,7 @@
     },
     "ghost_lover": {
       "name": "鬼魂戀人",
-      "description": "與鬼魂體驗奇異親密",
+      "description": "與鬼魂探索了超越生死的親密接觸",
       "icon": "👻",
       "rarity": "rare",
       "condition": "ending_ghost_intimacy",
@@ -26,7 +42,7 @@
     },
     "pumpkin_master": {
       "name": "南瓜大師",
-      "description": "在南瓜田發揮創意",
+      "description": "在南瓜田發揮創意，玩弄了巨大的南瓜",
       "icon": "🎃",
       "rarity": "rare",
       "condition": "ending_big_pumpkin_fun",
@@ -34,7 +50,7 @@
     },
     "field_lover": {
       "name": "田野戀人",
-      "description": "與農夫女郎度過激情夜晚",
+      "description": "在星空下的南瓜田中，與農夫女郎融為一體",
       "icon": "🌾",
       "rarity": "epic",
       "condition": "ending_farmer_seduction",
@@ -42,15 +58,15 @@
     },
     "cat_friend": {
       "name": "貓咪之友",
-      "description": "與黑貓咪咪建立友誼",
+      "description": "與黑貓咪咪建立了純潔的友誼",
       "icon": "🐱",
       "rarity": "common",
       "condition": "ending_cat_adventure",
       "points": 60
     },
-    "cat_lady_lover": {
-      "name": "貓女戀人",
-      "description": "與貓女莉莉度過浪漫時光",
+    "cat_tamer": {
+      "name": "馴貓師",
+      "description": "成功駕馭了狂野的貓女莉莉",
       "icon": "🐱‍👤",
       "rarity": "rare",
       "condition": "ending_cat_lady_romance",
@@ -58,7 +74,7 @@
     },
     "soul_mate": {
       "name": "心靈伴侶",
-      "description": "與農夫女郎建立情感連接",
+      "description": "與農夫女郎從心靈到肉體都達成了完美契合",
       "icon": "💕",
       "rarity": "rare",
       "condition": "ending_heart_to_heart",
@@ -66,7 +82,7 @@
     },
     "passion_lover": {
       "name": "激情戀人",
-      "description": "體驗火熱的激情夜晚",
+      "description": "與農夫女郎在稻草堆上體驗了最原始的激情",
       "icon": "🔥",
       "rarity": "epic",
       "condition": "ending_physical_attraction",
@@ -74,7 +90,7 @@
     },
     "cold_warrior": {
       "name": "冰冷戰士",
-      "description": "勇敢面對鬼魂的冰冷觸摸",
+      "description": "勇敢面對鬼魂的冰冷觸摸並享受其中",
       "icon": "❄️",
       "rarity": "common",
       "condition": "ending_cold_encounter",
@@ -114,7 +130,7 @@
     },
     "completionist": {
       "name": "完美主義者",
-      "description": "解鎖了所有結局",
+      "description": "解鎖了所有結局，真是個時間管理大師",
       "icon": "🏆",
       "rarity": "legendary",
       "condition": "all_endings_unlocked",
@@ -122,7 +138,7 @@
     },
     "speed_demon": {
       "name": "速度惡魔",
-      "description": "在 5 分鐘內完成遊戲",
+      "description": "在 5 分鐘內完成遊戲，快槍手！",
       "icon": "⚡",
       "rarity": "rare",
       "condition": "speed_run_5min",
@@ -130,7 +146,7 @@
     },
     "pun_master": {
       "name": "雙關語大師",
-      "description": "觸發了所有萬聖節雙關語",
+      "description": "觸發了所有萬聖節雙關語，真是個『壞』傢伙",
       "icon": "😄",
       "rarity": "epic",
       "condition": "all_puns_triggered",
@@ -138,7 +154,7 @@
     },
     "romance_expert": {
       "name": "浪漫專家",
-      "description": "達成所有浪漫結局",
+      "description": "達成所有浪漫結局，情場高手",
       "icon": "💘",
       "rarity": "rare",
       "condition": "all_romance_endings",
@@ -154,7 +170,7 @@
     },
     "halloween_legend": {
       "name": "萬聖節傳奇",
-      "description": "獲得 1000 分以上",
+      "description": "獲得 1000 分以上，成為了派對之王",
       "icon": "🎃👑",
       "rarity": "legendary",
       "condition": "score_1000_plus",
@@ -165,43 +181,43 @@
   "badges": {
     "first_play": {
       "name": "初來乍到",
-      "description": "第一次遊玩",
+      "description": "第一次遊玩，歡迎來到這個墮落的世界",
       "icon": "👶",
       "rarity": "common"
     },
     "night_owl": {
       "name": "夜貓子",
-      "description": "在深夜時分遊玩",
+      "description": "在深夜時分遊玩，你知道的，夜晚更刺激",
       "icon": "🦉",
       "rarity": "common"
     },
     "early_bird": {
       "name": "早起鳥",
-      "description": "在清晨時分遊玩",
+      "description": "在清晨時分遊玩，精力充沛啊",
       "icon": "🐦",
       "rarity": "common"
     },
     "weekend_warrior": {
       "name": "週末戰士",
-      "description": "在週末遊玩",
+      "description": "在週末遊玩，把時間都花在『正事』上",
       "icon": "⚔️",
       "rarity": "common"
     },
     "repeat_player": {
       "name": "重複玩家",
-      "description": "遊玩超過 5 次",
+      "description": "遊玩超過 5 次，樂此不疲",
       "icon": "🔄",
       "rarity": "rare"
     },
     "social_butterfly": {
       "name": "社交蝴蝶",
-      "description": "分享了 3 次成就",
+      "description": "分享了 3 次成就，喜歡炫耀是吧",
       "icon": "🦋",
       "rarity": "rare"
     },
     "perfectionist": {
       "name": "完美主義者",
-      "description": "單次遊戲獲得滿分",
+      "description": "單次遊戲獲得滿分，不放過任何一個",
       "icon": "💯",
       "rarity": "epic"
     },
@@ -213,14 +229,26 @@
     },
     "halloween_spirit": {
       "name": "萬聖節精神",
-      "description": "在萬聖節期間遊玩",
+      "description": "在萬聖節期間遊玩，非常應景",
       "icon": "🎃",
       "rarity": "rare"
     },
     "midnight_magic": {
       "name": "午夜魔法",
-      "description": "在午夜時分完成遊戲",
+      "description": "在午夜時分完成遊戲，魔法最強的時刻",
       "icon": "🕛",
+      "rarity": "rare"
+    },
+    "shameless": {
+      "name": "不知羞恥",
+      "description": "解鎖了所有性感結局",
+      "icon": "😈",
+      "rarity": "epic"
+    },
+    "bold_one": {
+      "name": "膽大包天",
+      "description": "第一次遊玩就選擇了最大膽的選項",
+      "icon": "🔥",
       "rarity": "rare"
     }
   },

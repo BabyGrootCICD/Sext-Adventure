@@ -292,38 +292,118 @@
         .achievements-panel {
             position: fixed;
             top: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.9);
+            right: -320px;
+            background: rgba(0, 0, 0, 0.95);
             border: 2px solid #8b5cf6;
-            border-radius: 10px;
+            border-radius: 10px 0 0 10px;
             padding: 15px;
             z-index: 100;
             max-width: 300px;
+            width: 300px;
+            max-height: 80vh;
+            overflow-y: auto;
+            transition: right 0.3s ease;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .achievements-panel.open {
+            right: 0;
+        }
+
+        .achievements-toggle {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #8b5cf6, #ff6b35);
+            border: 2px solid #8b5cf6;
+            border-right: none;
+            border-radius: 10px 0 0 10px;
+            padding: 15px 10px;
+            cursor: pointer;
+            z-index: 101;
+            transition: all 0.3s ease;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-weight: bold;
+            color: white;
+            font-size: 1em;
+        }
+
+        .achievements-toggle:hover {
+            padding-left: 15px;
+            box-shadow: -5px 0 15px rgba(139, 92, 246, 0.5);
+        }
+
+        .achievements-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #8b5cf6;
         }
 
         .achievements-title {
             font-size: 1.2em;
             color: #8b5cf6;
-            margin-bottom: 10px;
-            text-align: center;
+            font-weight: bold;
+        }
+
+        .achievements-close {
+            background: transparent;
+            border: none;
+            color: #ff6b35;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .achievements-close:hover {
+            background: rgba(255, 107, 53, 0.2);
+            transform: rotate(90deg);
         }
 
         .achievement-item {
             display: flex;
             align-items: center;
-            margin-bottom: 8px;
-            padding: 5px;
-            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 8px;
             background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .achievement-item:hover {
+            background: rgba(139, 92, 246, 0.2);
+            transform: translateX(5px);
+            border-color: rgba(139, 92, 246, 0.5);
         }
 
         .achievement-item.unlocked {
             background: rgba(255, 107, 53, 0.2);
+            border-color: rgba(255, 107, 53, 0.5);
+        }
+
+        .achievement-item.unlocked:hover {
+            background: rgba(255, 107, 53, 0.3);
+            box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
         }
 
         .achievement-item-icon {
-            font-size: 1.5em;
-            margin-right: 10px;
+            font-size: 2em;
+            margin-right: 12px;
+            min-width: 40px;
+            text-align: center;
         }
 
         .achievement-item-text {
@@ -331,26 +411,29 @@
         }
 
         .achievement-item-name {
-            font-size: 0.9em;
+            font-size: 0.95em;
             color: #fff;
             font-weight: bold;
+            margin-bottom: 3px;
         }
 
         .achievement-item-desc {
             font-size: 0.8em;
             color: #ccc;
+            line-height: 1.3;
         }
 
         .stats-panel {
             position: fixed;
             top: 20px;
             left: 20px;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             border: 2px solid #ff6b35;
             border-radius: 10px;
             padding: 15px;
             z-index: 100;
             min-width: 200px;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
         }
 
         .stats-title {
@@ -358,13 +441,26 @@
             color: #ff6b35;
             margin-bottom: 10px;
             text-align: center;
+            font-weight: bold;
         }
 
         .stat-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             color: #e0e0e0;
+            padding: 5px;
+            border-radius: 5px;
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        .stat-item span:first-child {
+            font-weight: 600;
+        }
+
+        .stat-item span:last-child {
+            color: #ff6b35;
+            font-weight: bold;
         }
 
         .overlay {
@@ -383,19 +479,236 @@
             font-size: 1.2em;
         }
 
+        /* RWD - 平板和小螢幕 */
+        @media (max-width: 1024px) {
+            .stats-panel {
+                top: 10px;
+                left: 10px;
+                min-width: 150px;
+                font-size: 0.9em;
+            }
+
+            .achievements-panel {
+                width: 250px;
+                right: -270px;
+            }
+
+            .achievements-toggle {
+                font-size: 0.9em;
+                padding: 12px 8px;
+            }
+        }
+
+        /* RWD - 手機橫向 */
         @media (max-width: 768px) {
             .container {
-                padding: 20px;
+                padding: 15px;
                 margin: 10px;
             }
             
             .title {
-                font-size: 2em;
+                font-size: 1.8em;
+            }
+
+            .subtitle {
+                font-size: 1em;
             }
             
             .scene-title {
+                font-size: 1.2em;
+            }
+
+            .scene-description {
+                font-size: 1em;
+            }
+
+            .choice {
+                font-size: 0.95em;
+                padding: 12px;
+            }
+
+            .stats-panel {
+                top: 10px;
+                left: 10px;
+                min-width: 120px;
+                font-size: 0.85em;
+                padding: 10px;
+            }
+
+            .stats-title {
+                font-size: 1em;
+            }
+
+            .stat-item {
+                font-size: 0.85em;
+                margin-bottom: 5px;
+            }
+
+            .achievements-panel {
+                width: 220px;
+                right: -240px;
+                max-height: 70vh;
+            }
+
+            .achievements-toggle {
+                font-size: 0.85em;
+                padding: 10px 6px;
+            }
+
+            .achievement-popup {
+                width: 90%;
+                max-width: 350px;
+                padding: 20px;
+            }
+
+            .achievement-icon {
+                font-size: 3em;
+            }
+
+            .achievement-title {
+                font-size: 1.5em;
+            }
+
+            .share-btn, .close-btn {
+                font-size: 0.9em;
+                padding: 8px 15px;
+            }
+        }
+
+        /* RWD - 手機直向 */
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+                margin: 5px;
+            }
+
+            .title {
+                font-size: 1.5em;
+            }
+
+            .subtitle {
+                font-size: 0.9em;
+            }
+
+            .warning {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+
+            .scene-title {
+                font-size: 1.1em;
+            }
+
+            .scene-description {
+                font-size: 0.95em;
+            }
+
+            .choice {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+
+            .stats-panel {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                margin-bottom: 10px;
+                box-sizing: border-box;
+            }
+
+            .achievements-panel {
+                width: 85%;
+                right: -90%;
+                top: 60px;
+                max-height: 60vh;
+            }
+
+            .achievements-toggle {
+                top: 65%;
+                font-size: 0.8em;
+                padding: 8px 5px;
+            }
+
+            .achievement-popup {
+                width: 95%;
+                padding: 15px;
+            }
+
+            .achievement-icon {
+                font-size: 2.5em;
+            }
+
+            .achievement-title {
                 font-size: 1.3em;
             }
+
+            .achievement-description {
+                font-size: 0.95em;
+            }
+
+            .share-btn, .close-btn {
+                font-size: 0.85em;
+                padding: 6px 12px;
+                margin: 3px;
+            }
+
+            .achievement-actions {
+                flex-direction: column;
+            }
+
+            .achievement-actions button {
+                width: 100%;
+            }
+
+            .player-input {
+                width: 90%;
+                font-size: 1em;
+            }
+
+            .start-btn, .restart-btn {
+                font-size: 1em;
+                padding: 12px 30px;
+            }
+        }
+
+        /* RWD - 超小螢幕 */
+        @media (max-width: 360px) {
+            .title {
+                font-size: 1.3em;
+            }
+
+            .scene-title {
+                font-size: 1em;
+            }
+
+            .scene-description {
+                font-size: 0.9em;
+            }
+
+            .choice {
+                font-size: 0.85em;
+                padding: 8px;
+            }
+        }
+
+        /* 捲軸樣式 */
+        .achievements-panel::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .achievements-panel::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+        }
+
+        .achievements-panel::-webkit-scrollbar-thumb {
+            background: #8b5cf6;
+            border-radius: 4px;
+        }
+
+        .achievements-panel::-webkit-scrollbar-thumb:hover {
+            background: #a78bfa;
         }
     </style>
 </head>
@@ -431,9 +744,17 @@
             </div>
         </div>
 
+        <!-- 成就切換按鈕 -->
+        <div class="achievements-toggle" id="achievementsToggle" onclick="toggleAchievementsPanel()" style="display: none;">
+            🏆 成就列表
+        </div>
+
         <!-- 成就面板 -->
-        <div class="achievements-panel" id="achievementsPanel" style="display: none;">
-            <div class="achievements-title">🏆 成就</div>
+        <div class="achievements-panel" id="achievementsPanel">
+            <div class="achievements-header">
+                <div class="achievements-title">🏆 成就列表</div>
+                <button class="achievements-close" onclick="toggleAchievementsPanel()">✕</button>
+            </div>
             <div id="achievementsList"></div>
         </div>
 
@@ -1122,23 +1443,54 @@
             closeShareModal();
         }
 
+        // 切換成就面板
+        function toggleAchievementsPanel() {
+            const panel = document.getElementById('achievementsPanel');
+            const toggle = document.getElementById('achievementsToggle');
+            
+            if (panel.classList.contains('open')) {
+                panel.classList.remove('open');
+                if (toggle) {
+                    toggle.style.right = '0';
+                }
+            } else {
+                panel.classList.add('open');
+                if (toggle) {
+                    toggle.style.right = '300px';
+                }
+            }
+        }
+
         // 更新成就面板
         function updateAchievementsPanel() {
             const panel = document.getElementById('achievementsList');
             if (!panel) return;
 
-            panel.innerHTML = Object.entries(achievementsData).map(([achievementId, achievement]) => {
+            const unlockedCount = gameState.unlockedAchievements.size;
+            const totalCount = Object.keys(achievementsData).length;
+            
+            let html = `
+                <div style="text-align: center; margin-bottom: 15px; padding: 10px; background: rgba(139, 92, 246, 0.2); border-radius: 8px;">
+                    <div style="font-size: 1.5em; color: #ff6b35; font-weight: bold;">${unlockedCount} / ${totalCount}</div>
+                    <div style="font-size: 0.9em; color: #e0e0e0;">已解鎖成就</div>
+                </div>
+            `;
+
+            html += Object.entries(achievementsData).map(([achievementId, achievement]) => {
                 const isUnlocked = gameState.unlockedAchievements.has(achievementId);
                 return `
-                    <div class="achievement-item ${isUnlocked ? 'unlocked' : ''}">
+                    <div class="achievement-item ${isUnlocked ? 'unlocked' : ''}" style="opacity: ${isUnlocked ? '1' : '0.5'}">
                         <div class="achievement-item-icon">${achievement.icon}</div>
                         <div class="achievement-item-text">
                             <div class="achievement-item-name">${achievement.name}</div>
                             <div class="achievement-item-desc">${achievement.description}</div>
+                            ${isUnlocked ? '<div style="font-size: 0.7em; color: #ff6b35; margin-top: 3px;">✓ 已解鎖</div>' : '<div style="font-size: 0.7em; color: #666; margin-top: 3px;">🔒 未解鎖</div>'}
                         </div>
                     </div>
                 `;
             }).join('');
+
+            panel.innerHTML = html;
         }
 
         // 更新統計面板
@@ -1175,9 +1527,10 @@
 
             document.getElementById('startScreen').style.display = 'none';
             document.getElementById('statsPanel').style.display = 'block';
-            document.getElementById('achievementsPanel').style.display = 'block';
+            document.getElementById('achievementsToggle').style.display = 'block';
             
             updateStatsPanel();
+            updateAchievementsPanel();
             saveGameData();
             displayScene('start');
         }
