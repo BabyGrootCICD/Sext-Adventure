@@ -20,8 +20,9 @@
 - **遊戲長度**：20-30 分鐘遊玩，包含 10-15 個分支結局，大多以荒謔失敗或高潮結束。
 - **NSFW 警告**：本遊戲包含成人暗示和幽默，適合 18 歲以上玩家。無圖像內容，純文字。
 
-[快速試玩 Demo](https://yourusername.github.io/tsext-adventure/demo)  
-*(建議使用 GitHub Pages 或 itch.io 部署 demo，讓訪客直接在瀏覽器試玩。)*
+[🌐 線上試玩 Demo](https://yourusername.github.io/tsext-adventure/)  
+[🎮 itch.io 版本](https://yourusername.itch.io/tsext-adventure-halloween-haunt)  
+*(直接在瀏覽器中試玩，無需下載！)*
 
 ## 為什麼玩這個遊戲？
 - **搞笑元素**：每條故事路徑都融入萬聖節 pun，例如 "Why don't witches wear panties? So they can grip the broom better!" 或 "I'm light as a feather, and I can see you're stiff as a board."
@@ -35,15 +36,20 @@
 - 無需額外套件（基礎版使用標準庫）
 
 ### 步驟
-1. Clone repo：
-   ```
+1. **線上遊玩**（推薦）：
+   - [GitHub Pages 版本](https://yourusername.github.io/tsext-adventure/)
+   - [itch.io 版本](https://yourusername.itch.io/tsext-adventure-halloween-haunt)
+
+2. **本地遊玩**：
+   ```bash
    git clone https://github.com/yourusername/tsext-adventure.git
    cd tsext-adventure
+   python main.py
    ```
-2. 運行遊戲：
-   - Python 版：`python main.py`
-   - Twine 版：開啟 `index.html` 在瀏覽器運行。
-3. 輸入 "start" 進入萬聖節模式！
+
+3. **Web 版本**：
+   - 開啟 `web/index.html` 在瀏覽器運行
+   - 或使用部署腳本：`./deploy.sh` (Linux/Mac) 或 `deploy.bat` (Windows)
 
 ## 專案架構
 
@@ -53,16 +59,26 @@
 tsext-adventure/
 ├── README.md              # 本文件
 ├── LICENSE                # MIT 開源授權
-├── main.py                # 主要遊戲腳本（Python 版） 或 index.html（Twine 版）
-├── stories/               # 故事 JSON 或腳本檔
+├── main.py                # 主要遊戲腳本（Python 版）
+├── demo.py                # 演示腳本
+├── web/                   # Web 版本
+│   ├── index.html         # 瀏覽器版本
+│   └── DEPLOYMENT.md      # 部署指南
+├── stories/               # 故事 JSON 檔案
 │   ├── halloween.json     # 萬聖節故事分支
 │   └── common.json        # 通用 pun 和結局資料庫
+├── tests/                 # 測試腳本
+│   └── test_stories.py    # 測試案例
+├── docs/                  # 文件
+│   ├── guides/            # 使用指南
+│   ├── api/               # API 文件
+│   └── examples/          # 範例
 ├── images/                # 圖像資源
-│   ├── cover.png          # 封面圖片（用於 README 和 social sharing）
-│   └── badges/            # 自訂徽章（optional）
-├── tests/                 # 測試腳本（確保故事邏輯無 bug）
-│   └── test_stories.py
-├── docs/                  # 文件夾（未來擴充）
+│   ├── cover-design.md    # 封面設計說明
+│   └── badges/            # 徽章資料夾
+├── .github/workflows/     # GitHub Actions
+│   └── deploy.yml         # 自動部署
+├── itch-deploy/           # itch.io 部署包
 └── CONTRIBUTING.md        # 貢獻指南
 ```
 
