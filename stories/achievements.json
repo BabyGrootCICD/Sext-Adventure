@@ -1,0 +1,285 @@
+{
+  "achievements": {
+    "magic_knight": {
+      "name": "魔法騎士",
+      "description": "與女巫達成完美結局",
+      "icon": "🧙‍♀️",
+      "rarity": "legendary",
+      "condition": "ending_rooftop_romance",
+      "points": 100
+    },
+    "moonlight_lover": {
+      "name": "月光戀人",
+      "description": "在月光湖度過浪漫夜晚",
+      "icon": "🌙",
+      "rarity": "epic",
+      "condition": "ending_moonlight_adventure",
+      "points": 90
+    },
+    "ghost_lover": {
+      "name": "鬼魂戀人",
+      "description": "與鬼魂體驗奇異親密",
+      "icon": "👻",
+      "rarity": "rare",
+      "condition": "ending_ghost_intimacy",
+      "points": 85
+    },
+    "pumpkin_master": {
+      "name": "南瓜大師",
+      "description": "在南瓜田發揮創意",
+      "icon": "🎃",
+      "rarity": "rare",
+      "condition": "ending_big_pumpkin_fun",
+      "points": 75
+    },
+    "field_lover": {
+      "name": "田野戀人",
+      "description": "與農夫女郎度過激情夜晚",
+      "icon": "🌾",
+      "rarity": "epic",
+      "condition": "ending_farmer_seduction",
+      "points": 95
+    },
+    "cat_friend": {
+      "name": "貓咪之友",
+      "description": "與黑貓咪咪建立友誼",
+      "icon": "🐱",
+      "rarity": "common",
+      "condition": "ending_cat_adventure",
+      "points": 60
+    },
+    "cat_lady_lover": {
+      "name": "貓女戀人",
+      "description": "與貓女莉莉度過浪漫時光",
+      "icon": "🐱‍👤",
+      "rarity": "rare",
+      "condition": "ending_cat_lady_romance",
+      "points": 80
+    },
+    "soul_mate": {
+      "name": "心靈伴侶",
+      "description": "與農夫女郎建立情感連接",
+      "icon": "💕",
+      "rarity": "rare",
+      "condition": "ending_heart_to_heart",
+      "points": 85
+    },
+    "passion_lover": {
+      "name": "激情戀人",
+      "description": "體驗火熱的激情夜晚",
+      "icon": "🔥",
+      "rarity": "epic",
+      "condition": "ending_physical_attraction",
+      "points": 90
+    },
+    "cold_warrior": {
+      "name": "冰冷戰士",
+      "description": "勇敢面對鬼魂的冰冷觸摸",
+      "icon": "❄️",
+      "rarity": "common",
+      "condition": "ending_cold_encounter",
+      "points": 70
+    },
+    "floating_fool": {
+      "name": "漂浮傻瓜",
+      "description": "因為無禮而漂浮撞壞吊燈",
+      "icon": "💥",
+      "rarity": "common",
+      "condition": "ending_floating_mischief",
+      "points": 30
+    },
+    "pumpkin_crusher": {
+      "name": "南瓜粉碎者",
+      "description": "摔碎南瓜但學到教訓",
+      "icon": "🎃💥",
+      "rarity": "common",
+      "condition": "ending_pumpkin_lifting",
+      "points": 20
+    },
+    "ghost_chaser": {
+      "name": "鬼魂追逐者",
+      "description": "被鬼魂追逐最後絆倒",
+      "icon": "🏃‍♂️👻",
+      "rarity": "common",
+      "condition": "ending_ghost_chase",
+      "points": 25
+    },
+    "explorer": {
+      "name": "探索者",
+      "description": "探索了所有主要場景",
+      "icon": "🗺️",
+      "rarity": "rare",
+      "condition": "visited_all_scenes",
+      "points": 50
+    },
+    "completionist": {
+      "name": "完美主義者",
+      "description": "解鎖了所有結局",
+      "icon": "🏆",
+      "rarity": "legendary",
+      "condition": "all_endings_unlocked",
+      "points": 200
+    },
+    "speed_demon": {
+      "name": "速度惡魔",
+      "description": "在 5 分鐘內完成遊戲",
+      "icon": "⚡",
+      "rarity": "rare",
+      "condition": "speed_run_5min",
+      "points": 75
+    },
+    "pun_master": {
+      "name": "雙關語大師",
+      "description": "觸發了所有萬聖節雙關語",
+      "icon": "😄",
+      "rarity": "epic",
+      "condition": "all_puns_triggered",
+      "points": 100
+    },
+    "romance_expert": {
+      "name": "浪漫專家",
+      "description": "達成所有浪漫結局",
+      "icon": "💘",
+      "rarity": "rare",
+      "condition": "all_romance_endings",
+      "points": 80
+    },
+    "adventure_seeker": {
+      "name": "冒險尋求者",
+      "description": "嘗試了所有冒險選擇",
+      "icon": "🗡️",
+      "rarity": "rare",
+      "condition": "all_adventure_choices",
+      "points": 70
+    },
+    "halloween_legend": {
+      "name": "萬聖節傳奇",
+      "description": "獲得 1000 分以上",
+      "icon": "🎃👑",
+      "rarity": "legendary",
+      "condition": "score_1000_plus",
+      "points": 300
+    }
+  },
+  
+  "badges": {
+    "first_play": {
+      "name": "初來乍到",
+      "description": "第一次遊玩",
+      "icon": "👶",
+      "rarity": "common"
+    },
+    "night_owl": {
+      "name": "夜貓子",
+      "description": "在深夜時分遊玩",
+      "icon": "🦉",
+      "rarity": "common"
+    },
+    "early_bird": {
+      "name": "早起鳥",
+      "description": "在清晨時分遊玩",
+      "icon": "🐦",
+      "rarity": "common"
+    },
+    "weekend_warrior": {
+      "name": "週末戰士",
+      "description": "在週末遊玩",
+      "icon": "⚔️",
+      "rarity": "common"
+    },
+    "repeat_player": {
+      "name": "重複玩家",
+      "description": "遊玩超過 5 次",
+      "icon": "🔄",
+      "rarity": "rare"
+    },
+    "social_butterfly": {
+      "name": "社交蝴蝶",
+      "description": "分享了 3 次成就",
+      "icon": "🦋",
+      "rarity": "rare"
+    },
+    "perfectionist": {
+      "name": "完美主義者",
+      "description": "單次遊戲獲得滿分",
+      "icon": "💯",
+      "rarity": "epic"
+    },
+    "lucky_charm": {
+      "name": "幸運符",
+      "description": "連續 3 次獲得稀有成就",
+      "icon": "🍀",
+      "rarity": "epic"
+    },
+    "halloween_spirit": {
+      "name": "萬聖節精神",
+      "description": "在萬聖節期間遊玩",
+      "icon": "🎃",
+      "rarity": "rare"
+    },
+    "midnight_magic": {
+      "name": "午夜魔法",
+      "description": "在午夜時分完成遊戲",
+      "icon": "🕛",
+      "rarity": "rare"
+    }
+  },
+  
+  "rarity_colors": {
+    "common": "#9CA3AF",
+    "rare": "#3B82F6", 
+    "epic": "#8B5CF6",
+    "legendary": "#F59E0B"
+  },
+  
+  "social_platforms": {
+    "twitter": {
+      "name": "Twitter",
+      "icon": "🐦",
+      "url": "https://twitter.com/intent/tweet",
+      "hashtags": ["TsextAdventure", "HalloweenHaunt", "NSFWGame"]
+    },
+    "facebook": {
+      "name": "Facebook",
+      "icon": "📘",
+      "url": "https://www.facebook.com/sharer/sharer.php",
+      "hashtags": ["TsextAdventure", "HalloweenHaunt"]
+    },
+    "instagram": {
+      "name": "Instagram",
+      "icon": "📷",
+      "url": "https://www.instagram.com/",
+      "hashtags": ["#TsextAdventure", "#HalloweenHaunt", "#NSFWGame"]
+    },
+    "threads": {
+      "name": "Threads",
+      "icon": "🧵",
+      "url": "https://www.threads.net/intent/post",
+      "hashtags": ["#TsextAdventure", "#HalloweenHaunt"]
+    },
+    "line": {
+      "name": "LINE",
+      "icon": "💬",
+      "url": "https://social-plugins.line.me/lineit/share",
+      "hashtags": ["TsextAdventure", "HalloweenHaunt"]
+    },
+    "discord": {
+      "name": "Discord",
+      "icon": "💬",
+      "url": "https://discord.com/",
+      "hashtags": ["TsextAdventure", "HalloweenHaunt"]
+    },
+    "reddit": {
+      "name": "Reddit",
+      "icon": "🤖",
+      "url": "https://reddit.com/submit",
+      "hashtags": ["TsextAdventure", "HalloweenHaunt", "NSFWGame"]
+    },
+    "telegram": {
+      "name": "Telegram",
+      "icon": "✈️",
+      "url": "https://t.me/share/url",
+      "hashtags": ["TsextAdventure", "HalloweenHaunt"]
+    }
+  }
+}

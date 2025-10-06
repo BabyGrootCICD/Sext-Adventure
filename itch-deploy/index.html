@@ -189,6 +189,194 @@
             font-size: 0.9em;
         }
 
+        .achievement-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border: 3px solid #ff6b35;
+            border-radius: 15px;
+            padding: 30px;
+            z-index: 1000;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(255, 107, 53, 0.5);
+            animation: achievementPop 0.5s ease-out;
+        }
+
+        @keyframes achievementPop {
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+
+        .achievement-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .achievement-title {
+            font-size: 1.8em;
+            color: #ff6b35;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .achievement-description {
+            font-size: 1.1em;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        .achievement-rarity {
+            font-size: 1em;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .rarity-common { background: #9CA3AF; color: #000; }
+        .rarity-rare { background: #3B82F6; color: #fff; }
+        .rarity-epic { background: #8B5CF6; color: #fff; }
+        .rarity-legendary { background: #F59E0B; color: #000; }
+
+        .achievement-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            background: linear-gradient(45deg, #ff6b35, #8b5cf6);
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .share-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 107, 53, 0.5);
+        }
+
+        .close-btn {
+            background: #666;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .close-btn:hover {
+            background: #888;
+            transform: scale(1.05);
+        }
+
+        .achievements-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            border: 2px solid #8b5cf6;
+            border-radius: 10px;
+            padding: 15px;
+            z-index: 100;
+            max-width: 300px;
+        }
+
+        .achievements-title {
+            font-size: 1.2em;
+            color: #8b5cf6;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .achievement-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            padding: 5px;
+            border-radius: 5px;
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .achievement-item.unlocked {
+            background: rgba(255, 107, 53, 0.2);
+        }
+
+        .achievement-item-icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .achievement-item-text {
+            flex: 1;
+        }
+
+        .achievement-item-name {
+            font-size: 0.9em;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .achievement-item-desc {
+            font-size: 0.8em;
+            color: #ccc;
+        }
+
+        .stats-panel {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            border: 2px solid #ff6b35;
+            border-radius: 10px;
+            padding: 15px;
+            z-index: 100;
+            min-width: 200px;
+        }
+
+        .stats-title {
+            font-size: 1.2em;
+            color: #ff6b35;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            color: #e0e0e0;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+
         .loading {
             text-align: center;
             color: #8b5cf6;
@@ -222,6 +410,33 @@
             ⚠️ <strong>NSFW 警告</strong>：本遊戲包含成人暗示和幽默，適合 18 歲以上玩家
         </div>
 
+        <!-- 統計面板 -->
+        <div class="stats-panel" id="statsPanel" style="display: none;">
+            <div class="stats-title">📊 遊戲統計</div>
+            <div class="stat-item">
+                <span>總分數:</span>
+                <span id="totalScore">0</span>
+            </div>
+            <div class="stat-item">
+                <span>遊玩次數:</span>
+                <span id="playCount">0</span>
+            </div>
+            <div class="stat-item">
+                <span>解鎖成就:</span>
+                <span id="achievementCount">0</span>
+            </div>
+            <div class="stat-item">
+                <span>探索場景:</span>
+                <span id="sceneCount">0</span>
+            </div>
+        </div>
+
+        <!-- 成就面板 -->
+        <div class="achievements-panel" id="achievementsPanel" style="display: none;">
+            <div class="achievements-title">🏆 成就</div>
+            <div id="achievementsList"></div>
+        </div>
+
         <div class="game-area" id="gameArea">
             <div class="start-screen" id="startScreen">
                 <h2>👻 歡迎來到萬聖節靈異約會趴！</h2>
@@ -244,7 +459,295 @@
             currentScene: 'start',
             playerName: '',
             score: 0,
-            visitedScenes: new Set()
+            visitedScenes: new Set(),
+            unlockedAchievements: new Set(),
+            unlockedBadges: new Set(),
+            playCount: 0,
+            totalScore: 0,
+            gameStartTime: null,
+            allEndingsUnlocked: new Set(),
+            allScenesVisited: new Set(),
+            punsTriggered: new Set()
+        };
+
+        // 成就資料
+        const achievementsData = {
+            "magic_knight": {
+                "name": "魔法騎士",
+                "description": "與女巫達成完美結局",
+                "icon": "🧙‍♀️",
+                "rarity": "legendary",
+                "condition": "ending_rooftop_romance",
+                "points": 100
+            },
+            "moonlight_lover": {
+                "name": "月光戀人",
+                "description": "在月光湖度過浪漫夜晚",
+                "icon": "🌙",
+                "rarity": "epic",
+                "condition": "ending_moonlight_adventure",
+                "points": 90
+            },
+            "ghost_lover": {
+                "name": "鬼魂戀人",
+                "description": "與鬼魂體驗奇異親密",
+                "icon": "👻",
+                "rarity": "rare",
+                "condition": "ending_ghost_intimacy",
+                "points": 85
+            },
+            "pumpkin_master": {
+                "name": "南瓜大師",
+                "description": "在南瓜田發揮創意",
+                "icon": "🎃",
+                "rarity": "rare",
+                "condition": "ending_big_pumpkin_fun",
+                "points": 75
+            },
+            "field_lover": {
+                "name": "田野戀人",
+                "description": "與農夫女郎度過激情夜晚",
+                "icon": "🌾",
+                "rarity": "epic",
+                "condition": "ending_farmer_seduction",
+                "points": 95
+            },
+            "cat_friend": {
+                "name": "貓咪之友",
+                "description": "與黑貓咪咪建立友誼",
+                "icon": "🐱",
+                "rarity": "common",
+                "condition": "ending_cat_adventure",
+                "points": 60
+            },
+            "cat_lady_lover": {
+                "name": "貓女戀人",
+                "description": "與貓女莉莉度過浪漫時光",
+                "icon": "🐱‍👤",
+                "rarity": "rare",
+                "condition": "ending_cat_lady_romance",
+                "points": 80
+            },
+            "soul_mate": {
+                "name": "心靈伴侶",
+                "description": "與農夫女郎建立情感連接",
+                "icon": "💕",
+                "rarity": "rare",
+                "condition": "ending_heart_to_heart",
+                "points": 85
+            },
+            "passion_lover": {
+                "name": "激情戀人",
+                "description": "體驗火熱的激情夜晚",
+                "icon": "🔥",
+                "rarity": "epic",
+                "condition": "ending_physical_attraction",
+                "points": 90
+            },
+            "cold_warrior": {
+                "name": "冰冷戰士",
+                "description": "勇敢面對鬼魂的冰冷觸摸",
+                "icon": "❄️",
+                "rarity": "common",
+                "condition": "ending_cold_encounter",
+                "points": 70
+            },
+            "floating_fool": {
+                "name": "漂浮傻瓜",
+                "description": "因為無禮而漂浮撞壞吊燈",
+                "icon": "💥",
+                "rarity": "common",
+                "condition": "ending_floating_mischief",
+                "points": 30
+            },
+            "pumpkin_crusher": {
+                "name": "南瓜粉碎者",
+                "description": "摔碎南瓜但學到教訓",
+                "icon": "🎃💥",
+                "rarity": "common",
+                "condition": "ending_pumpkin_lifting",
+                "points": 20
+            },
+            "ghost_chaser": {
+                "name": "鬼魂追逐者",
+                "description": "被鬼魂追逐最後絆倒",
+                "icon": "🏃‍♂️👻",
+                "rarity": "common",
+                "condition": "ending_ghost_chase",
+                "points": 25
+            },
+            "explorer": {
+                "name": "探索者",
+                "description": "探索了所有主要場景",
+                "icon": "🗺️",
+                "rarity": "rare",
+                "condition": "visited_all_scenes",
+                "points": 50
+            },
+            "completionist": {
+                "name": "完美主義者",
+                "description": "解鎖了所有結局",
+                "icon": "🏆",
+                "rarity": "legendary",
+                "condition": "all_endings_unlocked",
+                "points": 200
+            },
+            "speed_demon": {
+                "name": "速度惡魔",
+                "description": "在 5 分鐘內完成遊戲",
+                "icon": "⚡",
+                "rarity": "rare",
+                "condition": "speed_run_5min",
+                "points": 75
+            },
+            "pun_master": {
+                "name": "雙關語大師",
+                "description": "觸發了所有萬聖節雙關語",
+                "icon": "😄",
+                "rarity": "epic",
+                "condition": "all_puns_triggered",
+                "points": 100
+            },
+            "romance_expert": {
+                "name": "浪漫專家",
+                "description": "達成所有浪漫結局",
+                "icon": "💘",
+                "rarity": "rare",
+                "condition": "all_romance_endings",
+                "points": 80
+            },
+            "adventure_seeker": {
+                "name": "冒險尋求者",
+                "description": "嘗試了所有冒險選擇",
+                "icon": "🗡️",
+                "rarity": "rare",
+                "condition": "all_adventure_choices",
+                "points": 70
+            },
+            "halloween_legend": {
+                "name": "萬聖節傳奇",
+                "description": "獲得 1000 分以上",
+                "icon": "🎃👑",
+                "rarity": "legendary",
+                "condition": "score_1000_plus",
+                "points": 300
+            }
+        };
+
+        // 徽章資料
+        const badgesData = {
+            "first_play": {
+                "name": "初來乍到",
+                "description": "第一次遊玩",
+                "icon": "👶",
+                "rarity": "common"
+            },
+            "night_owl": {
+                "name": "夜貓子",
+                "description": "在深夜時分遊玩",
+                "icon": "🦉",
+                "rarity": "common"
+            },
+            "early_bird": {
+                "name": "早起鳥",
+                "description": "在清晨時分遊玩",
+                "icon": "🐦",
+                "rarity": "common"
+            },
+            "weekend_warrior": {
+                "name": "週末戰士",
+                "description": "在週末遊玩",
+                "icon": "⚔️",
+                "rarity": "common"
+            },
+            "repeat_player": {
+                "name": "重複玩家",
+                "description": "遊玩超過 5 次",
+                "icon": "🔄",
+                "rarity": "rare"
+            },
+            "social_butterfly": {
+                "name": "社交蝴蝶",
+                "description": "分享了 3 次成就",
+                "icon": "🦋",
+                "rarity": "rare"
+            },
+            "perfectionist": {
+                "name": "完美主義者",
+                "description": "單次遊戲獲得滿分",
+                "icon": "💯",
+                "rarity": "epic"
+            },
+            "lucky_charm": {
+                "name": "幸運符",
+                "description": "連續 3 次獲得稀有成就",
+                "icon": "🍀",
+                "rarity": "epic"
+            },
+            "halloween_spirit": {
+                "name": "萬聖節精神",
+                "description": "在萬聖節期間遊玩",
+                "icon": "🎃",
+                "rarity": "rare"
+            },
+            "midnight_magic": {
+                "name": "午夜魔法",
+                "description": "在午夜時分完成遊戲",
+                "icon": "🕛",
+                "rarity": "rare"
+            }
+        };
+
+        // 社交平台資料
+        const socialPlatforms = {
+            "twitter": {
+                "name": "Twitter",
+                "icon": "🐦",
+                "url": "https://twitter.com/intent/tweet",
+                "hashtags": ["TsextAdventure", "HalloweenHaunt", "NSFWGame"]
+            },
+            "facebook": {
+                "name": "Facebook",
+                "icon": "📘",
+                "url": "https://www.facebook.com/sharer/sharer.php",
+                "hashtags": ["TsextAdventure", "HalloweenHaunt"]
+            },
+            "instagram": {
+                "name": "Instagram",
+                "icon": "📷",
+                "url": "https://www.instagram.com/",
+                "hashtags": ["#TsextAdventure", "#HalloweenHaunt", "#NSFWGame"]
+            },
+            "threads": {
+                "name": "Threads",
+                "icon": "🧵",
+                "url": "https://www.threads.net/intent/post",
+                "hashtags": ["#TsextAdventure", "#HalloweenHaunt"]
+            },
+            "line": {
+                "name": "LINE",
+                "icon": "💬",
+                "url": "https://social-plugins.line.me/lineit/share",
+                "hashtags": ["TsextAdventure", "HalloweenHaunt"]
+            },
+            "discord": {
+                "name": "Discord",
+                "icon": "💬",
+                "url": "https://discord.com/",
+                "hashtags": ["TsextAdventure", "HalloweenHaunt"]
+            },
+            "reddit": {
+                "name": "Reddit",
+                "icon": "🤖",
+                "url": "https://reddit.com/submit",
+                "hashtags": ["TsextAdventure", "HalloweenHaunt", "NSFWGame"]
+            },
+            "telegram": {
+                "name": "Telegram",
+                "icon": "✈️",
+                "url": "https://t.me/share/url",
+                "hashtags": ["TsextAdventure", "HalloweenHaunt"]
+            }
         };
 
         // 故事資料
@@ -360,6 +863,292 @@
             }
         };
 
+        // 載入遊戲資料
+        function loadGameData() {
+            const saved = localStorage.getItem('tsextAdventureData');
+            if (saved) {
+                const data = JSON.parse(saved);
+                gameState.unlockedAchievements = new Set(data.unlockedAchievements || []);
+                gameState.unlockedBadges = new Set(data.unlockedBadges || []);
+                gameState.playCount = data.playCount || 0;
+                gameState.totalScore = data.totalScore || 0;
+                gameState.allEndingsUnlocked = new Set(data.allEndingsUnlocked || []);
+                gameState.allScenesVisited = new Set(data.allScenesVisited || []);
+                gameState.punsTriggered = new Set(data.punsTriggered || []);
+            }
+        }
+
+        // 儲存遊戲資料
+        function saveGameData() {
+            const data = {
+                unlockedAchievements: Array.from(gameState.unlockedAchievements),
+                unlockedBadges: Array.from(gameState.unlockedBadges),
+                playCount: gameState.playCount,
+                totalScore: gameState.totalScore,
+                allEndingsUnlocked: Array.from(gameState.allEndingsUnlocked),
+                allScenesVisited: Array.from(gameState.allScenesVisited),
+                punsTriggered: Array.from(gameState.punsTriggered)
+            };
+            localStorage.setItem('tsextAdventureData', JSON.stringify(data));
+        }
+
+        // 檢查成就
+        function checkAchievements(sceneId) {
+            const newAchievements = [];
+            
+            // 檢查結局成就
+            if (storyData[sceneId] && storyData[sceneId].is_ending) {
+                const endingCondition = `ending_${sceneId}`;
+                for (const [achievementId, achievement] of Object.entries(achievementsData)) {
+                    if (achievement.condition === endingCondition && !gameState.unlockedAchievements.has(achievementId)) {
+                        gameState.unlockedAchievements.add(achievementId);
+                        newAchievements.push(achievementId);
+                    }
+                }
+            }
+
+            // 檢查特殊成就
+            checkSpecialAchievements();
+
+            // 顯示新成就
+            newAchievements.forEach(achievementId => {
+                showAchievementPopup(achievementId);
+            });
+
+            // 更新成就面板
+            updateAchievementsPanel();
+            updateStatsPanel();
+            saveGameData();
+        }
+
+        // 檢查特殊成就
+        function checkSpecialAchievements() {
+            // 探索者成就
+            if (gameState.visitedScenes.size >= 10 && !gameState.unlockedAchievements.has('explorer')) {
+                gameState.unlockedAchievements.add('explorer');
+                showAchievementPopup('explorer');
+            }
+
+            // 完美主義者成就
+            if (gameState.allEndingsUnlocked.size >= 8 && !gameState.unlockedAchievements.has('completionist')) {
+                gameState.unlockedAchievements.add('completionist');
+                showAchievementPopup('completionist');
+            }
+
+            // 速度惡魔成就
+            if (gameState.gameStartTime) {
+                const playTime = (Date.now() - gameState.gameStartTime) / 1000 / 60; // 分鐘
+                if (playTime <= 5 && !gameState.unlockedAchievements.has('speed_demon')) {
+                    gameState.unlockedAchievements.add('speed_demon');
+                    showAchievementPopup('speed_demon');
+                }
+            }
+
+            // 萬聖節傳奇成就
+            if (gameState.totalScore >= 1000 && !gameState.unlockedAchievements.has('halloween_legend')) {
+                gameState.unlockedAchievements.add('halloween_legend');
+                showAchievementPopup('halloween_legend');
+            }
+        }
+
+        // 檢查徽章
+        function checkBadges() {
+            const newBadges = [];
+            const now = new Date();
+            const hour = now.getHours();
+            const day = now.getDay();
+
+            // 第一次遊玩
+            if (gameState.playCount === 1 && !gameState.unlockedBadges.has('first_play')) {
+                gameState.unlockedBadges.add('first_play');
+                newBadges.push('first_play');
+            }
+
+            // 夜貓子
+            if ((hour >= 22 || hour <= 2) && !gameState.unlockedBadges.has('night_owl')) {
+                gameState.unlockedBadges.add('night_owl');
+                newBadges.push('night_owl');
+            }
+
+            // 早起鳥
+            if (hour >= 5 && hour <= 8 && !gameState.unlockedBadges.has('early_bird')) {
+                gameState.unlockedBadges.add('early_bird');
+                newBadges.push('early_bird');
+            }
+
+            // 週末戰士
+            if ((day === 0 || day === 6) && !gameState.unlockedBadges.has('weekend_warrior')) {
+                gameState.unlockedBadges.add('weekend_warrior');
+                newBadges.push('weekend_warrior');
+            }
+
+            // 重複玩家
+            if (gameState.playCount >= 5 && !gameState.unlockedBadges.has('repeat_player')) {
+                gameState.unlockedBadges.add('repeat_player');
+                newBadges.push('repeat_player');
+            }
+
+            // 午夜魔法
+            if (hour === 0 && !gameState.unlockedBadges.has('midnight_magic')) {
+                gameState.unlockedBadges.add('midnight_magic');
+                newBadges.push('midnight_magic');
+            }
+
+            return newBadges;
+        }
+
+        // 顯示成就彈窗
+        function showAchievementPopup(achievementId) {
+            const achievement = achievementsData[achievementId];
+            if (!achievement) return;
+
+            const overlay = document.createElement('div');
+            overlay.className = 'overlay';
+            overlay.onclick = () => closeAchievementPopup();
+
+            const popup = document.createElement('div');
+            popup.className = 'achievement-popup';
+            popup.innerHTML = `
+                <div class="achievement-icon">${achievement.icon}</div>
+                <div class="achievement-title">🏆 成就解鎖！</div>
+                <div class="achievement-description">${achievement.name}</div>
+                <div class="achievement-rarity rarity-${achievement.rarity}">${achievement.rarity.toUpperCase()}</div>
+                <div class="achievement-description">${achievement.description}</div>
+                <div class="achievement-actions">
+                    <button class="share-btn" onclick="shareAchievement('${achievementId}')">分享成就 📤</button>
+                    <button class="close-btn" onclick="closeAchievementPopup()">關閉</button>
+                </div>
+            `;
+
+            document.body.appendChild(overlay);
+            document.body.appendChild(popup);
+
+            // 3秒後自動關閉
+            setTimeout(() => {
+                if (document.body.contains(popup)) {
+                    closeAchievementPopup();
+                }
+            }, 5000);
+        }
+
+        // 關閉成就彈窗
+        function closeAchievementPopup() {
+            const overlay = document.querySelector('.overlay');
+            const popup = document.querySelector('.achievement-popup');
+            if (overlay) overlay.remove();
+            if (popup) popup.remove();
+        }
+
+        // 分享成就
+        function shareAchievement(achievementId) {
+            const achievement = achievementsData[achievementId];
+            const shareText = `🎃 我在 Tsext Adventure: Halloween Haunt 中解鎖了成就「${achievement.name}」！\n\n${achievement.description}\n\n#TsextAdventure #HalloweenHaunt #NSFWGame`;
+            const shareUrl = window.location.href;
+
+            showShareModal(shareText, shareUrl, achievement);
+        }
+
+        // 顯示分享模態框
+        function showShareModal(text, url, achievement) {
+            const overlay = document.createElement('div');
+            overlay.className = 'overlay';
+            overlay.onclick = () => closeShareModal();
+
+            const modal = document.createElement('div');
+            modal.className = 'achievement-popup';
+            modal.innerHTML = `
+                <div class="achievement-icon">${achievement.icon}</div>
+                <div class="achievement-title">分享成就</div>
+                <div class="achievement-description">選擇分享平台：</div>
+                <div class="achievement-actions">
+                    ${Object.entries(socialPlatforms).map(([platformId, platform]) => `
+                        <button class="share-btn" onclick="shareToPlatform('${platformId}', '${encodeURIComponent(text)}', '${encodeURIComponent(url)}')">
+                            ${platform.icon} ${platform.name}
+                        </button>
+                    `).join('')}
+                    <button class="close-btn" onclick="closeShareModal()">取消</button>
+                </div>
+            `;
+
+            document.body.appendChild(overlay);
+            document.body.appendChild(modal);
+        }
+
+        // 關閉分享模態框
+        function closeShareModal() {
+            const overlay = document.querySelector('.overlay');
+            const modal = document.querySelector('.achievement-popup');
+            if (overlay) overlay.remove();
+            if (modal) modal.remove();
+        }
+
+        // 分享到平台
+        function shareToPlatform(platformId, text, url) {
+            const platform = socialPlatforms[platformId];
+            let shareUrl = '';
+
+            switch (platformId) {
+                case 'twitter':
+                    shareUrl = `${platform.url}?text=${text}&url=${url}`;
+                    break;
+                case 'facebook':
+                    shareUrl = `${platform.url}?u=${url}&quote=${text}`;
+                    break;
+                case 'instagram':
+                    // Instagram 需要手動複製
+                    navigator.clipboard.writeText(`${text}\n\n${url}`);
+                    alert('已複製到剪貼板！請在 Instagram 中貼上。');
+                    return;
+                case 'threads':
+                    shareUrl = `${platform.url}?text=${text}`;
+                    break;
+                case 'line':
+                    shareUrl = `${platform.url}?url=${url}&text=${text}`;
+                    break;
+                case 'reddit':
+                    shareUrl = `${platform.url}?url=${url}&title=${text}`;
+                    break;
+                case 'telegram':
+                    shareUrl = `${platform.url}?url=${url}&text=${text}`;
+                    break;
+                default:
+                    // 複製到剪貼板
+                    navigator.clipboard.writeText(`${text}\n\n${url}`);
+                    alert('已複製到剪貼板！');
+                    return;
+            }
+
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+            closeShareModal();
+        }
+
+        // 更新成就面板
+        function updateAchievementsPanel() {
+            const panel = document.getElementById('achievementsList');
+            if (!panel) return;
+
+            panel.innerHTML = Object.entries(achievementsData).map(([achievementId, achievement]) => {
+                const isUnlocked = gameState.unlockedAchievements.has(achievementId);
+                return `
+                    <div class="achievement-item ${isUnlocked ? 'unlocked' : ''}">
+                        <div class="achievement-item-icon">${achievement.icon}</div>
+                        <div class="achievement-item-text">
+                            <div class="achievement-item-name">${achievement.name}</div>
+                            <div class="achievement-item-desc">${achievement.description}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 更新統計面板
+        function updateStatsPanel() {
+            document.getElementById('totalScore').textContent = gameState.totalScore;
+            document.getElementById('playCount').textContent = gameState.playCount;
+            document.getElementById('achievementCount').textContent = gameState.unlockedAchievements.size;
+            document.getElementById('sceneCount').textContent = gameState.visitedScenes.size;
+        }
+
         // 開始遊戲
         function startGame() {
             const playerName = document.getElementById('playerName').value.trim();
@@ -372,8 +1161,24 @@
             gameState.currentScene = 'start';
             gameState.score = 0;
             gameState.visitedScenes.clear();
+            gameState.gameStartTime = Date.now();
+            gameState.playCount++;
+
+            // 檢查徽章
+            const newBadges = checkBadges();
+            if (newBadges.length > 0) {
+                newBadges.forEach(badgeId => {
+                    const badge = badgesData[badgeId];
+                    alert(`🏆 獲得徽章：${badge.name} - ${badge.description}`);
+                });
+            }
 
             document.getElementById('startScreen').style.display = 'none';
+            document.getElementById('statsPanel').style.display = 'block';
+            document.getElementById('achievementsPanel').style.display = 'block';
+            
+            updateStatsPanel();
+            saveGameData();
             displayScene('start');
         }
 
@@ -386,6 +1191,7 @@
             }
 
             gameState.visitedScenes.add(sceneId);
+            gameState.allScenesVisited.add(sceneId);
 
             let html = `
                 <div class="scene-title">🎃 ${scene.title} 🎃</div>
@@ -393,16 +1199,23 @@
             `;
 
             if (scene.is_ending) {
+                gameState.score += scene.score || 0;
+                gameState.totalScore += scene.score || 0;
+                gameState.allEndingsUnlocked.add(sceneId);
+                
+                // 檢查成就
+                checkAchievements(sceneId);
+
                 html += `
                     <div class="ending">
                         <div class="ending-title">🎭 結局：${scene.title}</div>
                         <div class="ending-outcome">${scene.outcome.replace(/\n/g, '<br>')}</div>
-                        <div class="score">🏆 你的分數：${gameState.score + (scene.score || 0)}</div>
+                        <div class="score">🏆 你的分數：${gameState.score}</div>
                         <div class="score">📍 探索場景數：${gameState.visitedScenes.size}</div>
+                        <div class="score">🎯 總分數：${gameState.totalScore}</div>
                         <button class="restart-btn" onclick="restartGame()">重新開始 🎃</button>
                     </div>
                 `;
-                gameState.score += scene.score || 0;
             } else if (scene.choices) {
                 html += '<div class="choices">';
                 scene.choices.forEach((choice, index) => {
@@ -428,21 +1241,28 @@
             gameState.currentScene = 'start';
             gameState.score = 0;
             gameState.visitedScenes.clear();
+            gameState.gameStartTime = Date.now();
+            gameState.playCount++;
+
+            // 檢查徽章
+            const newBadges = checkBadges();
+            if (newBadges.length > 0) {
+                newBadges.forEach(badgeId => {
+                    const badge = badgesData[badgeId];
+                    alert(`🏆 獲得徽章：${badge.name} - ${badge.description}`);
+                });
+            }
+
+            updateStatsPanel();
+            saveGameData();
             displayScene('start');
         }
 
-        // 鍵盤事件
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Enter') {
-                const playerInput = document.getElementById('playerName');
-                if (playerInput && document.activeElement === playerInput) {
-                    startGame();
-                }
-            }
-        });
-
         // 初始化
         document.addEventListener('DOMContentLoaded', function() {
+            loadGameData();
+            updateAchievementsPanel();
+            updateStatsPanel();
             console.log('🎃 Tsext Adventure: Halloween Haunt 已載入！');
         });
     </script>
