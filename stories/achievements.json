@@ -26,7 +26,7 @@
     },
     "pumpkin_master": {
       "name": "南瓜大師",
-      "description": "在南瓜田發揮創意",
+      "description": "在南瓜田發揮創意，玩弄碩大的南瓜",
       "icon": "🎃",
       "rarity": "rare",
       "condition": "ending_big_pumpkin_fun",
@@ -34,7 +34,7 @@
     },
     "field_lover": {
       "name": "田野戀人",
-      "description": "與農夫女郎度過激情夜晚",
+      "description": "與農夫女郎度過激情播種，來年豐收",
       "icon": "🌾",
       "rarity": "epic",
       "condition": "ending_physical_attraction",
@@ -50,7 +50,7 @@
     },
     "cat_lady_lover": {
       "name": "貓女戀人",
-      "description": "與貓女莉莉度過浪漫時光",
+      "description": "與貓女莉莉度過毛茸茸的時光",
       "icon": "🐱‍👤",
       "rarity": "rare",
       "condition": "ending_cat_lady_romance",
@@ -130,7 +130,7 @@
     },
     "unicorn_knight": {
       "name": "獨角獸騎士",
-      "description": "馴服傳說中的獨角獸",
+      "description": "馴服傳說中的獨角獸，噴出獨角獸精液",
       "icon": "🦄",
       "rarity": "legendary",
       "condition": "ending_unicorn_trial",
@@ -138,15 +138,15 @@
     },
     "forbidden_scholar": {
       "name": "禁忌學者",
-      "description": "掌握神級的愛情技巧",
+      "description": "掌握神級的性愛性愛技巧",
       "icon": "📖",
       "rarity": "legendary",
       "condition": "ending_forbidden_knowledge",
       "points": 130
     },
     "gender_master": {
-      "name": "性別大師",
-      "description": "理解愛情的所有可能性",
+      "name": "SHIVA",
+      "description": "破壞所有洞穴，噴出精液",
       "icon": "🔄",
       "rarity": "legendary",
       "condition": "ending_gender_swap_potion",
