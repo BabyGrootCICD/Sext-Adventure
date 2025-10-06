@@ -53,6 +53,60 @@
     "outcome": "🌙 浪漫結局！你和女巫在月光湖度過了最美好的時光！\n\n你獲得了『月光戀人』的稱號，並且永遠記住了這個神奇的夜晚。",
     "score": 90
   },
+  "haunted_house": {
+    "title": "鬼屋內部",
+    "description": "你走進鬼屋，裡面燈光昏暗，牆上掛著古老的畫像。突然，一個半透明的鬼魂從牆壁中飄出來！\n\n「歡迎來到我的家，」鬼魂說，「我是這裡的主人，已經死了 200 年了。但我還是很... 活躍。」他對你眨了眨眼。",
+    "choices": [
+      {"option": "A: 說「你看起來很寂寞」", "next_scene": "ghost_romance"},
+      {"option": "B: 問「你能觸摸實體嗎？」", "next_scene": "ghost_touch"},
+      {"option": "C: 試圖逃跑", "next_scene": "ghost_chase"}
+    ]
+  },
+  "ghost_romance": {
+    "title": "鬼魂的浪漫",
+    "description": "鬼魂嘆了口氣：「是的，我確實很寂寞。200 年來，沒有人願意和我... 你知道的。」他的聲音帶著渴望。\n\n「但是，」他突然興奮地說，「如果你願意，我可以教你一些鬼魂的... 特殊技巧。」",
+    "choices": [
+      {"option": "A: 說「我很感興趣」", "next_scene": "ghost_lessons"},
+      {"option": "B: 問「會不會很冷？」", "next_scene": "cold_encounter"}
+    ]
+  },
+  "cold_encounter": {
+    "title": "冰冷的相遇",
+    "description": "鬼魂笑著說：「一開始會有點冷，但很快就會變暖的。讓我示範給你看...」\n\n他輕輕觸摸你的手，你感覺到一陣涼意，但同時又有一種奇異的溫暖。他的觸摸讓你感到既刺激又舒適。",
+    "is_ending": true,
+    "outcome": "❄️ 冰冷結局！你和鬼魂度過了奇異的夜晚！\n\n雖然有點冷，但你體驗到了前所未有的感覺。",
+    "score": 70
+  },
+  "pumpkin_patch": {
+    "title": "南瓜田的誘惑",
+    "description": "你來到南瓜田，月光下的大南瓜看起來格外誘人。突然，一個穿著農夫裝的性感女郎從南瓜後面走出來。\n\n「歡迎來到我的南瓜田，」她說，「我是這裡的守護者。這些南瓜都很特別... 它們會回應你的慾望。」",
+    "choices": [
+      {"option": "A: 問「南瓜會回應什麼慾望？」", "next_scene": "pumpkin_magic"},
+      {"option": "B: 說「我更想了解你」", "next_scene": "farmer_romance"}
+    ]
+  },
+  "farmer_romance": {
+    "title": "農夫的浪漫",
+    "description": "農夫女郎對你的直接感到驚訝，然後笑了。「你很有趣，」她說，「我喜歡直接的人。」\n\n她靠近你，輕聲說：「那麼，你想要了解我的哪個方面呢？」她的眼睛閃爍著誘惑的光芒。",
+    "choices": [
+      {"option": "A: 說「我想了解你的心」", "next_scene": "heart_to_heart"},
+      {"option": "B: 說「我想了解你的身體」", "next_scene": "physical_attraction"}
+    ]
+  },
+  "heart_to_heart": {
+    "title": "心靈交流",
+    "description": "農夫女郎對你的回答感到感動。「你是一個真正的人，」她說，「我願意和你分享我的內心。」\n\n你們坐在南瓜田邊，分享著彼此的故事和夢想，度過了最美好的時光。",
+    "is_ending": true,
+    "outcome": "💕 心靈結局！你和農夫女郎建立了深厚的情感連接！\n\n你獲得了『心靈伴侶』的稱號，並且永遠記住了這個美好的夜晚。",
+    "score": 85
+  },
+  "physical_attraction": {
+    "title": "身體吸引",
+    "description": "農夫女郎對你的直接感到興奮。「很好，」她說，「我喜歡誠實的人。」\n\n她拉著你的手，帶你到南瓜田的深處。「讓我們做一些真正有趣的事情，」她輕聲說。",
+    "is_ending": true,
+    "outcome": "🔥 激情結局！你和農夫女郎度過了火熱的夜晚！\n\n你獲得了『激情戀人』的稱號，並且永遠記住了這個充滿激情的夜晚。",
+    "score": 90
+  },
   "vampire_castle": {
     "title": "吸血鬼城堡的誘惑",
     "description": "你推開沉重的城堡大門，裡面燭光搖曳，紅色絲綢窗簾隨風飄動。一個身穿黑色緊身衣的性感吸血鬼從陰影中走出。\n\n「歡迎來到我的城堡，」他舔了舔尖牙，「我是德古拉伯爵的... 後代。你聞起來很香甜，讓我想要... 品嚐。」",
@@ -134,6 +188,606 @@
     "description": "你成為了整個派對的焦點！在『慾火焚身』的效果下，你散發出不可抵擋的魅力。惡魔、天使、精靈，甚至一些無法名狀的存在都被你吸引。\n\n「這就是真正的萬聖節派對！」魅魔大喊道，「讓我們一起燃燒吧！」所有人圍繞著你，形成了一個瘋狂的狂歡圈。",
     "is_ending": true,
     "outcome": "🔥 烈火之王結局！你成為了地下派對的絕對主角，體驗了超越想像的狂歡！\n\n你獲得了『慾火之王』的稱號，掌握了極致誘惑的藝術。",
+    "score": 120
+  },
+  "ancient_cemetery": {
+    "title": "古老墓地的秘密",
+    "description": "你走進古老的墓地，月光透過枯樹投下詭異的陰影。突然，一個美麗的幽靈從墳墓中浮現，她穿著維多利亞時代的長裙，但裙子若隱若現...\n\n「你為什麼來打擾死者的安息？」她的聲音如銀鈴般動聽，「除非... 你是來陪伴我們的？」",
+    "choices": [
+      {"option": "A: 「我想了解你的故事」", "next_scene": "ghost_story_victoria"},
+      {"option": "B: 「死亡讓你更美麗了」", "next_scene": "death_beauty"},
+      {"option": "C: 「我可以讓你復活嗎？」", "next_scene": "resurrection_attempt"},
+      {"option": "D: 「我們一起探索墓地吧」", "next_scene": "cemetery_exploration"}
+    ]
+  },
+  "enchanted_forest": {
+    "title": "魔法森林的呼喚",
+    "description": "你走進一片充滿魔法的森林，樹木會說話，花朵會唱歌，蝴蝶會發光。突然，一個美麗的森林精靈出現，她只穿著樹葉編成的比基尼。\n\n「人類，你踏入了我們的聖域，」她的聲音如春風般溫柔，「按照森林的法則，你必須通過三個試煉... 或者成為我們的一員。」",
+    "choices": [
+      {"option": "A: 「我接受試煉」", "next_scene": "forest_trials"},
+      {"option": "B: 「我想成為精靈」", "next_scene": "elf_transformation"},
+      {"option": "C: 「先讓我欣賞森林的美」", "next_scene": "nature_appreciation"},
+      {"option": "D: 「森林法則是誰定的？」", "next_scene": "forest_law_challenge"}
+    ]
+  },
+  "cursed_library": {
+    "title": "詛咒圖書館的知識",
+    "description": "你推開圖書館的門，裡面書架高聳入雲，書本自己在飛來飛去。一個戴著眼鏡的性感圖書館員出現，她穿著緊身的職業裝，但胸口大開。\n\n「歡迎來到禁書區，」她調整著眼鏡，「這裡的每本書都包含危險的知識... 包括愛情魔法、慾望咒語，還有... 更刺激的內容。」",
+    "choices": [
+      {"option": "A: 「我想學習愛情魔法」", "next_scene": "love_magic_book"},
+      {"option": "B: 「慾望咒語聽起來有趣」", "next_scene": "desire_spells"},
+      {"option": "C: 「那些更刺激的是什麼？」", "next_scene": "forbidden_knowledge"},
+      {"option": "D: 「能教我讀這些書嗎？」", "next_scene": "library_lessons"}
+    ]
+  },
+  "wizard_tavern": {
+    "title": "巫師酒吧的魔法夜",
+    "description": "你推開酒吧的門，裡面煙霧繚繞，各種巫師和法師在喝酒聊天。一個性感的女酒保穿著低胸的法師袍在調製發光的雞尾酒。\n\n「歡迎光臨『魔杖與玫瑰』酒吧，」她魅惑地說，「我們這裡的酒都有特殊效果 - 有些能讓你看到未來，有些能讓你體驗多重高潮，還有些... 能讓你暫時變性。想試試哪種？」",
+    "choices": [
+      {"option": "A: 「預見未來聽起來不錯」", "next_scene": "future_vision_drink"},
+      {"option": "B: 「多重高潮？我很好奇」", "next_scene": "pleasure_potion"},
+      {"option": "C: 「變性？太有趣了！」", "next_scene": "gender_swap_potion"},
+      {"option": "D: 「你們最烈的酒是什麼？」", "next_scene": "ultimate_brew"}
+    ]
+  },
+  "witch_rejection": {
+    "title": "女巫的拒絕",
+    "description": "女巫皺起眉頭：「你以為我是什麼？隨便的女巫嗎？」她揮動魔杖，你突然感覺你的肉魔杖...\n\n「既然你這麼無禮，就讓你體驗一下真正的『輕如羽毛』吧！」你開始飄浮在空中，無法控制方向。",
+    "choices": [
+      {"option": "A: 道歉並請求原諒", "next_scene": "apology_accepted"},
+      {"option": "B: 試圖抓住什麼東西", "next_scene": "floating_mischief"}
+    ]
+  },
+  "floating_mischief": {
+    "title": "漂浮惡作劇",
+    "description": "你試圖抓住什麼東西，但只能在空中飄浮。女巫在下面笑著：「這就是無禮的代價！」\n\n突然，你撞到了一個吊燈，燈泡爆裂，火花四濺。女巫驚叫：「我的天！快下來！」她揮動魔杖，你安全地降落到地面。",
+    "is_ending": true,
+    "outcome": "💥 搞笑結局！你因為無禮而漂浮，最後撞壞了吊燈！\n\n雖然結局有點尷尬，但至少你學會了對女巫要有禮貌。",
+    "score": 30
+  },
+  "cat_encounter": {
+    "title": "神秘貓咪",
+    "description": "女巫神秘地笑了：「咪咪？她很特別，不是普通的貓。」突然，一隻優雅的黑貓從陰影中走出，牠的眼睛在月光下閃閃發光。\n\n貓咪變身成一個貓女，有著性感的耳朵和尾巴。「我是莉莉，」她用誘人的聲音說，「想和我玩嗎？」",
+    "choices": [
+      {"option": "A: 說「我很想和你玩」", "next_scene": "cat_lady_romance"},
+      {"option": "B: 問「你能變回貓咪嗎？」", "next_scene": "cat_adventure"},
+      {"option": "C: 邀請女巫一起加入", "next_scene": "witch_cat_threesome"}
+    ]
+  },
+  "cat_lady_romance": {
+    "title": "貓女的誘惑",
+    "description": "莉莉優雅地靠近你，她的尾巴輕撫著你的臉頰。「我喜歡你的勇氣，」她輕聲說，眼中閃爍著野性的光芒。\n\n她帶你到一個舒適的角落，月光透過窗戶灑在你們身上。「讓我教你貓咪的... 特殊技巧。」",
+    "is_ending": true,
+    "outcome": "🐱‍👤 貓女結局！你與貓女莉莉度過了充滿野性魅力的夜晚！\n\n你獲得了『貓女戀人』的稱號，學會了貓咪般的優雅與激情。",
+    "score": 80
+  },
+  "ghost_touch": {
+    "title": "鬼魂的觸摸",
+    "description": "鬼魂展示他半透明的手：「我可以觸摸實體，但感覺會很... 特別。」他輕撫你的臉頰，你感到一陣奇異的涼意伴隨著電流般的刺激。\n\n「200年的孤獨讓我對觸摸格外渴望，」他輕聲說，「你願意體驗這種超越生死的親密接觸嗎？」",
+    "choices": [
+      {"option": "A: 說「我願意體驗」", "next_scene": "ghost_intimacy"},
+      {"option": "B: 問「會有什麼後果嗎？」", "next_scene": "ghost_consequences"},
+      {"option": "C: 提議慢慢來", "next_scene": "gentle_approach"}
+    ]
+  },
+  "ghost_intimacy": {
+    "title": "超越生死的親密",
+    "description": "你勇敢地接受了鬼魂的觸摸。那種感覺難以形容 - 既冰冷又溫暖，既虛幻又真實。你們在這種奇異的接觸中找到了彼此。\n\n鬼魂感動地說：「200年來，你是第一個真正接受我的人。這比任何魔法都要珍貴。」",
+    "is_ending": true,
+    "outcome": "👻 靈魂結局！你與鬼魂體驗了超越生死的真愛！\n\n你獲得了『靈魂戀人』的稱號，證明了愛情能夠跨越生死界限。",
+    "score": 88
+  },
+  "ghost_chase": {
+    "title": "鬼魂追逐",
+    "description": "你轉身就跑！但鬼魂的速度比你想像的要快。「別跑啊！我只是想聊聊天！」他在後面大喊。\n\n你跑得太急，被地毯絆倒了。鬼魂追上來，擔心地問：「你沒事吧？我真的沒有惡意，只是太久沒見到活人了...」",
+    "choices": [
+      {"option": "A: 道歉並解釋你的恐懼", "next_scene": "ghost_understanding"},
+      {"option": "B: 繼續試圖逃跑", "next_scene": "final_chase"},
+      {"option": "C: 問他真正想要什麼", "next_scene": "ghost_honesty"}
+    ]
+  },
+  "ghost_lessons": {
+    "title": "鬼魂的特殊技巧",
+    "description": "鬼魂興奮地開始教你：「作為鬼魂，我掌握了一些... 特別的技能。比如穿牆術、飄浮術，還有最重要的 - 靈魂共鳴術。」\n\n他教你如何感受靈魂的振動，如何在精神層面建立深度連接。這種體驗超越了肉體的限制。",
+    "choices": [
+      {"option": "A: 專注學習靈魂共鳴", "next_scene": "soul_resonance"},
+      {"option": "B: 要求學習飄浮術", "next_scene": "floating_lessons"},
+      {"option": "C: 詢問穿牆術的秘密", "next_scene": "wall_phasing"}
+    ]
+  },
+  "soul_resonance": {
+    "title": "靈魂共鳴",
+    "description": "在鬼魂的指導下，你學會了靈魂共鳴。兩個靈魂在精神層面完美融合，產生了前所未有的親密感。\n\n這種體驗超越了肉體的愛情，直達靈魂深處。你們在這種神聖的連結中找到了永恆的愛。",
+    "is_ending": true,
+    "outcome": "✨ 靈魂共鳴結局！你與鬼魂達成了最高級的靈魂融合！\n\n你獲得了『靈魂大師』的稱號，掌握了靈魂共鳴的終極奧義。",
+    "score": 110
+  },
+  "pumpkin_magic": {
+    "title": "南瓜的魔法",
+    "description": "農夫女郎神秘地笑著：「這些南瓜吸收了月光精華，能夠實現人們最深層的願望。但要小心，」她警告道，「它們會讓你的慾望成真，包括那些你不敢承認的。」\n\n她指向幾個特別大的南瓜：「選擇一個，讓它讀取你的心願吧。」",
+    "choices": [
+      {"option": "A: 選擇最大的金色南瓜", "next_scene": "big_pumpkin_fun"},
+      {"option": "B: 選擇神秘的紫色南瓜", "next_scene": "purple_pumpkin_mystery"},
+      {"option": "C: 選擇小巧的銀色南瓜", "next_scene": "silver_pumpkin_wish"}
+    ]
+  },
+  "big_pumpkin_fun": {
+    "title": "巨大南瓜的驚喜",
+    "description": "你觸摸大南瓜的瞬間，它開始發光並且慢慢變形。最終，南瓜變成了一個豪華的愛情巢穴，裡面鋪滿了柔軟的絲綢和玫瑰花瓣。\n\n農夫女郎驚訝地說：「哇！南瓜很少變成這麼... 實用的東西。看來你的願望很明確呢。」",
+    "is_ending": true,
+    "outcome": "🎃 大南瓜結局！巨大南瓜為你創造了完美的浪漫空間！\n\n你獲得了『南瓜大師』的稱號，學會了如何讓願望成真。",
+    "score": 87
+  },
+  "vampire_initiation": {
+    "title": "吸血鬼的初擁儀式",
+    "description": "吸血鬼帶你到一個精心裝飾的房間，牆上掛著古老的畫像，床上鋪著絲綢床單。「初擁不只是咬一口那麼簡單，」他解釋道，「這是一個神聖的結合儀式。」\n\n他開始脫去你的衣物，每一個動作都充滿儀式感。「準備好迎接永恆了嗎？」",
+    "is_ending": true,
+    "outcome": "🩸 初擁結局！你完成了神聖的吸血鬼初擁儀式，成為了黑夜的孩子！\n\n你獲得了『夜之新娘/新郎』的稱號，擁有了永恆的生命與愛情。",
+    "score": 135
+  },
+  "heaven_drink_effect": {
+    "title": "天堂之門的體驗",
+    "description": "藍色的酒液讓你感覺飄飄欲仙，彷彿真的到了天堂。你的身體變得輕盈，能夠感受到周圍每個生物的情感和慾望。\n\n「哇，你發光了！」一個天使驚呼道，她的翅膀在你身邊輕撫，「這種純潔與慾望的結合太美了！」",
+    "is_ending": true,
+    "outcome": "😇 天堂結局！你體驗了天堂般的純潔與激情，達到了精神與肉體的完美統一！\n\n你獲得了『天堂使者』的稱號，學會了聖潔的愛情藝術。",
+    "score": 115
+  },
+  "ghost_story_victoria": {
+    "title": "維多利亞的往事",
+    "description": "幽靈優雅地飄近：「我叫維多利亞，1800年死於一場『意外』... 實際上是我丈夫發現我和馬夫、園丁、還有牧師的... 關係。」她苦笑著，「他毒死了我，但我的慾望太強烈，死後依然留在這個世界。」\n\n她的透明手指輕撫你的臉頰：「200年了，你是第一個不害怕我的人。」",
+    "choices": [
+      {"option": "A: 「我願意滿足你的慾望」", "next_scene": "ghost_desire_fulfillment"},
+      {"option": "B: 「讓我為你報仇」", "next_scene": "revenge_plot"},
+      {"option": "C: 「教我你的... 經驗」", "next_scene": "ghostly_lessons"},
+      {"option": "D: 「我們可以一起統治墓地」", "next_scene": "cemetery_rulers"}
+    ]
+  },
+  "ghost_desire_fulfillment": {
+    "title": "滿足幽靈的慾望",
+    "description": "維多利亞的眼中燃起了200年來第一次的火焰：「你真的願意嗎？即使我只是一個鬼魂？」她的身體開始變得更加實體化，體溫回到了生前的溫度。\n\n「讓我教你什麼叫做超越生死的愛情，」她輕聲說，墓地周圍的其他幽靈也開始出現。",
+    "is_ending": true,
+    "outcome": "👻💕 幽靈慾望結局！你滿足了維多利亞200年的渴望，成為了墓地的永恆戀人！\n\n你獲得了『亡靈之愛』的稱號，掌握了超越生死的激情藝術。",
+    "score": 125
+  },
+  "forest_trials": {
+    "title": "森林的三大試煉",
+    "description": "精靈微笑著說：「第一個試煉：勇氣 - 你必須馴服獨角獸；第二個試煉：智慧 - 解答古樹的謎題；第三個試煉：愛心 - 治癒受傷的鳳凰。」\n\n「但是，」她眨眨眼，「每個試煉都有... 特殊的獎勵。你準備好了嗎？」",
+    "choices": [
+      {"option": "A: 挑戰獨角獸試煉", "next_scene": "unicorn_trial"},
+      {"option": "B: 嘗試古樹謎題", "next_scene": "ancient_tree_riddle"},
+      {"option": "C: 尋找受傷的鳳凰", "next_scene": "phoenix_healing"},
+      {"option": "D: 「能同時挑戰三個嗎？」", "next_scene": "triple_trial"}
+    ]
+  },
+  "unicorn_trial": {
+    "title": "獨角獸的馴服",
+    "description": "你在森林深處找到了一匹純白的獨角獸，它的角散發著彩虹光芒。但這匹獨角獸非常... 好色，它舔了舔你的手，眼神充滿暗示。\n\n精靈在旁邊咯咯笑：「獨角獸只接受純潔的處女... 但這一匹有點特別，它喜歡... 有經驗的人。」",
+    "is_ending": true,
+    "outcome": "🦄 獨角獸結局！你成功馴服了傳說中的獨角獸，獲得了它的忠誠與愛！\n\n你獲得了『獨角獸騎士』的稱號，掌握了純潔與激情的平衡。",
+    "score": 125
+  },
+  "forbidden_knowledge": {
+    "title": "禁忌知識的誘惑",
+    "description": "圖書館員神秘地笑著，帶你到最深處的書架：「這些是真正的禁書 - 『如何與惡魔做愛』、『天使的隱秘慾望』、『神的性愛技巧』...」\n\n「但是，」她警告道，「閱讀這些書會改變你，你可能再也回不到從前。你確定要繼續嗎？」",
+    "is_ending": true,
+    "outcome": "📖 禁忌結局！你獲得了宇宙最深層的性愛秘密，成為了慾望的大師！\n\n你獲得了『禁忌學者』的稱號，掌握了神級的愛情技巧。",
+    "score": 130
+  },
+  "gender_swap_potion": {
+    "title": "性別轉換的體驗",
+    "description": "你喝下閃著彩虹光的藥劑，立刻感覺身體開始變化！你體驗到了完全不同的身體感受和慾望。酒保笑著說：「效果持續24小時，好好享受吧！」\n\n其他顧客都對你投來好奇和慾望的目光，你發現自己對這種新身份充滿興趣。",
+    "is_ending": true,
+    "outcome": "🔄 變身結局！你體驗了完全不同的性別身份，發現了全新的自己！\n\n你獲得了『性別大師』的稱號，理解了愛情的所有可能性。",
+    "score": 140
+  },
+  "vampire_wine_ritual": {
+    "title": "紅酒儀式",
+    "description": "吸血鬼優雅地為你倒了一杯深紅色的酒：「這不是普通的紅酒，而是用了... 特殊材料。」他眼神曖昧，「喝了它，你會體驗到前所未有的快感。」\n\n酒杯散發著誘人的香氣，但你察覺到其中似乎有血的味道。",
+    "choices": [
+      {"option": "A: 一飲而盡", "next_scene": "blood_wine_effect"},
+      {"option": "B: 「我們一起喝」", "next_scene": "shared_ritual"},
+      {"option": "C: 「先告訴我這是什麼」", "next_scene": "wine_explanation"},
+      {"option": "D: 假裝喝然後偷偷倒掉", "next_scene": "fake_drinking"}
+    ]
+  },
+  "blood_wine_effect": {
+    "title": "血酒的魔力",
+    "description": "你喝下血酒，立刻感覺到一股強烈的力量流遍全身。你的感官變得極度敏銳，能聽到吸血鬼的心跳（如果他還有的話）。\n\n「很好，」吸血鬼滿意地說，「現在你已經初步接受了我們的血統。讓我們進入下一個階段...」",
+    "choices": [
+      {"option": "A: 「我感覺很奇妙，繼續吧」", "next_scene": "vampire_initiation"},
+      {"option": "B: 「這力量讓我想要更多」", "next_scene": "power_hunger"},
+      {"option": "C: 「我想要回報你」", "next_scene": "vampire_service"}
+    ]
+  },
+  "castle_tour": {
+    "title": "城堡參觀",
+    "description": "吸血鬼帶你參觀古老的城堡，每個房間都有獨特的故事。「這是刑房，」他指著滿是鎖鏈的房間，「這是寢室，」他指著豪華的四柱床，「這是... 娛樂室。」\n\n你在娛樂室看到各種奇異的器具，有些你認識，有些你不認識。",
+    "choices": [
+      {"option": "A: 「娛樂室很有趣」", "next_scene": "playroom_exploration"},
+      {"option": "B: 「我想看看你的私人房間」", "next_scene": "private_chambers"},
+      {"option": "C: 「刑房是做什麼用的？」", "next_scene": "dungeon_secrets"}
+    ]
+  },
+  "vampire_comedy": {
+    "title": "吸血鬼的幽默",
+    "description": "吸血鬼看到你做鬼臉，忍不住笑了：「哈哈！你的尖牙太可愛了！」他也做了個鬼臉，露出真正的尖牙。\n\n「看來你是個有趣的人，」他說，「我喜歡幽默感。來，讓我教你一些真正的吸血鬼笑話。」",
+    "choices": [
+      {"option": "A: 「我想聽吸血鬼笑話」", "next_scene": "vampire_jokes"},
+      {"option": "B: 「我們來比賽做鬼臉」", "next_scene": "face_competition"},
+      {"option": "C: 「你平常都在幹嘛？」", "next_scene": "vampire_daily_life"}
+    ]
+  },
+  "vampire_jokes": {
+    "title": "吸血鬼笑話時間",
+    "description": "吸血鬼清了清嗓子：「為什麼吸血鬼不喜歡快餐？因為他們不能等到快餐！」他自己先笑了起來。\n\n「還有，為什麼吸血鬼去銀行？因為他們想要存一些『液體資產』！」你們兩個都笑得前仰後合。",
+    "is_ending": true,
+    "outcome": "😂 搞笑結局！你和吸血鬼度過了充滿歡聲笑語的夜晚！\n\n你獲得了『幽默大師』的稱號，學會了用笑聲征服黑暗。",
+    "score": 65
+  },
+  "apology_accepted": {
+    "title": "真誠的道歉",
+    "description": "你在空中誠懇地道歉：「對不起，我不應該那麼無禮。請原諒我的冒昧。」\n\n女巫看到你真誠的悔意，臉色軟化了。「好吧，至少你知道錯了。」她輕揮魔杖，讓你緩緩降落。「現在，讓我教你如何正確地與女巫交流。」",
+    "choices": [
+      {"option": "A: 謙遜地學習禮儀", "next_scene": "witch_lessons"},
+      {"option": "B: 請求第二次機會", "next_scene": "second_chance_romance"}
+    ]
+  },
+  "witch_lessons": {
+    "title": "女巫的教導",
+    "description": "女巫耐心地教你魔法世界的禮儀和規矩。「尊重是一切關係的基礎，」她說，「無論是愛情還是友情。」\n\n在她的指導下，you學會了如何與魔法生物相處，這將是你珍貴的人生經驗。",
+    "is_ending": true,
+    "outcome": "📚 學習結局！你從女巫那裡學會了寶貴的人生課程！\n\n你獲得了『魔法學徒』的稱號，掌握了基本的魔法禮儀。",
+    "score": 65
+  },
+  "cat_adventure": {
+    "title": "貓咪冒險",
+    "description": "莉莉笑著變回了可愛的黑貓咪咪。她跳到你的肩膀上，用頭蹭蹭你的臉頰。\n\n「咪咪很喜歡你，」女巫說，「她想帶你去探索這個神奇的地方。」咪咪開始引導你走向一個隱秘的花園。",
+    "is_ending": true,
+    "outcome": "🐱 貓咪結局！你和黑貓咪咪建立了純潔的友誼！\n\n你獲得了『貓咪之友』的稱號，並且獲得了貓咪的信任與友誼。",
+    "score": 60
+  },
+  "witch_cat_threesome": {
+    "title": "魔法三重奏",
+    "description": "女巫和莉莉對視一眼，都笑了。「有趣的提議，」女巫說，「不是每個人都能同時承受我們兩個的魔力。」\n\n莉莉變回貓女形態，三人在月光下開始了一場奇異的魔法儀式，充滿了神秘與激情。",
+    "is_ending": true,
+    "outcome": "🔮 魔法三重結局！你與女巫和貓女莉莉一起度過了終生難忘的魔法夜晚！\n\n你獲得了『魔法大師』的稱號，掌握了最高級的愛情魔法。",
+    "score": 120
+  },
+  "ghost_consequences": {
+    "title": "鬼魂的警告",
+    "description": "鬼魂誠實地告訴你：「與鬼魂親密接觸可能會讓你對靈界更敏感，但也會讓你更理解生命的珍貴。」\n\n他給你選擇的權利：「決定權在你，我不會強迫任何人。但如果你願意，我保證這會是你最難忘的經歷。」",
+    "choices": [
+      {"option": "A: 決定冒險一試", "next_scene": "ghost_intimacy"},
+      {"option": "B: 選擇只做朋友", "next_scene": "ghost_friendship"}
+    ]
+  },
+  "gentle_approach": {
+    "title": "溫柔的開始",
+    "description": "鬼魂欣賞你的謹慎：「你很聰明，急躁從來不是好事。」他溫柔地握住你的手，讓你慢慢適應這種奇特的感覺。\n\n「我們有整夜的時間，」他溫柔地說，「讓我們慢慢探索彼此的世界。」",
+    "is_ending": true,
+    "outcome": "💫 溫柔結局！你與鬼魂建立了溫柔而深刻的聯繫！\n\n你獲得了『溫柔靈魂』的稱號，學會了耐心與理解的重要。",
+    "score": 82
+  },
+  "ghost_friendship": {
+    "title": "跨界友誼",
+    "description": "鬼魂對你的決定表示理解：「友誼也是一種珍貴的關係，」他說，「我很高興能有一個活人朋友。」\n\n你們度過了一個充滿趣味對話的夜晚，分享著生與死的不同體驗，建立了跨越界限的友誼。",
+    "is_ending": true,
+    "outcome": "🤝 友誼結局！你與鬼魂建立了珍貴的跨界友誼！\n\n你獲得了『靈界之友』的稱號，證明了友誼無界限。",
+    "score": 70
+  },
+  "reverse_bite": {
+    "title": "角色反轉",
+    "description": "你出乎意料的提議讓吸血鬼愣了一下，然後大笑起來：「有趣！200年來還沒人這樣對我說過。」\n\n他露出脖子：「那麼，來吧！讓我體驗一下被咬的感覺。但要小心，我的血可能有點... 特別。」",
+    "choices": [
+      {"option": "A: 輕咬他的脖子", "next_scene": "vampire_blood_taste"},
+      {"option": "B: 「我只是開玩笑的」", "next_scene": "vampire_laughter"},
+      {"option": "C: 「先教我怎麼咬」", "next_scene": "biting_lessons"}
+    ]
+  },
+  "vampire_blood_taste": {
+    "title": "吸血鬼血液的味道",
+    "description": "你咬了吸血鬼的脖子，他的血液有種奇異的甜味，像是陳年葡萄酒混合了月光的味道。\n\n「哇，」吸血鬼驚訝地說，「你有天賦！我感覺到了久違的刺激。也許我們可以互相... 品嚐。」",
+    "is_ending": true,
+    "outcome": "🩸 角色反轉結局！你讓吸血鬼體驗了被咬的快感，建立了獨特的關係！\n\n你獲得了『反轉大師』的稱號，學會了主導的藝術。",
+    "score": 95
+  },
+  "hunter_reveal": {
+    "title": "獵人身份揭露",
+    "description": "你突然拿出一根銀製十字架：「驚喜！我是吸血鬼獵人！」\n\n吸血鬼不但沒有害怕，反而興奮地說：「太棒了！終於有人能給我一些挑戰了！200年的無聊生活需要一點刺激！」",
+    "choices": [
+      {"option": "A: 「等等，你不怕十字架？」", "next_scene": "fearless_vampire"},
+      {"option": "B: 「那我們來決鬥吧！」", "next_scene": "vampire_duel"},
+      {"option": "C: 「其實我是假獵人」", "next_scene": "fake_hunter_confession"}
+    ]
+  },
+  "ticklish_vampire": {
+    "title": "怕癢的吸血鬼",
+    "description": "吸血鬼笑了：「怕癢？這很可愛。」他輕輕咬了你一下，真的很輕，像羽毛一樣。\n\n「其實，」他承認，「我也很怕癢。如果你輕輕摸我的翅膀...」他變成蝙蝠形態，你發現他的翅膀確實很敏感。",
+    "is_ending": true,
+    "outcome": "😂 搔癢結局！你發現了吸血鬼怕癢的秘密，度過了歡樂的夜晚！\n\n你獲得了『搔癢大師』的稱號，掌握了歡樂的藝術。",
+    "score": 75
+  },
+  "shared_ritual": {
+    "title": "共享儀式",
+    "description": "吸血鬼微笑著同意：「共享血酒是最高等的親密行為。」你們同時舉起酒杯，眼神交匯。\n\n一飲而盡後，兩人都感受到強烈的連結。「現在我們的血液永遠相連，」他輕聲說。",
+    "is_ending": true,
+    "outcome": "🍷 共享結局！你與吸血鬼進行了血酒共享儀式，建立了永恆的連結！\n\n你獲得了『血盟伴侶』的稱號，擁有了永恆的羈絆。",
+    "score": 110
+  },
+  "wine_explanation": {
+    "title": "血酒的秘密",
+    "description": "吸血鬼誠實地告訴你：「這是特製的血酒，含有我的血液，但經過特殊處理，不會讓你變成吸血鬼，只會讓你體驗我們的感官世界。」\n\n「決定權在你，」他說，「但我保證這會是難忘的體驗。」",
+    "choices": [
+      {"option": "A: 「那我願意嚐試」", "next_scene": "blood_wine_effect"},
+      {"option": "B: 「能不能稀釋一點？」", "next_scene": "diluted_wine"},
+      {"option": "C: 「我想要更濃的」", "next_scene": "concentrated_wine"}
+    ]
+  },
+  "fake_drinking": {
+    "title": "假裝飲用",
+    "description": "你假裝喝酒，但偷偷將酒倒掉。然而，吸血鬼立刻察覺了：「我能感覺到血酒的位置，你沒有喝。」\n\n他沒有生氣，反而讚賞地說：「謹慎是好事，但誠實更重要。讓我們重新開始如何？」",
+    "is_ending": true,
+    "outcome": "🤝 謹慎結局！你的小心謹慎得到了吸血鬼的尊重！\n\n你獲得了『謹慎者』的稱號，學會了在危險中保持理智。",
+    "score": 70
+  },
+  "vampire_laughter": {
+    "is_ending": true,
+    "outcome": "😄 歡笑結局！",
+    "score": 60
+  },
+  "biting_lessons": {
+    "is_ending": true,
+    "outcome": "🧛‍♀️ 學習結局！",
+    "score": 70
+  },
+  "fearless_vampire": {
+    "is_ending": true,
+    "outcome": "😈 無懼結局！",
+    "score": 80
+  },
+  "vampire_duel": {
+    "is_ending": true,
+    "outcome": "⚔️ 決鬥結局！",
+    "score": 85
+  },
+  "fake_hunter_confession": {
+    "is_ending": true,
+    "outcome": "🎭 告白結局！",
+    "score": 75
+  },
+  "diluted_wine": {
+    "is_ending": true,
+    "outcome": "🍷 稀釋結局！",
+    "score": 65
+  },
+  "concentrated_wine": {
+    "is_ending": true,
+    "outcome": "🍷 濃縮結局！",
+    "score": 95
+  },
+  "power_hunger": {
+    "is_ending": true,
+    "outcome": "⚡ 力量結局！",
+    "score": 100
+  },
+  "vampire_service": {
+    "is_ending": true,
+    "outcome": "🙇‍♀️ 服務結局！",
+    "score": 90
+  },
+  "playroom_exploration": {
+    "is_ending": true,
+    "outcome": "🎭 探索結局！",
+    "score": 95
+  },
+  "private_chambers": {
+    "is_ending": true,
+    "outcome": "🏰 私密結局！",
+    "score": 110
+  },
+  "dungeon_secrets": {
+    "is_ending": true,
+    "outcome": "⛓️ 秘密結局！",
+    "score": 85
+  },
+  "face_competition": {
+    "is_ending": true,
+    "outcome": "😜 競賽結局！",
+    "score": 70
+  },
+  "vampire_daily_life": {
+    "is_ending": true,
+    "outcome": "🌙 日常結局！",
+    "score": 75
+  },
+  "second_chance_romance": {
+    "is_ending": true,
+    "outcome": "💕 第二次機會結局！",
+    "score": 95
+  },
+  "ghost_understanding": {
+    "is_ending": true,
+    "outcome": "🤝 理解結局！",
+    "score": 78
+  },
+  "final_chase": {
+    "is_ending": true,
+    "outcome": "🏃‍♂️ 追逐結局！",
+    "score": 45
+  },
+  "ghost_honesty": {
+    "is_ending": true,
+    "outcome": "💭 真心話結局！",
+    "score": 80
+  },
+  "floating_lessons": {
+    "is_ending": true,
+    "outcome": "🌟 飄浮結局！",
+    "score": 92
+  },
+  "wall_phasing": {
+    "is_ending": true,
+    "outcome": "🚪 穿透結局！",
+    "score": 85
+  },
+  "purple_pumpkin_mystery": {
+    "is_ending": true,
+    "outcome": "🌸 女神結局！",
+    "score": 105
+  },
+  "silver_pumpkin_wish": {
+    "is_ending": true,
+    "outcome": "💝 心願結局！",
+    "score": 80
+  },
+  "wolf_transformation": {
+    "is_ending": true,
+    "outcome": "🐺 野狼結局！",
+    "score": 100
+  },
+  "mist_form": {
+    "is_ending": true,
+    "outcome": "🌫️ 霧化結局！",
+    "score": 110
+  },
+  "charm_magic": {
+    "is_ending": true,
+    "outcome": "💫 魅惑結局！",
+    "score": 105
+  },
+  "hunting_lessons": {
+    "is_ending": true,
+    "outcome": "🦇 狩獵結局！",
+    "score": 90
+  },
+  "dance_floor_seduction": {
+    "is_ending": true,
+    "outcome": "💃 舞蹈結局！",
+    "score": 85
+  },
+  "vip_lounge": {
+    "is_ending": true,
+    "outcome": "👑 VIP結局！",
+    "score": 120
+  },
+  "sound_booth": {
+    "is_ending": true,
+    "outcome": "🎵 音響結局！",
+    "score": 75
+  },
+  "soul_drink_effect": {
+    "is_ending": true,
+    "outcome": "👻 靈魂出竅結局！",
+    "score": 100
+  },
+  "truth_drink_effect": {
+    "is_ending": true,
+    "outcome": "💭 真心話結局！",
+    "score": 90
+  },
+  "cocktail_chaos": {
+    "is_ending": true,
+    "outcome": "🍸 混合結局！",
+    "score": 125
+  },
+  "cooling_down": {
+    "is_ending": true,
+    "outcome": "❄️ 冷靜結局！",
+    "score": 65
+  },
+  "antidote_quest": {
+    "is_ending": true,
+    "outcome": "💊 解藥結局！",
+    "score": 70
+  },
+  "death_beauty": {
+    "is_ending": true,
+    "outcome": "💀 死亡美結局！",
+    "score": 85
+  },
+  "resurrection_attempt": {
+    "is_ending": true,
+    "outcome": "⚰️ 復活結局！",
+    "score": 100
+  },
+  "cemetery_exploration": {
+    "is_ending": true,
+    "outcome": "🪦 墓地探索結局！",
+    "score": 80
+  },
+  "revenge_plot": {
+    "is_ending": true,
+    "outcome": "⚔️ 復仇結局！",
+    "score": 95
+  },
+  "ghostly_lessons": {
+    "is_ending": true,
+    "outcome": "👻 鬼魂課程結局！",
+    "score": 90
+  },
+  "cemetery_rulers": {
+    "is_ending": true,
+    "outcome": "👑 墓地統治者結局！",
+    "score": 130
+  },
+  "elf_transformation": {
+    "is_ending": true,
+    "outcome": "🧚‍♀️ 精靈轉化結局！",
+    "score": 110
+  },
+  "nature_appreciation": {
+    "is_ending": true,
+    "outcome": "🌿 自然欣賞結局！",
+    "score": 75
+  },
+  "forest_law_challenge": {
+    "is_ending": true,
+    "outcome": "⚖️ 法則挑戰結局！",
+    "score": 85
+  },
+  "ancient_tree_riddle": {
+    "is_ending": true,
+    "outcome": "🌳 古樹謎題結局！",
+    "score": 95
+  },
+  "phoenix_healing": {
+    "is_ending": true,
+    "outcome": "🔥 鳳凰治癒結局！",
+    "score": 105
+  },
+  "triple_trial": {
+    "is_ending": true,
+    "outcome": "🏆 三重試煉結局！",
+    "score": 140
+  },
+  "love_magic_book": {
+    "is_ending": true,
+    "outcome": "💕 愛情魔法結局！",
+    "score": 100
+  },
+  "desire_spells": {
+    "is_ending": true,
+    "outcome": "💫 慾望咒語結局！",
+    "score": 110
+  },
+  "library_lessons": {
+    "is_ending": true,
+    "outcome": "📚 圖書館課程結局！",
+    "score": 85
+  },
+  "future_vision_drink": {
+    "is_ending": true,
+    "outcome": "🔮 預知未來結局！",
+    "score": 95
+  },
+  "pleasure_potion": {
+    "is_ending": true,
+    "outcome": "💖 快樂藥劑結局！",
+    "score": 115
+  },
+  "ultimate_brew": {
+    "is_ending": true,
+    "outcome": "🍺 終極釀酒結局！",
     "score": 120
   }
 }
