@@ -27,7 +27,7 @@
 ## 為什麼玩這個遊戲？
 - **搞笑元素**：每條故事路徑都融入萬聖節 pun，例如 "Why don't witches wear panties? So they can grip the broom better!" 或 "I'm light as a feather, and I can see you're stiff as a board."
 - **互動性**：透過簡單選擇推進情節，適合手機或電腦遊玩。
-- **社區貢獻**：我們鼓勵大家添加新故事分支、porn 或萬聖節梗！詳見貢獻指南。
+- **社區貢獻**：我們鼓勵大家添加新故事分支、pun 或萬聖節梗！詳見貢獻指南。
 
 ## 安裝與運行
 
