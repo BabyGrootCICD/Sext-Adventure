@@ -501,10 +501,55 @@
             background: rgba(0, 0, 0, 0.95);
             border: 2px solid #ff6b35;
             border-radius: 10px;
-            padding: 15px;
             z-index: 100;
             min-width: 200px;
             box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .stats-header {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+            padding: 12px 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .stats-header:hover {
+            background: linear-gradient(135deg, #ff8c42 0%, #ffa726 100%);
+        }
+
+        .stats-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .stats-toggle {
+            font-size: 1.1em;
+            color: white;
+            transition: transform 0.3s ease;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .stats-toggle.collapsed {
+            transform: rotate(-90deg);
+        }
+
+        .stats-content {
+            padding: 15px;
+            transition: all 0.3s ease;
+            max-height: 200px;
+            overflow: hidden;
+        }
+
+        .stats-content.collapsed {
+            max-height: 0;
+            padding: 0 15px;
         }
 
         .stats-title {
@@ -1162,22 +1207,27 @@
 
         <!-- 統計面板 -->
         <div class="stats-panel" id="statsPanel" style="display: none;">
-            <div class="stats-title">📊 遊戲統計</div>
-            <div class="stat-item">
-                <span>總分數:</span>
-                <span id="totalScore">0</span>
+            <div class="stats-header" onclick="toggleStatsPanel()">
+                <div class="stats-title">📊 遊戲統計</div>
+                <div class="stats-toggle" id="statsToggle">▼</div>
             </div>
-            <div class="stat-item">
-                <span>遊玩次數:</span>
-                <span id="playCount">0</span>
-            </div>
-            <div class="stat-item">
-                <span>解鎖成就:</span>
-                <span id="achievementCount">0</span>
-            </div>
-            <div class="stat-item">
-                <span>探索場景:</span>
-                <span id="sceneCount">0</span>
+            <div class="stats-content" id="statsContent">
+                <div class="stat-item">
+                    <span>總分數:</span>
+                    <span id="totalScore">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>遊玩次數:</span>
+                    <span id="playCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>解鎖成就:</span>
+                    <span id="achievementCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>探索場景:</span>
+                    <span id="sceneCount">0</span>
+                </div>
             </div>
         </div>
 
@@ -2849,6 +2899,22 @@
                 if (toggle) {
                     toggle.style.right = '300px';
                 }
+            }
+        }
+
+        // 切換統計面板
+        function toggleStatsPanel() {
+            const content = document.getElementById('statsContent');
+            const toggle = document.getElementById('statsToggle');
+            
+            if (content.classList.contains('collapsed')) {
+                content.classList.remove('collapsed');
+                toggle.classList.remove('collapsed');
+                toggle.textContent = '▼';
+            } else {
+                content.classList.add('collapsed');
+                toggle.classList.add('collapsed');
+                toggle.textContent = '▶';
             }
         }
 

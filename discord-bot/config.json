@@ -1,0 +1,64 @@
+{
+  "bot": {
+    "name": "Tsext Adventure Bot",
+    "version": "1.0.0",
+    "description": "Tsext Adventure 專案的 Discord 機器人，用於管理貢獻者角色和自動化通知",
+    "prefix": "!",
+    "intents": {
+      "message_content": true,
+      "members": true,
+      "guilds": true,
+      "presences": false,
+      "voice_states": false
+    }
+  },
+  "github": {
+    "owner": "BabyGrootCICD",
+    "repo": "Sext-Adventure",
+    "api_base_url": "https://api.github.com"
+  },
+  "roles": {
+    "maintainer": {
+      "name": "👑 專案維護者",
+      "color": "gold",
+      "permissions": ["manage_messages", "manage_channels", "kick_members"],
+      "description": "長期維護專案的核心成員"
+    },
+    "core": {
+      "name": "🥇 核心貢獻者",
+      "color": "blue",
+      "permissions": ["manage_messages"],
+      "description": "重大功能開發者"
+    },
+    "active": {
+      "name": "🥈 活躍貢獻者",
+      "color": "green",
+      "permissions": [],
+      "description": "持續貢獻的社區成員"
+    },
+    "novice": {
+      "name": "🥉 新手貢獻者",
+      "color": "orange",
+      "permissions": [],
+      "description": "首次貢獻者"
+    }
+  },
+  "channels": {
+    "welcome": "welcome",
+    "announcements": "announcements",
+    "contributor-updates": "contributor-updates",
+    "general": "general"
+  },
+  "features": {
+    "auto_role_assignment": true,
+    "periodic_updates": true,
+    "welcome_messages": true,
+    "contribution_tracking": true,
+    "monthly_awards": true
+  },
+  "update_schedule": {
+    "role_updates": "24h",
+    "contribution_checks": "6h",
+    "monthly_reports": "weekly"
+  }
+}

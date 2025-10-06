@@ -1,0 +1,40 @@
+# Discord Bot 部署配置
+# discord-bot/docker-compose.yml
+
+version: '3.8'
+
+services:
+  discord-bot:
+    build: .
+    container_name: tsext-discord-bot
+    restart: unless-stopped
+    environment:
+      - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - GITHUB_WEBHOOK_SECRET=${GITHUB_WEBHOOK_SECRET}
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    networks:
+      - tsext-network
+
+  webhook-handler:
+    build: .
+    container_name: tsext-webhook-handler
+    restart: unless-stopped
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - GITHUB_WEBHOOK_SECRET=${GITHUB_WEBHOOK_SECRET}
+      - PORT=5000
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - tsext-network
+
+networks:
+  tsext-network:
+    driver: bridge
