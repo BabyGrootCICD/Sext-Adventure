@@ -97,6 +97,14 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 1em;
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            user-select: none;
+            -webkit-user-select: none;
+            /* 改善觸控回饋 */
+            -webkit-tap-highlight-color: rgba(139, 92, 246, 0.3);
+            touch-action: manipulation;
         }
 
         .choice:hover {
@@ -180,6 +188,69 @@
         .start-btn:hover {
             transform: scale(1.05);
             box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+        }
+
+        .start-btn:focus,
+        .restart-btn:focus,
+        .share-btn:focus,
+        .close-btn:focus {
+            outline: 2px solid #8b5cf6;
+            outline-offset: 2px;
+        }
+
+        /* 鍵盤導航支援 */
+        .choice:focus {
+            outline: 2px solid #8b5cf6;
+            outline-offset: 2px;
+            background: rgba(139, 92, 246, 0.4);
+        }
+
+        .achievements-toggle:focus {
+            outline: 2px solid #8b5cf6;
+            outline-offset: 2px;
+        }
+
+        /* 載入狀態改善 */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .loading::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 2px solid #8b5cf6;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 效能優化 */
+        * {
+            box-sizing: border-box;
+        }
+
+        .container,
+        .game-area,
+        .achievement-popup {
+            will-change: transform;
+            backface-visibility: hidden;
+        }
+
+        /* 防止文字選取 */
+        .achievement-popup,
+        .stats-panel,
+        .achievements-panel {
+            user-select: none;
+            -webkit-user-select: none;
         }
 
         .footer {
@@ -479,6 +550,26 @@
             font-size: 1.2em;
         }
 
+        /* RWD - 大型螢幕 */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1000px;
+            }
+
+            .title {
+                font-size: 3em;
+            }
+
+            .achievements-panel {
+                width: 350px;
+                right: -370px;
+            }
+
+            .stats-panel {
+                min-width: 220px;
+            }
+        }
+
         /* RWD - 平板和小螢幕 */
         @media (max-width: 1024px) {
             .stats-panel {
@@ -497,34 +588,75 @@
                 font-size: 0.9em;
                 padding: 12px 8px;
             }
+
+            /* 改善按鈕觸控區域 */
+            .choice {
+                padding: 18px;
+                margin-bottom: 12px;
+                font-size: 1em;
+            }
+
+            .start-btn, .restart-btn {
+                padding: 15px 35px;
+                font-size: 1.1em;
+                min-height: 50px;
+            }
         }
 
         /* RWD - 手機橫向 */
         @media (max-width: 768px) {
             .container {
                 padding: 15px;
-                margin: 10px;
+                margin: 5px;
+                width: calc(100% - 10px);
             }
             
             .title {
                 font-size: 1.8em;
+                line-height: 1.2;
+                margin-bottom: 15px;
             }
 
             .subtitle {
                 font-size: 1em;
+                line-height: 1.4;
+                margin-bottom: 15px;
+            }
+
+            .warning {
+                font-size: 0.9em;
+                padding: 12px;
+                margin-bottom: 15px;
             }
             
             .scene-title {
                 font-size: 1.2em;
+                line-height: 1.3;
+                padding-bottom: 8px;
             }
 
             .scene-description {
                 font-size: 1em;
+                line-height: 1.5;
+                margin-bottom: 15px;
             }
 
             .choice {
                 font-size: 0.95em;
-                padding: 12px;
+                padding: 15px;
+                margin-bottom: 10px;
+                border-radius: 10px;
+                /* 改善觸控體驗 */
+                min-height: 50px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                -webkit-tap-highlight-color: rgba(139, 92, 246, 0.3);
+            }
+
+            .choice:active {
+                transform: translateX(3px) scale(0.98);
+                background: rgba(139, 92, 246, 0.6);
             }
 
             .stats-panel {
@@ -533,79 +665,172 @@
                 min-width: 120px;
                 font-size: 0.85em;
                 padding: 10px;
+                border-radius: 8px;
             }
 
             .stats-title {
                 font-size: 1em;
+                margin-bottom: 8px;
             }
 
             .stat-item {
                 font-size: 0.85em;
                 margin-bottom: 5px;
+                padding: 3px 5px;
             }
 
             .achievements-panel {
                 width: 220px;
                 right: -240px;
                 max-height: 70vh;
+                border-radius: 10px 0 0 10px;
             }
 
             .achievements-toggle {
                 font-size: 0.85em;
                 padding: 10px 6px;
+                border-radius: 8px 0 0 8px;
             }
 
             .achievement-popup {
                 width: 90%;
                 max-width: 350px;
                 padding: 20px;
+                max-height: 80vh;
+                overflow-y: auto;
             }
 
             .achievement-icon {
                 font-size: 3em;
+                margin-bottom: 10px;
             }
 
             .achievement-title {
                 font-size: 1.5em;
+                line-height: 1.2;
+                margin-bottom: 8px;
+            }
+
+            .achievement-description {
+                font-size: 0.95em;
+                line-height: 1.4;
             }
 
             .share-btn, .close-btn {
                 font-size: 0.9em;
-                padding: 8px 15px;
+                padding: 10px 18px;
+                border-radius: 20px;
+                margin: 5px;
+                min-height: 40px;
+                /* 改善觸控體驗 */
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .share-btn:active, .close-btn:active {
+                transform: scale(0.95);
+            }
+
+            .player-input {
+                font-size: 1em;
+                padding: 12px;
+                border-radius: 8px;
+                width: 90%;
+            }
+
+            .start-btn, .restart-btn {
+                font-size: 1em;
+                padding: 12px 25px;
+                border-radius: 20px;
+                min-height: 45px;
+                margin: 10px 5px;
             }
         }
 
         /* RWD - 手機直向 */
         @media (max-width: 480px) {
-            .container {
+            body {
                 padding: 10px;
-                margin: 5px;
+            }
+
+            .container {
+                padding: 12px;
+                margin: 0;
+                width: 100%;
+                max-width: none;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(255, 107, 53, 0.2);
+            }
+
+            .header {
+                margin-bottom: 20px;
             }
 
             .title {
-                font-size: 1.5em;
+                font-size: 1.4em;
+                line-height: 1.1;
+                margin-bottom: 8px;
+                text-shadow: 0 0 8px #ff6b35;
             }
 
             .subtitle {
                 font-size: 0.9em;
+                line-height: 1.3;
+                margin-bottom: 12px;
             }
 
             .warning {
-                font-size: 0.9em;
+                font-size: 0.85em;
                 padding: 10px;
+                border-radius: 8px;
+                margin-bottom: 15px;
+                line-height: 1.3;
+            }
+
+            .game-area {
+                padding: 15px;
+                min-height: 300px;
+                border-radius: 8px;
+                margin-bottom: 15px;
             }
 
             .scene-title {
                 font-size: 1.1em;
+                line-height: 1.2;
+                margin-bottom: 10px;
+                padding-bottom: 8px;
             }
 
             .scene-description {
-                font-size: 0.95em;
+                font-size: 0.9em;
+                line-height: 1.4;
+                margin-bottom: 15px;
+            }
+
+            .choices {
+                margin-top: 15px;
             }
 
             .choice {
-                font-size: 0.9em;
-                padding: 10px;
+                font-size: 0.85em;
+                padding: 12px;
+                margin-bottom: 8px;
+                border-radius: 8px;
+                line-height: 1.3;
+                min-height: 45px;
+                display: flex;
+                align-items: center;
+                text-align: left;
+                /* 優化小螢幕觸控 */
+                -webkit-tap-highlight-color: rgba(139, 92, 246, 0.2);
+                touch-action: manipulation;
+            }
+
+            .choice:hover {
+                transform: translateX(2px);
+            }
+
+            .choice:active {
+                transform: translateX(1px) scale(0.98);
             }
 
             .stats-panel {
@@ -615,81 +840,293 @@
                 width: 100%;
                 margin-bottom: 10px;
                 box-sizing: border-box;
+                border-radius: 8px;
+                padding: 10px;
+            }
+
+            .stats-title {
+                font-size: 0.9em;
+                margin-bottom: 6px;
+            }
+
+            .stat-item {
+                font-size: 0.8em;
+                margin-bottom: 4px;
+                padding: 2px 4px;
             }
 
             .achievements-panel {
-                width: 85%;
-                right: -90%;
+                width: 90%;
+                right: -95%;
                 top: 60px;
-                max-height: 60vh;
+                max-height: 65vh;
+                border-radius: 8px 0 0 8px;
             }
 
             .achievements-toggle {
-                top: 65%;
-                font-size: 0.8em;
-                padding: 8px 5px;
+                top: 60%;
+                font-size: 0.75em;
+                padding: 8px 4px;
+                border-radius: 6px 0 0 6px;
+                writing-mode: vertical-rl;
             }
 
             .achievement-popup {
-                width: 95%;
+                width: 96%;
                 padding: 15px;
+                max-height: 85vh;
+                border-radius: 12px;
+                margin: 0 2%;
             }
 
             .achievement-icon {
                 font-size: 2.5em;
+                margin-bottom: 8px;
             }
 
             .achievement-title {
-                font-size: 1.3em;
+                font-size: 1.2em;
+                line-height: 1.1;
+                margin-bottom: 6px;
             }
 
             .achievement-description {
-                font-size: 0.95em;
+                font-size: 0.85em;
+                line-height: 1.3;
+                margin-bottom: 10px;
             }
 
-            .share-btn, .close-btn {
-                font-size: 0.85em;
-                padding: 6px 12px;
-                margin: 3px;
+            .achievement-rarity {
+                font-size: 0.8em;
+                padding: 4px 12px;
+                margin-bottom: 15px;
             }
 
             .achievement-actions {
                 flex-direction: column;
+                gap: 8px;
             }
 
             .achievement-actions button {
                 width: 100%;
+                min-height: 42px;
+                font-size: 0.85em;
+                padding: 10px 15px;
+                border-radius: 20px;
             }
 
             .player-input {
-                width: 90%;
-                font-size: 1em;
+                width: 95%;
+                max-width: 280px;
+                font-size: 0.95em;
+                padding: 10px;
+                border-radius: 8px;
+                margin: 15px auto;
             }
 
             .start-btn, .restart-btn {
-                font-size: 1em;
-                padding: 12px 30px;
+                font-size: 0.95em;
+                padding: 12px 25px;
+                border-radius: 20px;
+                min-height: 45px;
+                margin: 8px 4px;
+            }
+
+            .ending {
+                padding: 15px;
+                border-radius: 8px;
+                margin-top: 15px;
+            }
+
+            .ending-title {
+                font-size: 1.4em;
+                line-height: 1.2;
+                margin-bottom: 10px;
+            }
+
+            .ending-outcome {
+                font-size: 0.95em;
+                line-height: 1.4;
+                margin-bottom: 15px;
+            }
+
+            .score {
+                font-size: 0.9em;
+                margin-bottom: 10px;
+            }
+
+            .footer {
+                margin-top: 20px;
+                font-size: 0.8em;
+                line-height: 1.3;
+            }
+
+            .footer a {
+                color: #8b5cf6;
+                text-decoration: none;
+            }
+
+            .footer a:hover {
+                text-decoration: underline;
             }
         }
 
-        /* RWD - 超小螢幕 */
+        /* RWD - 超小螢幕 (320px - 360px) */
         @media (max-width: 360px) {
+            body {
+                padding: 5px;
+            }
+
+            .container {
+                padding: 8px;
+                border-radius: 8px;
+            }
+
             .title {
-                font-size: 1.3em;
+                font-size: 1.2em;
+                line-height: 1.1;
+                margin-bottom: 6px;
+            }
+
+            .subtitle {
+                font-size: 0.85em;
+                margin-bottom: 10px;
+            }
+
+            .warning {
+                font-size: 0.8em;
+                padding: 8px;
+                margin-bottom: 12px;
+            }
+
+            .game-area {
+                padding: 12px;
+                min-height: 250px;
             }
 
             .scene-title {
                 font-size: 1em;
+                line-height: 1.1;
+                margin-bottom: 8px;
+                padding-bottom: 6px;
             }
 
             .scene-description {
-                font-size: 0.9em;
+                font-size: 0.85em;
+                line-height: 1.4;
+                margin-bottom: 12px;
             }
 
             .choice {
-                font-size: 0.85em;
+                font-size: 0.8em;
+                padding: 10px;
+                margin-bottom: 6px;
+                min-height: 40px;
+                border-radius: 6px;
+            }
+
+            .stats-panel {
+                font-size: 0.75em;
                 padding: 8px;
             }
+
+            .stats-title {
+                font-size: 0.85em;
+                margin-bottom: 5px;
+            }
+
+            .stat-item {
+                font-size: 0.75em;
+                margin-bottom: 3px;
+                padding: 1px 3px;
+            }
+
+            .achievement-popup {
+                width: 98%;
+                padding: 12px;
+                margin: 0 1%;
+            }
+
+            .achievement-icon {
+                font-size: 2.2em;
+            }
+
+            .achievement-title {
+                font-size: 1.1em;
+            }
+
+            .achievement-description {
+                font-size: 0.8em;
+            }
+
+            .achievement-actions button {
+                font-size: 0.8em;
+                padding: 8px 12px;
+                min-height: 38px;
+            }
+
+            .player-input {
+                font-size: 0.9em;
+                padding: 8px;
+                width: 98%;
+                max-width: 250px;
+            }
+
+            .start-btn, .restart-btn {
+                font-size: 0.9em;
+                padding: 10px 20px;
+                min-height: 42px;
+            }
+
+            .ending-title {
+                font-size: 1.2em;
+            }
+
+            .ending-outcome {
+                font-size: 0.9em;
+            }
+
+            .footer {
+                font-size: 0.75em;
+                margin-top: 15px;
+            }
+        }
+
+        /* 輔助功能改善 */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .choice:hover,
+            .choice:active {
+                transform: none;
+            }
+        }
+
+        /* 高對比度模式支援 */
+        @media (prefers-contrast: high) {
+            .container {
+                border: 3px solid #fff;
+                background: rgba(0, 0, 0, 0.95);
+            }
+            
+            .choice {
+                border: 2px solid #fff;
+                background: rgba(139, 92, 246, 0.8);
+            }
+            
+            .achievement-popup {
+                border: 3px solid #fff;
+                background: rgba(0, 0, 0, 0.95);
+            }
+        }
+
+        /* 暗色主題偏好 */
+        @media (prefers-color-scheme: dark) {
+            /* 本遊戲預設就是暗色主題，所以不需要額外調整 */
         }
 
         /* 捲軸樣式 */
@@ -770,7 +1207,7 @@
 
         <div class="footer">
             <p>🎃 Happy Halloween! 🎃</p>
-            <p>開源專案 | MIT License | <a href="https://github.com/yourusername/tsext-adventure" style="color: #8b5cf6;">GitHub</a></p>
+            <p>開源專案 | MIT License | <a href="https://github.com/dennislee928/tsext-adventure" style="color: #8b5cf6;">GitHub</a></p>
         </div>
     </div>
 
@@ -1336,6 +1773,7 @@
                 <div class="achievement-rarity rarity-${achievement.rarity}">${achievement.rarity.toUpperCase()}</div>
                 <div class="achievement-description">${achievement.description}</div>
                 <div class="achievement-actions">
+                    <button class="share-btn" onclick="downloadAchievementImage('${achievementId}')">下載圖片 📥</button>
                     <button class="share-btn" onclick="shareAchievement('${achievementId}')">分享成就 📤</button>
                     <button class="close-btn" onclick="closeAchievementPopup()">關閉</button>
                 </div>
@@ -1367,6 +1805,161 @@
             const shareUrl = window.location.href;
 
             showShareModal(shareText, shareUrl, achievement);
+        }
+
+        // 下載成就圖片
+        function downloadAchievementImage(achievementId) {
+            const achievement = achievementsData[achievementId];
+            if (!achievement) return;
+
+            // 創建 canvas 元素
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // 設定 canvas 尺寸 (社交媒體適用尺寸)
+            canvas.width = 800;
+            canvas.height = 600;
+
+            // 創建漸層背景
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, '#1a1a2e');
+            gradient.addColorStop(0.5, '#16213e');
+            gradient.addColorStop(1, '#0f3460');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // 添加邊框效果
+            ctx.strokeStyle = '#ff6b35';
+            ctx.lineWidth = 8;
+            ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
+
+            // 內層邊框
+            ctx.strokeStyle = 'rgba(139, 92, 246, 0.8)';
+            ctx.lineWidth = 4;
+            ctx.strokeRect(40, 40, canvas.width - 80, canvas.height - 80);
+
+            // 遊戲標題
+            ctx.fillStyle = '#ff6b35';
+            ctx.font = 'bold 32px "Courier New", monospace';
+            ctx.textAlign = 'center';
+            ctx.fillText('🎃 Tsext Adventure: Halloween Haunt 🎃', canvas.width / 2, 100);
+
+            // 成就解鎖文字
+            ctx.fillStyle = '#8b5cf6';
+            ctx.font = 'bold 24px "Courier New", monospace';
+            ctx.fillText('🏆 成就解鎖！', canvas.width / 2, 150);
+
+            // 成就圖標 (放大)
+            ctx.font = '120px Arial';
+            ctx.fillText(achievement.icon, canvas.width / 2, 280);
+
+            // 成就名稱
+            ctx.fillStyle = '#ff6b35';
+            ctx.font = 'bold 36px "Courier New", monospace';
+            ctx.fillText(achievement.name, canvas.width / 2, 350);
+
+            // 稀有度標籤
+            const rarityColors = {
+                'common': '#9CA3AF',
+                'rare': '#3B82F6', 
+                'epic': '#8B5CF6',
+                'legendary': '#F59E0B'
+            };
+            
+            ctx.fillStyle = rarityColors[achievement.rarity] || '#9CA3AF';
+            ctx.font = 'bold 20px "Courier New", monospace';
+            ctx.fillText(`【 ${achievement.rarity.toUpperCase()} 】`, canvas.width / 2, 390);
+
+            // 成就描述 (自動換行)
+            ctx.fillStyle = '#e0e0e0';
+            ctx.font = '18px "Courier New", monospace';
+            const maxWidth = canvas.width - 120;
+            const lineHeight = 25;
+            const words = achievement.description.split('');
+            let line = '';
+            let y = 440;
+
+            for (let i = 0; i < words.length; i++) {
+                const testLine = line + words[i];
+                const metrics = ctx.measureText(testLine);
+                const testWidth = metrics.width;
+                
+                if (testWidth > maxWidth && i > 0) {
+                    ctx.fillText(line, canvas.width / 2, y);
+                    line = words[i];
+                    y += lineHeight;
+                } else {
+                    line = testLine;
+                }
+            }
+            ctx.fillText(line, canvas.width / 2, y);
+
+            // 分數資訊
+            if (achievement.points) {
+                ctx.fillStyle = '#ffd700';
+                ctx.font = 'bold 20px "Courier New", monospace';
+                ctx.fillText(`💎 ${achievement.points} 分`, canvas.width / 2, y + 50);
+            }
+
+            // 底部裝飾
+            ctx.fillStyle = '#8b5cf6';
+            ctx.font = '16px "Courier New", monospace';
+            ctx.fillText('github.com/dennislee928/tsext-adventure', canvas.width / 2, canvas.height - 50);
+
+            // 下載圖片
+            const link = document.createElement('a');
+            link.download = `tsext-adventure-achievement-${achievement.name.replace(/[^a-zA-Z0-9]/g, '_')}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+
+            // 顯示成功提示
+            showSuccessNotification(`🎉 成就圖片已下載：${achievement.name}`);
+        }
+
+        // 顯示成功通知
+        function showSuccessNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #10b981, #059669);
+                color: white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+                z-index: 10000;
+                font-family: 'Courier New', monospace;
+                font-weight: bold;
+                animation: slideInRight 0.3s ease-out;
+            `;
+            notification.textContent = message;
+            
+            // 添加動畫樣式
+            if (!document.getElementById('notification-style')) {
+                const style = document.createElement('style');
+                style.id = 'notification-style';
+                style.textContent = `
+                    @keyframes slideInRight {
+                        from { transform: translateX(100%); opacity: 0; }
+                        to { transform: translateX(0); opacity: 1; }
+                    }
+                    @keyframes slideOutRight {
+                        from { transform: translateX(0); opacity: 1; }
+                        to { transform: translateX(100%); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+            document.body.appendChild(notification);
+
+            // 3 秒後自動移除
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.3s ease-in';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
         }
 
         // 顯示分享模態框
@@ -1486,6 +2079,12 @@
                             <div class="achievement-item-desc">${achievement.description}</div>
                             ${isUnlocked ? '<div style="font-size: 0.7em; color: #ff6b35; margin-top: 3px;">✓ 已解鎖</div>' : '<div style="font-size: 0.7em; color: #666; margin-top: 3px;">🔒 未解鎖</div>'}
                         </div>
+                        ${isUnlocked ? `
+                            <div class="achievement-item-actions" style="display: flex; flex-direction: column; gap: 5px; margin-left: 10px;">
+                                <button onclick="downloadAchievementImage('${achievementId}')" style="background: #ff6b35; border: none; border-radius: 15px; padding: 5px 10px; color: white; font-size: 0.7em; cursor: pointer; transition: all 0.2s; min-width: 60px;" onmouseover="this.style.background='#e55a2e'" onmouseout="this.style.background='#ff6b35'">📥 下載</button>
+                                <button onclick="shareAchievement('${achievementId}')" style="background: #8b5cf6; border: none; border-radius: 15px; padding: 5px 10px; color: white; font-size: 0.7em; cursor: pointer; transition: all 0.2s; min-width: 60px;" onmouseover="this.style.background='#7c3aed'" onmouseout="this.style.background='#8b5cf6'">📤 分享</button>
+                            </div>
+                        ` : ''}
                     </div>
                 `;
             }).join('');
@@ -1611,12 +2210,93 @@
             displayScene('start');
         }
 
+        // 版本檢查和快取管理
+        function checkVersion() {
+            const currentVersion = document.querySelector('meta[name="version"]')?.content;
+            const lastVersion = localStorage.getItem('gameVersion');
+            
+            if (currentVersion && lastVersion && currentVersion !== lastVersion) {
+                // 版本已更新，清除快取
+                console.log('🔄 偵測到新版本，清除本地快取...');
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                        for(let registration of registrations) {
+                            registration.unregister();
+                        }
+                    });
+                }
+                
+                // 清除快取儲存
+                if ('caches' in window) {
+                    caches.keys().then(function(cacheNames) {
+                        return Promise.all(
+                            cacheNames.map(function(cacheName) {
+                                return caches.delete(cacheName);
+                            })
+                        );
+                    });
+                }
+                
+                showSuccessNotification('🎉 遊戲已更新到最新版本！');
+            }
+            
+            if (currentVersion) {
+                localStorage.setItem('gameVersion', currentVersion);
+            }
+        }
+
+        // 強制重新載入功能（開發者用）
+        function forceReload() {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                    for(let registration of registrations) {
+                        registration.unregister();
+                    }
+                    location.reload(true);
+                });
+            } else {
+                location.reload(true);
+            }
+        }
+
+        // 檢查網路連線和版本更新
+        function checkForUpdates() {
+            if (navigator.onLine) {
+                // 隨機參數避免快取
+                const timestamp = new Date().getTime();
+                fetch(`./version.json?v=${timestamp}`, { 
+                    cache: 'no-cache',
+                    headers: {
+                        'Cache-Control': 'no-cache, no-store, must-revalidate',
+                        'Pragma': 'no-cache',
+                        'Expires': '0'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const currentVersion = document.querySelector('meta[name="version"]')?.content;
+                    if (data.version && currentVersion && data.version !== currentVersion) {
+                        if (confirm('發現新版本！是否要重新載入遊戲？')) {
+                            forceReload();
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.log('版本檢查失敗:', error);
+                });
+            }
+        }
+
         // 初始化
         document.addEventListener('DOMContentLoaded', function() {
             loadGameData();
             updateAchievementsPanel();
             updateStatsPanel();
+            checkVersion();
             console.log('🎃 Tsext Adventure: Halloween Haunt 已載入！');
+            
+            // 每 5 分鐘檢查一次更新
+            setInterval(checkForUpdates, 5 * 60 * 1000);
         });
     </script>
 </body>

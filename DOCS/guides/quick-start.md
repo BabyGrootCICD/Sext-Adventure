@@ -10,7 +10,7 @@
 
 ### 步驟 1: 下載專案
 ```bash
-git clone https://github.com/yourusername/tsext-adventure.git
+git clone https://github.com/dennislee928/tsext-adventure.git
 cd tsext-adventure
 ```
 

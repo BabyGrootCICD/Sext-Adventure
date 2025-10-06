@@ -45,11 +45,51 @@ jobs:
     - name: Setup Pages
       uses: actions/configure-pages@v5
       
-    - name: Copy web files
+    - name: Copy web files and add cache busting
       run: |
+        # 產生時間戳記用於版本控制
+        TIMESTAMP=$(date +%s)
+        echo "TIMESTAMP=$TIMESTAMP" >> $GITHUB_ENV
+        
+        # 複製主要檔案
         cp web/index.html .
         mkdir -p assets
+        
+        # 在 index.html 中加入 meta tag 防止快取
+        sed -i "s|<head>|<head>\n    <meta http-equiv=\"Cache-Control\" content=\"no-cache, no-store, must-revalidate\">\n    <meta http-equiv=\"Pragma\" content=\"no-cache\">\n    <meta http-equiv=\"Expires\" content=\"0\">\n    <meta name=\"version\" content=\"${TIMESTAMP}\">|" index.html
+        
+        # 加入版本資訊到標題
+        sed -i "s|<title>Tsext Adventure: Halloween Haunt</title>|<title>Tsext Adventure: Halloween Haunt (v${TIMESTAMP})</title>|" index.html
+        
         # 如果有額外資源，複製到 assets 資料夾
+        if [ -d "web/assets" ]; then
+          cp -r web/assets/* assets/
+        fi
+        
+        # 建立 .nojekyll 檔案避免 Jekyll 處理
+        touch .nojekyll
+        
+        echo "Deployment version: $TIMESTAMP"
+        
+        # 建立版本資訊檔案
+        cat > version.json << EOF
+        {
+          "version": "${TIMESTAMP}",
+          "build_date": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+          "commit_sha": "${GITHUB_SHA}",
+          "branch": "${GITHUB_REF_NAME}",
+          "deployment_id": "${GITHUB_RUN_NUMBER}"
+        }
+        EOF
+        
+        # 在 JavaScript 中注入版本資訊
+        sed -i "/console.log('🎃 Tsext Adventure: Halloween Haunt 已載入！');/a\\
+        console.log('🔄 版本資訊:', {\
+            version: '${TIMESTAMP}',\
+            buildDate: '$(date -u +%Y-%m-%dT%H:%M:%SZ)',\
+            commitSha: '${GITHUB_SHA}',\
+            branch: '${GITHUB_REF_NAME}'\
+        });" index.html
         
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
@@ -59,3 +99,14 @@ jobs:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
+      
+    - name: Purge CDN Cache (if applicable)
+      run: |
+        echo "部署完成 - 版本: ${TIMESTAMP}"
+        echo "如果使用 CDN，請手動清除快取或設定自動清除"
+        echo "GitHub Pages URL: ${{ steps.deployment.outputs.page_url }}"
+        
+        # 可選：使用 curl 來觸發頁面載入以確保快取更新
+        sleep 30  # 等待部署完成
+        curl -I "${{ steps.deployment.outputs.page_url }}" || true
+        curl -I "${{ steps.deployment.outputs.page_url }}?v=${TIMESTAMP}" || true

@@ -42,7 +42,7 @@
 ## 🤝 開源專案
 
 本遊戲是開源專案，歡迎貢獻！
-- **GitHub**: [專案頁面](https://github.com/yourusername/tsext-adventure)
+- **GitHub**: [專案頁面](https://github.com/dennislee928/tsext-adventure)
 - **授權**: MIT License
 - **貢獻**: 歡迎提交新故事、雙關語和改進
 
