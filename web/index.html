@@ -2210,12 +2210,93 @@
             displayScene('start');
         }
 
+        // 版本檢查和快取管理
+        function checkVersion() {
+            const currentVersion = document.querySelector('meta[name="version"]')?.content;
+            const lastVersion = localStorage.getItem('gameVersion');
+            
+            if (currentVersion && lastVersion && currentVersion !== lastVersion) {
+                // 版本已更新，清除快取
+                console.log('🔄 偵測到新版本，清除本地快取...');
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                        for(let registration of registrations) {
+                            registration.unregister();
+                        }
+                    });
+                }
+                
+                // 清除快取儲存
+                if ('caches' in window) {
+                    caches.keys().then(function(cacheNames) {
+                        return Promise.all(
+                            cacheNames.map(function(cacheName) {
+                                return caches.delete(cacheName);
+                            })
+                        );
+                    });
+                }
+                
+                showSuccessNotification('🎉 遊戲已更新到最新版本！');
+            }
+            
+            if (currentVersion) {
+                localStorage.setItem('gameVersion', currentVersion);
+            }
+        }
+
+        // 強制重新載入功能（開發者用）
+        function forceReload() {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                    for(let registration of registrations) {
+                        registration.unregister();
+                    }
+                    location.reload(true);
+                });
+            } else {
+                location.reload(true);
+            }
+        }
+
+        // 檢查網路連線和版本更新
+        function checkForUpdates() {
+            if (navigator.onLine) {
+                // 隨機參數避免快取
+                const timestamp = new Date().getTime();
+                fetch(`./version.json?v=${timestamp}`, { 
+                    cache: 'no-cache',
+                    headers: {
+                        'Cache-Control': 'no-cache, no-store, must-revalidate',
+                        'Pragma': 'no-cache',
+                        'Expires': '0'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const currentVersion = document.querySelector('meta[name="version"]')?.content;
+                    if (data.version && currentVersion && data.version !== currentVersion) {
+                        if (confirm('發現新版本！是否要重新載入遊戲？')) {
+                            forceReload();
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.log('版本檢查失敗:', error);
+                });
+            }
+        }
+
         // 初始化
         document.addEventListener('DOMContentLoaded', function() {
             loadGameData();
             updateAchievementsPanel();
             updateStatsPanel();
+            checkVersion();
             console.log('🎃 Tsext Adventure: Halloween Haunt 已載入！');
+            
+            // 每 5 分鐘檢查一次更新
+            setInterval(checkForUpdates, 5 * 60 * 1000);
         });
     </script>
 </body>
