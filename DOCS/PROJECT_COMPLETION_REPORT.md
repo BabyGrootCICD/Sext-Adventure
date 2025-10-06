@@ -136,7 +136,7 @@ OK
 ### 快速開始
 ```bash
 # 1. 下載專案
-git clone https://github.com/yourusername/tsext-adventure.git
+git clone https://github.com/dennislee928/tsext-adventure.git
 cd tsext-adventure
 
 # 2. 運行遊戲
@@ -206,7 +206,7 @@ python tests/test_stories.py
 
 ## 📞 聯絡資訊
 
-- **GitHub**: [專案頁面](https://github.com/yourusername/tsext-adventure)
+- **GitHub**: [專案頁面](https://github.com/dennislee928/tsext-adventure)
 - **Discord**: [Tsext Community](https://discord.gg/yourinvite)
 - **Twitter**: [@tsext_adventure](https://x.com/lee66876613)
 

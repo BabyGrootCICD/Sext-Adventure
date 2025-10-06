@@ -3,11 +3,11 @@
 ![封面圖片](https://i.imgur.com/ti77o.jpg)  
 
 
-[![GitHub release](https://img.shields.io/github/v/release/yourusername/tsext-adventure.svg)](https://github.com/yourusername/tsext-adventure/releases)
+[![GitHub release](https://img.shields.io/github/v/release/dennislee928/tsext-adventure.svg)](https://github.com/dennislee928/tsext-adventure/releases)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/tsext-adventure.svg?style=social)](https://github.com/yourusername/tsext-adventure/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/dennislee928/tsext-adventure.svg?style=social)](https://github.com/dennislee928/tsext-adventure/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Downloads](https://img.shields.io/github/downloads/yourusername/tsext-adventure/total.svg)](https://github.com/yourusername/tsext-adventure/releases)
+[![Downloads](https://img.shields.io/github/downloads/dennislee928/tsext-adventure/total.svg)](https://github.com/dennislee928/tsext-adventure/releases)
 
 ## 專案描述
 
@@ -20,8 +20,8 @@
 - **遊戲長度**：20-30 分鐘遊玩，包含 10-15 個分支結局，大多以荒謔失敗或高潮結束。
 - **NSFW 警告**：本遊戲包含成人暗示和幽默，適合 18 歲以上玩家。無圖像內容，純文字。
 
-[🌐 線上試玩 Demo](https://yourusername.github.io/tsext-adventure/)  
-[🎮 itch.io 版本](https://yourusername.itch.io/tsext-adventure-halloween-haunt)  
+[🌐 線上試玩 Demo](https://dennislee928.github.io/tsext-adventure/)  
+[🎮 itch.io 版本](https://dennislee928.itch.io/tsext-adventure-halloween-haunt)  
 *(直接在瀏覽器中試玩，無需下載！)*
 
 ## 為什麼玩這個遊戲？
@@ -37,12 +37,12 @@
 
 ### 步驟
 1. **線上遊玩**（推薦）：
-   - [GitHub Pages 版本](https://yourusername.github.io/tsext-adventure/)
-   - [itch.io 版本](https://yourusername.itch.io/tsext-adventure-halloween-haunt)
+   - [GitHub Pages 版本](https://dennislee928.github.io/tsext-adventure/)
+   - [itch.io 版本](https://dennislee928.itch.io/tsext-adventure-halloween-haunt)
 
 2. **本地遊玩**：
    ```bash
-   git clone https://github.com/yourusername/tsext-adventure.git
+   git clone https://github.com/dennislee928/tsext-adventure.git
    cd tsext-adventure
    python main.py
    ```

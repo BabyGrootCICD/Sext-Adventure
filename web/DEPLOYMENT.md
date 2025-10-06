@@ -115,12 +115,12 @@ cp web/index.html itch-deploy/
 
 ### GitHub Pages
 ```
-https://yourusername.github.io/tsext-adventure/
+https://dennislee928.github.io/tsext-adventure/
 ```
 
 ### itch.io
 ```
-https://yourusername.itch.io/tsext-adventure-halloween-haunt
+https://dennislee928.itch.io/tsext-adventure-halloween-haunt
 ```
 
 ## 🎯 推廣建議

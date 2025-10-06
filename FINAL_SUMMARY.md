@@ -164,7 +164,7 @@ pip install pytest black flake8 mypy
 
 ## 📞 聯絡資訊
 
-- **GitHub**: [專案頁面](https://github.com/yourusername/tsext-adventure)
+- **GitHub**: [專案頁面](https://github.com/dennislee928/tsext-adventure)
 - **Discord**: [Tsext Community](https://discord.gg/yourinvite)
 - **Twitter**: [@tsext_adventure](https://x.com/lee66876613)
 
