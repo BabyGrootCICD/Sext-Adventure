@@ -2,31 +2,15 @@
   "achievements": {
     "magic_knight": {
       "name": "魔法騎士",
-      "description": "與女巫達成完美的屋頂浪漫結局",
+      "description": "與女巫達成完美結局",
       "icon": "🧙‍♀️",
       "rarity": "legendary",
       "condition": "ending_rooftop_romance",
       "points": 100
     },
-    "broom_rider": {
-      "name": "掃帚騎士",
-      "description": "體驗了女巫無與倫比的『騎術』",
-      "icon": "🧹",
-      "rarity": "legendary",
-      "condition": "ending_witch_seduction",
-      "points": 110
-    },
-    "vampire_bride": {
-      "name": "血色新娘",
-      "description": "接受了吸血鬼的初擁，成為永生的伴侶",
-      "icon": "🧛‍♂️",
-      "rarity": "legendary",
-      "condition": "ending_vampire_bite_romance",
-      "points": 120
-    },
     "moonlight_lover": {
       "name": "月光戀人",
-      "description": "在月光湖與女巫進行了一場浪漫的裸泳",
+      "description": "在月光湖度過浪漫夜晚",
       "icon": "🌙",
       "rarity": "epic",
       "condition": "ending_moonlight_adventure",
@@ -34,7 +18,7 @@
     },
     "ghost_lover": {
       "name": "鬼魂戀人",
-      "description": "與鬼魂探索了超越生死的親密接觸",
+      "description": "與鬼魂體驗奇異親密",
       "icon": "👻",
       "rarity": "rare",
       "condition": "ending_ghost_intimacy",
@@ -42,31 +26,31 @@
     },
     "pumpkin_master": {
       "name": "南瓜大師",
-      "description": "在南瓜田發揮創意，玩弄了巨大的南瓜",
+      "description": "在南瓜田發揮創意",
       "icon": "🎃",
       "rarity": "rare",
       "condition": "ending_big_pumpkin_fun",
-      "points": 75
+      "points": 87
     },
     "field_lover": {
       "name": "田野戀人",
-      "description": "在星空下的南瓜田中，與農夫女郎融為一體",
+      "description": "與農夫女郎度過激情夜晚",
       "icon": "🌾",
       "rarity": "epic",
-      "condition": "ending_farmer_seduction",
-      "points": 95
+      "condition": "ending_physical_attraction",
+      "points": 90
     },
     "cat_friend": {
       "name": "貓咪之友",
-      "description": "與黑貓咪咪建立了純潔的友誼",
+      "description": "與黑貓咪咪建立友誼",
       "icon": "🐱",
       "rarity": "common",
       "condition": "ending_cat_adventure",
       "points": 60
     },
-    "cat_tamer": {
-      "name": "馴貓師",
-      "description": "成功駕馭了狂野的貓女莉莉",
+    "cat_lady_lover": {
+      "name": "貓女戀人",
+      "description": "與貓女莉莉度過浪漫時光",
       "icon": "🐱‍👤",
       "rarity": "rare",
       "condition": "ending_cat_lady_romance",
@@ -74,150 +58,229 @@
     },
     "soul_mate": {
       "name": "心靈伴侶",
-      "description": "與農夫女郎從心靈到肉體都達成了完美契合",
+      "description": "與農夫女郎建立情感連接",
       "icon": "💕",
       "rarity": "rare",
       "condition": "ending_heart_to_heart",
       "points": 85
     },
-    "passion_lover": {
-      "name": "激情戀人",
-      "description": "與農夫女郎在稻草堆上體驗了最原始的激情",
-      "icon": "🔥",
+    "night_sky_knight": {
+      "name": "夜空騎士",
+      "description": "掌握蝙蝠變身，在月夜中翱翔",
+      "icon": "🦇",
       "rarity": "epic",
-      "condition": "ending_physical_attraction",
-      "points": 90
+      "condition": "ending_bat_transformation",
+      "points": 95
     },
-    "cold_warrior": {
-      "name": "冰冷戰士",
-      "description": "勇敢面對鬼魂的冰冷觸摸並享受其中",
-      "icon": "❄️",
-      "rarity": "common",
-      "condition": "ending_cold_encounter",
-      "points": 70
+    "wild_king": {
+      "name": "野性之王",
+      "description": "擁抱內心野性，成為狼群之王",
+      "icon": "🐺",
+      "rarity": "epic",
+      "condition": "ending_wolf_transformation",
+      "points": 100
     },
-    "floating_fool": {
-      "name": "漂浮傻瓜",
-      "description": "因為無禮而漂浮撞壞吊燈",
-      "icon": "💥",
-      "rarity": "common",
-      "condition": "ending_floating_mischief",
-      "points": 30
+    "mist_phantom": {
+      "name": "霧中幻影",
+      "description": "掌握最神秘的霧化術",
+      "icon": "🌫️",
+      "rarity": "legendary",
+      "condition": "ending_mist_form",
+      "points": 110
     },
-    "pumpkin_crusher": {
-      "name": "南瓜粉碎者",
-      "description": "摔碎南瓜但學到教訓",
-      "icon": "🎃💥",
-      "rarity": "common",
-      "condition": "ending_pumpkin_lifting",
-      "points": 20
+    "charm_master": {
+      "name": "魅惑之主",
+      "description": "掌握心靈控制的終極藝術",
+      "icon": "💫",
+      "rarity": "epic",
+      "condition": "ending_charm_magic",
+      "points": 105
     },
-    "ghost_chaser": {
-      "name": "鬼魂追逐者",
-      "description": "被鬼魂追逐最後絆倒",
-      "icon": "🏃‍♂️👻",
-      "rarity": "common",
-      "condition": "ending_ghost_chase",
-      "points": 25
+    "night_bride": {
+      "name": "夜之新娘/新郎",
+      "description": "完成神聖的吸血鬼初擁儀式",
+      "icon": "🩸",
+      "rarity": "legendary",
+      "condition": "ending_vampire_initiation",
+      "points": 135
     },
-    "explorer": {
-      "name": "探索者",
-      "description": "探索了所有主要場景",
-      "icon": "🗺️",
-      "rarity": "rare",
-      "condition": "visited_all_scenes",
-      "points": 50
+    "desire_king": {
+      "name": "慾火之王",
+      "description": "成為地下派對的絕對主角",
+      "icon": "🔥",
+      "rarity": "legendary",
+      "condition": "ending_party_center_fire",
+      "points": 120
+    },
+    "heaven_messenger": {
+      "name": "天堂使者",
+      "description": "體驗天堂般的純潔與激情",
+      "icon": "😇",
+      "rarity": "epic",
+      "condition": "ending_heaven_drink_effect",
+      "points": 115
+    },
+    "undead_love": {
+      "name": "亡靈之愛",
+      "description": "掌握超越生死的激情藝術",
+      "icon": "👻💕",
+      "rarity": "legendary",
+      "condition": "ending_ghost_desire_fulfillment",
+      "points": 125
+    },
+    "unicorn_knight": {
+      "name": "獨角獸騎士",
+      "description": "馴服傳說中的獨角獸",
+      "icon": "🦄",
+      "rarity": "legendary",
+      "condition": "ending_unicorn_trial",
+      "points": 125
+    },
+    "forbidden_scholar": {
+      "name": "禁忌學者",
+      "description": "掌握神級的愛情技巧",
+      "icon": "📖",
+      "rarity": "legendary",
+      "condition": "ending_forbidden_knowledge",
+      "points": 130
+    },
+    "gender_master": {
+      "name": "性別大師",
+      "description": "理解愛情的所有可能性",
+      "icon": "🔄",
+      "rarity": "legendary",
+      "condition": "ending_gender_swap_potion",
+      "points": 140
+    },
+    "vampire_lord": {
+      "name": "吸血鬼領主",
+      "description": "解鎖所有吸血鬼城堡結局",
+      "icon": "🧛‍♂️👑",
+      "rarity": "legendary",
+      "condition": "all_vampire_endings",
+      "points": 200
+    },
+    "party_master": {
+      "name": "派對大師",
+      "description": "征服地下派對的所有挑戰",
+      "icon": "🎉👑",
+      "rarity": "epic",
+      "condition": "all_party_endings",
+      "points": 170
+    },
+    "cemetery_lord": {
+      "name": "墓地領主",
+      "description": "統治古老墓地的所有幽靈",
+      "icon": "⚰️👑",
+      "rarity": "epic",
+      "condition": "all_cemetery_endings",
+      "points": 180
+    },
+    "forest_guardian": {
+      "name": "森林守護者",
+      "description": "成為魔法森林的永恆守護者",
+      "icon": "🌲👑",
+      "rarity": "epic",
+      "condition": "all_forest_endings",
+      "points": 175
+    },
+    "knowledge_seeker": {
+      "name": "知識尋求者",
+      "description": "探索詛咒圖書館的所有秘密",
+      "icon": "📚👑",
+      "rarity": "epic",
+      "condition": "all_library_endings",
+      "points": 160
+    },
+    "tavern_legend": {
+      "name": "酒吧傳奇",
+      "description": "品嚐巫師酒吧的所有魔法雞尾酒",
+      "icon": "🍷👑",
+      "rarity": "epic",
+      "condition": "all_tavern_endings",
+      "points": 185
+    },
+    "mansion_master": {
+      "name": "莊園大師",
+      "description": "征服萬聖節極樂莊園的所有區域",
+      "icon": "🏰👑",
+      "rarity": "legendary",
+      "condition": "all_mansion_areas",
+      "points": 500
+    },
+    "ultimate_lover": {
+      "name": "終極戀人",
+      "description": "體驗所有可能的愛情形式",
+      "icon": "💖👑",
+      "rarity": "legendary",
+      "condition": "all_love_endings",
+      "points": 400
+    },
+    "transformation_god": {
+      "name": "變身之神",
+      "description": "掌握所有變身和轉化技能",
+      "icon": "🔄👑",
+      "rarity": "legendary",
+      "condition": "all_transformation_endings",
+      "points": 350
     },
     "completionist": {
       "name": "完美主義者",
-      "description": "解鎖了所有結局，真是個時間管理大師",
+      "description": "解鎖了所有結局",
       "icon": "🏆",
       "rarity": "legendary",
       "condition": "all_endings_unlocked",
       "points": 200
     },
-    "speed_demon": {
-      "name": "速度惡魔",
-      "description": "在 5 分鐘內完成遊戲，快槍手！",
-      "icon": "⚡",
-      "rarity": "rare",
-      "condition": "speed_run_5min",
-      "points": 75
-    },
-    "pun_master": {
-      "name": "雙關語大師",
-      "description": "觸發了所有萬聖節雙關語，真是個『壞』傢伙",
-      "icon": "😄",
-      "rarity": "epic",
-      "condition": "all_puns_triggered",
-      "points": 100
-    },
-    "romance_expert": {
-      "name": "浪漫專家",
-      "description": "達成所有浪漫結局，情場高手",
-      "icon": "💘",
-      "rarity": "rare",
-      "condition": "all_romance_endings",
-      "points": 80
-    },
-    "adventure_seeker": {
-      "name": "冒險尋求者",
-      "description": "嘗試了所有冒險選擇",
-      "icon": "🗡️",
-      "rarity": "rare",
-      "condition": "all_adventure_choices",
-      "points": 70
-    },
     "halloween_legend": {
       "name": "萬聖節傳奇",
-      "description": "獲得 1000 分以上，成為了派對之王",
+      "description": "獲得 1000 分以上",
       "icon": "🎃👑",
       "rarity": "legendary",
       "condition": "score_1000_plus",
       "points": 300
     }
   },
-  
   "badges": {
     "first_play": {
       "name": "初來乍到",
-      "description": "第一次遊玩，歡迎來到這個墮落的世界",
+      "description": "第一次遊玩",
       "icon": "👶",
       "rarity": "common"
     },
     "night_owl": {
       "name": "夜貓子",
-      "description": "在深夜時分遊玩，你知道的，夜晚更刺激",
+      "description": "在深夜時分遊玩",
       "icon": "🦉",
       "rarity": "common"
     },
     "early_bird": {
       "name": "早起鳥",
-      "description": "在清晨時分遊玩，精力充沛啊",
+      "description": "在清晨時分遊玩",
       "icon": "🐦",
       "rarity": "common"
     },
     "weekend_warrior": {
       "name": "週末戰士",
-      "description": "在週末遊玩，把時間都花在『正事』上",
+      "description": "在週末遊玩",
       "icon": "⚔️",
       "rarity": "common"
     },
     "repeat_player": {
       "name": "重複玩家",
-      "description": "遊玩超過 5 次，樂此不疲",
+      "description": "遊玩超過 5 次",
       "icon": "🔄",
       "rarity": "rare"
     },
     "social_butterfly": {
       "name": "社交蝴蝶",
-      "description": "分享了 3 次成就，喜歡炫耀是吧",
+      "description": "分享了 3 次成就",
       "icon": "🦋",
       "rarity": "rare"
     },
     "perfectionist": {
       "name": "完美主義者",
-      "description": "單次遊戲獲得滿分，不放過任何一個",
+      "description": "單次遊戲獲得滿分",
       "icon": "💯",
       "rarity": "epic"
     },
@@ -229,85 +292,15 @@
     },
     "halloween_spirit": {
       "name": "萬聖節精神",
-      "description": "在萬聖節期間遊玩，非常應景",
+      "description": "在萬聖節期間遊玩",
       "icon": "🎃",
       "rarity": "rare"
     },
     "midnight_magic": {
       "name": "午夜魔法",
-      "description": "在午夜時分完成遊戲，魔法最強的時刻",
-      "icon": "🕛",
+      "description": "在午夜時分遊玩",
+      "icon": "🌙",
       "rarity": "rare"
-    },
-    "shameless": {
-      "name": "不知羞恥",
-      "description": "解鎖了所有性感結局",
-      "icon": "😈",
-      "rarity": "epic"
-    },
-    "bold_one": {
-      "name": "膽大包天",
-      "description": "第一次遊玩就選擇了最大膽的選項",
-      "icon": "🔥",
-      "rarity": "rare"
-    }
-  },
-  
-  "rarity_colors": {
-    "common": "#9CA3AF",
-    "rare": "#3B82F6", 
-    "epic": "#8B5CF6",
-    "legendary": "#F59E0B"
-  },
-  
-  "social_platforms": {
-    "twitter": {
-      "name": "Twitter",
-      "icon": "🐦",
-      "url": "https://twitter.com/intent/tweet",
-      "hashtags": ["TsextAdventure", "HalloweenHaunt", "NSFWGame"]
-    },
-    "facebook": {
-      "name": "Facebook",
-      "icon": "📘",
-      "url": "https://www.facebook.com/sharer/sharer.php",
-      "hashtags": ["TsextAdventure", "HalloweenHaunt"]
-    },
-    "instagram": {
-      "name": "Instagram",
-      "icon": "📷",
-      "url": "https://www.instagram.com/",
-      "hashtags": ["#TsextAdventure", "#HalloweenHaunt", "#NSFWGame"]
-    },
-    "threads": {
-      "name": "Threads",
-      "icon": "🧵",
-      "url": "https://www.threads.net/intent/post",
-      "hashtags": ["#TsextAdventure", "#HalloweenHaunt"]
-    },
-    "line": {
-      "name": "LINE",
-      "icon": "💬",
-      "url": "https://social-plugins.line.me/lineit/share",
-      "hashtags": ["TsextAdventure", "HalloweenHaunt"]
-    },
-    "discord": {
-      "name": "Discord",
-      "icon": "💬",
-      "url": "https://discord.com/",
-      "hashtags": ["TsextAdventure", "HalloweenHaunt"]
-    },
-    "reddit": {
-      "name": "Reddit",
-      "icon": "🤖",
-      "url": "https://reddit.com/submit",
-      "hashtags": ["TsextAdventure", "HalloweenHaunt", "NSFWGame"]
-    },
-    "telegram": {
-      "name": "Telegram",
-      "icon": "✈️",
-      "url": "https://t.me/share/url",
-      "hashtags": ["TsextAdventure", "HalloweenHaunt"]
     }
   }
 }
