@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsext Adventure: Halloween Haunt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
+            border: 2px solid #ff6b35;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .title {
+            font-size: 2.5em;
+            color: #ff6b35;
+            text-shadow: 0 0 10px #ff6b35;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #8b5cf6;
+            margin-bottom: 20px;
+        }
+
+        .warning {
+            background: rgba(255, 107, 53, 0.2);
+            border: 1px solid #ff6b35;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .game-area {
+            min-height: 400px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+        }
+
+        .scene-title {
+            font-size: 1.5em;
+            color: #ff6b35;
+            margin-bottom: 15px;
+            text-align: center;
+            border-bottom: 2px solid #ff6b35;
+            padding-bottom: 10px;
+        }
+
+        .scene-description {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+
+        .choices {
+            margin-top: 20px;
+        }
+
+        .choice {
+            background: rgba(139, 92, 246, 0.2);
+            border: 1px solid #8b5cf6;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1em;
+        }
+
+        .choice:hover {
+            background: rgba(139, 92, 246, 0.4);
+            transform: translateX(5px);
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+        }
+
+        .ending {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 10px;
+            border: 2px solid #ff6b35;
+        }
+
+        .ending-title {
+            font-size: 1.8em;
+            color: #ff6b35;
+            margin-bottom: 15px;
+        }
+
+        .ending-outcome {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .score {
+            font-size: 1.1em;
+            color: #8b5cf6;
+            margin-bottom: 15px;
+        }
+
+        .restart-btn {
+            background: linear-gradient(45deg, #ff6b35, #8b5cf6);
+            border: none;
+            border-radius: 25px;
+            padding: 12px 30px;
+            color: white;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .restart-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+        }
+
+        .start-screen {
+            text-align: center;
+        }
+
+        .player-input {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #8b5cf6;
+            border-radius: 10px;
+            padding: 15px;
+            color: white;
+            font-size: 1.1em;
+            width: 100%;
+            max-width: 300px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .start-btn {
+            background: linear-gradient(45deg, #8b5cf6, #ff6b35);
+            border: none;
+            border-radius: 25px;
+            padding: 15px 40px;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .start-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .loading {
+            text-align: center;
+            color: #8b5cf6;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .title {
+                font-size: 2em;
+            }
+            
+            .scene-title {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">🎃 Tsext Adventure: Halloween Haunt 🎃</h1>
+            <p class="subtitle">萬聖節瑟瑟冒險遊戲</p>
+        </div>
+
+        <div class="warning">
+            ⚠️ <strong>NSFW 警告</strong>：本遊戲包含成人暗示和幽默，適合 18 歲以上玩家
+        </div>
+
+        <div class="game-area" id="gameArea">
+            <div class="start-screen" id="startScreen">
+                <h2>👻 歡迎來到萬聖節靈異約會趴！</h2>
+                <p>準備好參加最刺激的萬聖節冒險了嗎？</p>
+                <input type="text" class="player-input" id="playerName" placeholder="請輸入你的名字" maxlength="20">
+                <br>
+                <button class="start-btn" onclick="startGame()">開始冒險 🎃</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🎃 Happy Halloween! 🎃</p>
+            <p>開源專案 | MIT License | <a href="https://github.com/yourusername/tsext-adventure" style="color: #8b5cf6;">GitHub</a></p>
+        </div>
+    </div>
+
+    <script>
+        // 遊戲狀態
+        let gameState = {
+            currentScene: 'start',
+            playerName: '',
+            score: 0,
+            visitedScenes: new Set()
+        };
+
+        // 故事資料
+        const storyData = {
+            "start": {
+                "title": "萬聖節靈異約會趴入口",
+                "description": "你站在一棟陰森的老宅前，門口掛著「歡迎參加萬聖節靈異約會趴」的牌子。月光透過烏雲灑下，南瓜燈在風中搖曳，發出詭異的光芒。\n\n你聽到屋內傳來笑聲、音樂聲，還有一些... 奇怪的聲音。門口站著一個穿著性感女巫裝的接待員，她對你眨了眨眼。",
+                "choices": [
+                    {"option": "A: 對女巫說「你的掃帚真漂亮，能騎嗎？」", "next_scene": "witch_encounter"},
+                    {"option": "B: 直接進入鬼屋探險", "next_scene": "haunted_house"},
+                    {"option": "C: 先去南瓜田看看", "next_scene": "pumpkin_patch"}
+                ]
+            },
+            "witch_encounter": {
+                "title": "女巫的誘惑",
+                "description": "女巫咯咯笑著說：「當然可以騎，但你要小心不要被掃帚柄... 你知道的。」她揮了揮手，掃帚突然飛到你面前。\n\n「不過，」她神秘地笑著，「我的掃帚很挑剔，只有真正勇敢的人才能駕馭它。」",
+                "choices": [
+                    {"option": "A: 勇敢地跨上掃帚", "next_scene": "broom_ride_success"},
+                    {"option": "B: 說「我更想騎你」", "next_scene": "witch_rejection"},
+                    {"option": "C: 問「你的貓咪在哪裡？」", "next_scene": "cat_encounter"}
+                ]
+            },
+            "broom_ride_success": {
+                "title": "掃帚飛行成功",
+                "description": "你成功跨上掃帚，它載著你在月光下飛翔！女巫在下面鼓掌：「太棒了！你是我見過最勇敢的騎士！」\n\n你們一起飛到屋頂，看著下面的派對。女巫靠近你，輕聲說：「現在... 讓我們做一些更刺激的事情。」",
+                "choices": [
+                    {"option": "A: 在屋頂上親吻女巫", "next_scene": "rooftop_romance"},
+                    {"option": "B: 提議一起飛到更遠的地方", "next_scene": "moonlight_adventure"}
+                ]
+            },
+            "rooftop_romance": {
+                "title": "屋頂浪漫",
+                "description": "在月光下，你和女巫在屋頂上擁吻。她的嘴唇溫暖而甜蜜，帶著魔法的味道。突然，她推開你，笑著說：「現在讓我們做一些真正的魔法！」\n\n她揮動魔杖，你們周圍出現了閃爍的星星，整個世界都變得浪漫起來。",
+                "is_ending": true,
+                "outcome": "🎉 完美結局！你和女巫在魔法星光下度過了難忘的萬聖節夜晚！\n\n你獲得了『魔法騎士』的稱號，並且學會了真正的愛情魔法。",
+                "score": 100
+            },
+            "moonlight_adventure": {
+                "title": "月光冒險",
+                "description": "你們飛到更遠的地方，來到一個隱秘的月光湖。女巫說：「這裡是我的秘密花園，只有真正特別的人才能來到這裡。」\n\n在月光下，你們一起探索著彼此的內心，度過了最浪漫的夜晚。",
+                "is_ending": true,
+                "outcome": "🌙 浪漫結局！你和女巫在月光湖度過了最美好的時光！\n\n你獲得了『月光戀人』的稱號，並且永遠記住了這個神奇的夜晚。",
+                "score": 90
+            },
+            "witch_rejection": {
+                "title": "女巫的拒絕",
+                "description": "女巫皺起眉頭：「你以為我是什麼？隨便的女巫嗎？」她揮動魔杖，你突然感覺身體變輕了...\n\n「既然你這麼無禮，就讓你體驗一下真正的『輕如羽毛』吧！」你開始飄浮在空中，無法控制方向。",
+                "choices": [
+                    {"option": "A: 道歉並請求原諒", "next_scene": "apology_accepted"},
+                    {"option": "B: 試圖抓住什麼東西", "next_scene": "floating_mischief"}
+                ]
+            },
+            "floating_mischief": {
+                "title": "漂浮惡作劇",
+                "description": "你試圖抓住什麼東西，但只能在空中飄浮。女巫在下面笑著：「這就是無禮的代價！」\n\n突然，你撞到了一個吊燈，燈泡爆裂，火花四濺。女巫驚叫：「我的天！快下來！」她揮動魔杖，你安全地降落到地面。",
+                "is_ending": true,
+                "outcome": "💥 搞笑結局！你因為無禮而漂浮，最後撞壞了吊燈！\n\n雖然結局有點尷尬，但至少你學會了對女巫要有禮貌。",
+                "score": 30
+            },
+            "haunted_house": {
+                "title": "鬼屋內部",
+                "description": "你走進鬼屋，裡面燈光昏暗，牆上掛著古老的畫像。突然，一個半透明的鬼魂從牆壁中飄出來！\n\n「歡迎來到我的家，」鬼魂說，「我是這裡的主人，已經死了 200 年了。但我還是很... 活躍。」他對你眨了眨眼。",
+                "choices": [
+                    {"option": "A: 說「你看起來很寂寞」", "next_scene": "ghost_romance"},
+                    {"option": "B: 問「你能觸摸實體嗎？」", "next_scene": "ghost_touch"},
+                    {"option": "C: 試圖逃跑", "next_scene": "ghost_chase"}
+                ]
+            },
+            "ghost_romance": {
+                "title": "鬼魂的浪漫",
+                "description": "鬼魂嘆了口氣：「是的，我確實很寂寞。200 年來，沒有人願意和我... 你知道的。」他的聲音帶著渴望。\n\n「但是，」他突然興奮地說，「如果你願意，我可以教你一些鬼魂的... 特殊技巧。」",
+                "choices": [
+                    {"option": "A: 說「我很感興趣」", "next_scene": "ghost_lessons"},
+                    {"option": "B: 問「會不會很冷？」", "next_scene": "cold_encounter"}
+                ]
+            },
+            "cold_encounter": {
+                "title": "冰冷的相遇",
+                "description": "鬼魂笑著說：「一開始會有點冷，但很快就會變暖的。讓我示範給你看...」\n\n他輕輕觸摸你的手，你感覺到一陣涼意，但同時又有一種奇異的溫暖。他的觸摸讓你感到既刺激又舒適。",
+                "is_ending": true,
+                "outcome": "❄️ 冰冷結局！你和鬼魂度過了奇異的夜晚！\n\n雖然有點冷，但你體驗到了前所未有的感覺。",
+                "score": 70
+            },
+            "pumpkin_patch": {
+                "title": "南瓜田的誘惑",
+                "description": "你來到南瓜田，月光下的大南瓜看起來格外誘人。突然，一個穿著農夫裝的性感女郎從南瓜後面走出來。\n\n「歡迎來到我的南瓜田，」她說，「我是這裡的守護者。這些南瓜都很特別... 它們會回應你的慾望。」",
+                "choices": [
+                    {"option": "A: 問「南瓜會回應什麼慾望？」", "next_scene": "pumpkin_magic"},
+                    {"option": "B: 說「我更想了解你」", "next_scene": "farmer_romance"}
+                ]
+            },
+            "farmer_romance": {
+                "title": "農夫的浪漫",
+                "description": "農夫女郎對你的直接感到驚訝，然後笑了。「你很有趣，」她說，「我喜歡直接的人。」\n\n她靠近你，輕聲說：「那麼，你想要了解我的哪個方面呢？」她的眼睛閃爍著誘惑的光芒。",
+                "choices": [
+                    {"option": "A: 說「我想了解你的心」", "next_scene": "heart_to_heart"},
+                    {"option": "B: 說「我想了解你的身體」", "next_scene": "physical_attraction"}
+                ]
+            },
+            "heart_to_heart": {
+                "title": "心靈交流",
+                "description": "農夫女郎對你的回答感到感動。「你是一個真正的人，」她說，「我願意和你分享我的內心。」\n\n你們坐在南瓜田邊，分享著彼此的故事和夢想，度過了最美好的時光。",
+                "is_ending": true,
+                "outcome": "💕 心靈結局！你和農夫女郎建立了深厚的情感連接！\n\n你獲得了『心靈伴侶』的稱號，並且永遠記住了這個美好的夜晚。",
+                "score": 85
+            },
+            "physical_attraction": {
+                "title": "身體吸引",
+                "description": "農夫女郎對你的直接感到興奮。「很好，」她說，「我喜歡誠實的人。」\n\n她拉著你的手，帶你到南瓜田的深處。「讓我們做一些真正有趣的事情，」她輕聲說。",
+                "is_ending": true,
+                "outcome": "🔥 激情結局！你和農夫女郎度過了火熱的夜晚！\n\n你獲得了『激情戀人』的稱號，並且永遠記住了這個充滿激情的夜晚。",
+                "score": 90
+            }
+        };
+
+        // 開始遊戲
+        function startGame() {
+            const playerName = document.getElementById('playerName').value.trim();
+            if (!playerName) {
+                alert('請輸入你的名字！');
+                return;
+            }
+
+            gameState.playerName = playerName;
+            gameState.currentScene = 'start';
+            gameState.score = 0;
+            gameState.visitedScenes.clear();
+
+            document.getElementById('startScreen').style.display = 'none';
+            displayScene('start');
+        }
+
+        // 顯示場景
+        function displayScene(sceneId) {
+            const scene = storyData[sceneId];
+            if (!scene) {
+                alert('找不到場景資料！');
+                return;
+            }
+
+            gameState.visitedScenes.add(sceneId);
+
+            let html = `
+                <div class="scene-title">🎃 ${scene.title} 🎃</div>
+                <div class="scene-description">${scene.description.replace(/\n/g, '<br>')}</div>
+            `;
+
+            if (scene.is_ending) {
+                html += `
+                    <div class="ending">
+                        <div class="ending-title">🎭 結局：${scene.title}</div>
+                        <div class="ending-outcome">${scene.outcome.replace(/\n/g, '<br>')}</div>
+                        <div class="score">🏆 你的分數：${gameState.score + (scene.score || 0)}</div>
+                        <div class="score">📍 探索場景數：${gameState.visitedScenes.size}</div>
+                        <button class="restart-btn" onclick="restartGame()">重新開始 🎃</button>
+                    </div>
+                `;
+                gameState.score += scene.score || 0;
+            } else if (scene.choices) {
+                html += '<div class="choices">';
+                scene.choices.forEach((choice, index) => {
+                    html += `
+                        <div class="choice" onclick="makeChoice('${choice.next_scene}')">
+                            ${choice.option}
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            }
+
+            document.getElementById('gameArea').innerHTML = html;
+        }
+
+        // 做出選擇
+        function makeChoice(nextScene) {
+            displayScene(nextScene);
+        }
+
+        // 重新開始遊戲
+        function restartGame() {
+            gameState.currentScene = 'start';
+            gameState.score = 0;
+            gameState.visitedScenes.clear();
+            displayScene('start');
+        }
+
+        // 鍵盤事件
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                const playerInput = document.getElementById('playerName');
+                if (playerInput && document.activeElement === playerInput) {
+                    startGame();
+                }
+            }
+        });
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🎃 Tsext Adventure: Halloween Haunt 已載入！');
+        });
+    </script>
+</body>
+</html>
