@@ -1,6 +1,7 @@
 # Tsext Adventure: Halloween Haunt
 
 ![封面圖片](https://i.imgur.com/ti77o.jpg)  
+![螢幕擷取畫面_6-10-2025_173336_](https://github.com/user-attachments/assets/df3a6200-2f6d-41c5-bbe7-ec087aa7d0dd)
 
 
 [![GitHub release](https://img.shields.io/github/v/release/yourusername/tsext-adventure.svg)](https://github.com/yourusername/tsext-adventure/releases)
@@ -28,6 +29,15 @@
 - **搞笑元素**：每條故事路徑都融入萬聖節 pun，例如 "Why don't witches wear panties? So they can grip the broom better!" 或 "I'm light as a feather, and I can see you're stiff as a board."
 - **互動性**：透過簡單選擇推進情節，適合手機或電腦遊玩。
 - **社區貢獻**：我們鼓勵大家添加新故事分支、porn 或萬聖節梗！詳見貢獻指南。
+
+## -> 請到
+```plaintxst
+├── stories/               # 故事 JSON 檔案
+│   ├── halloween.json     # 萬聖節故事分支
+│   └── common.json        # 通用 pun 和結局資料庫
+```
+
+## 2個json檔案，直接加上劇情並發起pull request
 
 ## 安裝與運行
 
