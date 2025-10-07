@@ -223,7 +223,7 @@ echo "🌐 版本檢查: {output_dir}/version-check.html"
 
 def main():
     """主程式"""
-    print("🎃 Tsext Adventure - 版本管理系統 🎃")
+    print("Tsext Adventure - 版本管理系統")
     print("=====================================")
     
     vm = VersionManager()
@@ -235,25 +235,25 @@ def main():
     
     # 更新 HTML 版本
     if os.path.exists("web/index.html"):
-        print("\n📝 更新 HTML 版本...")
+        print("\n更新 HTML 版本...")
         new_version = vm.update_html_version()
         print(f"新版本: {new_version}")
     
     # 產生部署檔案
-    print("\n🚀 產生部署檔案...")
+    print("\n產生部署檔案...")
     deploy_file = vm.generate_versioned_html()
     
     # 建立快取清除腳本
-    print("\n🧹 建立快取清除腳本...")
+    print("\n建立快取清除腳本...")
     cache_script = vm.create_cache_buster_script()
     
     # 儲存版本資訊
     vm.save_version()
     
-    print("\n✅ 版本管理完成！")
-    print(f"📁 部署檔案: {deploy_file}")
-    print(f"🔧 快取腳本: {cache_script}")
-    print(f"📋 版本檔案: {vm.version_file}")
+    print("\n版本管理完成！")
+    print(f"部署檔案: {deploy_file}")
+    print(f"快取腳本: {cache_script}")
+    print(f"版本檔案: {vm.version_file}")
 
 
 if __name__ == "__main__":
