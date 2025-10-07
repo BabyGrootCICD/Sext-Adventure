@@ -13,6 +13,12 @@ on:
       - 'scripts/announcement_system.py'
       - '.github/workflows/monthly-awards.yml'
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  discussions: write
+
 jobs:
   monthly-awards:
     runs-on: ubuntu-latest
@@ -85,33 +91,55 @@ jobs:
         script: |
           const fs = require('fs');
           
-          // 讀取最新的月度報告
-          const reportFiles = fs.readdirSync('.').filter(f => f.startsWith('monthly_report_') && f.endsWith('.md'));
-          const awardFiles = fs.readdirSync('.').filter(f => f.startsWith('monthly_awards_') && f.endsWith('.md'));
-          
-          if (reportFiles.length > 0 && awardFiles.length > 0) {
-            const reportContent = fs.readFileSync(reportFiles[0], 'utf8');
-            const awardContent = fs.readFileSync(awardFiles[0], 'utf8');
+          try {
+            // 讀取最新的月度報告
+            const reportFiles = fs.readdirSync('.').filter(f => f.startsWith('monthly_report_') && f.endsWith('.md'));
+            const awardFiles = fs.readdirSync('.').filter(f => f.startsWith('monthly_awards_') && f.endsWith('.md'));
             
-            const discussionBody = `# 🎉 Tsext Adventure 月度貢獻報告
-            
-            ## 📊 月度統計
-            ${reportContent}
-            
-            ## 🏆 月度獎項
-            ${awardContent}
-            
-            ---
-            *此討論由 GitHub Actions 自動生成*
-            `;
-            
-            await github.rest.discussions.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: `🎉 Tsext Adventure 月度貢獻報告 - ${new Date().toISOString().slice(0, 7)}`,
-              body: discussionBody,
-              category: 'Announcements'
-            });
+            if (reportFiles.length > 0 && awardFiles.length > 0) {
+              const reportContent = fs.readFileSync(reportFiles[0], 'utf8');
+              const awardContent = fs.readFileSync(awardFiles[0], 'utf8');
+              
+              const discussionBody = `# Tsext Adventure 月度貢獻報告
+              
+              ## 月度統計
+              ${reportContent}
+              
+              ## 月度獎項
+              ${awardContent}
+              
+              ---
+              *此討論由 GitHub Actions 自動生成*
+              `;
+              
+              // 嘗試創建討論，如果失敗則創建 Issue
+              try {
+                await github.rest.discussions.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: `Tsext Adventure 月度貢獻報告 - ${new Date().toISOString().slice(0, 7)}`,
+                  body: discussionBody,
+                  category: 'Announcements'
+                });
+                console.log('成功創建 GitHub Discussion');
+              } catch (discussionError) {
+                console.log('Discussion API 不可用，改為創建 Issue');
+                
+                // 如果討論不可用，創建 Issue
+                await github.rest.issues.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: `Tsext Adventure 月度貢獻報告 - ${new Date().toISOString().slice(0, 7)}`,
+                  body: discussionBody,
+                  labels: ['monthly-report', 'automated']
+                });
+                console.log('成功創建 GitHub Issue');
+              }
+            } else {
+              console.log('沒有找到月度報告檔案');
+            }
+          } catch (error) {
+            console.log('創建討論/Issue 時發生錯誤:', error.message);
           }
     
     - name: Create summary

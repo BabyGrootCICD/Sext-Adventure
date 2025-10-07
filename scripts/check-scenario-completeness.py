@@ -65,6 +65,40 @@ class ScenarioChecker:
             # 如果 JSON 解析失敗，嘗試手動分析
             return self.manual_scenario_analysis(story_data_str)
     
+    def manual_scenario_analysis(self, story_data_str):
+        """手動分析場景資料"""
+        print("使用手動分析方法...")
+        
+        # 使用正則表達式找出所有場景
+        scene_pattern = r'"([^"]+)":\s*{'
+        scenes = re.findall(scene_pattern, story_data_str)
+        
+        print(f"找到 {len(scenes)} 個場景:")
+        for scene in scenes:
+            print(f"  - {scene}")
+        
+        # 找出結局場景
+        ending_pattern = r'"is_ending":\s*true'
+        endings = re.findall(ending_pattern, story_data_str)
+        
+        print(f"找到 {len(endings)} 個結局場景")
+        
+        # 簡單的場景統計
+        self.scenarios = {scene: {} for scene in scenes}
+        self.endings = set()
+        
+        # 嘗試找出結局場景
+        for scene in scenes:
+            scene_block_pattern = rf'"{scene}":\s*{{(.*?)}}'
+            scene_match = re.search(scene_block_pattern, story_data_str, re.DOTALL)
+            if scene_match:
+                scene_content = scene_match.group(1)
+                if '"is_ending":\s*true' in scene_content:
+                    self.endings.add(scene)
+        
+        print(f"成功分析 {len(self.scenarios)} 個場景，其中 {len(self.endings)} 個是結局")
+        return True
+    
     def analyze_scenarios(self):
         """分析場景結構"""
         print("\n分析場景結構...")
