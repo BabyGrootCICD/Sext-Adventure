@@ -1,0 +1,22 @@
+# Discord Bot 依賴檔案
+# discord-bot/requirements.txt
+
+# Discord.py - Discord Bot 框架
+discord.py>=2.3.0
+
+# HTTP 請求
+requests>=2.28.0
+
+# 異步支援
+aiohttp>=3.8.0
+
+# 環境變數管理
+python-dotenv>=1.0.0
+
+# 日誌增強
+colorlog>=6.7.0
+
+# 可選依賴（用於進階功能）
+# matplotlib>=3.5.0  # 圖表生成
+# pandas>=1.4.0      # 數據分析
+# schedule>=1.2.0    # 任務排程

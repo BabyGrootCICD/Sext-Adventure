@@ -1,0 +1,61 @@
+{
+  "github": {
+    "owner": "BabyGrootCICD",
+    "repo": "Sext-Adventure",
+    "api_base_url": "https://api.github.com"
+  },
+  "contribution_levels": {
+    "maintainer": {
+      "min_score": 50,
+      "min_prs": 15,
+      "description": "長期維護專案的核心成員",
+      "emoji": "👑"
+    },
+    "core": {
+      "min_score": 20,
+      "min_prs": 8,
+      "description": "重大功能開發者",
+      "emoji": "🥇"
+    },
+    "active": {
+      "min_score": 5,
+      "min_prs": 2,
+      "description": "持續貢獻的社區成員",
+      "emoji": "🥈"
+    },
+    "novice": {
+      "min_score": 0,
+      "min_prs": 0,
+      "description": "首次貢獻者",
+      "emoji": "🥉"
+    }
+  },
+  "monthly_awards": {
+    "story_content": {
+      "keywords": ["story", "scene", "content", "劇情", "場景"],
+      "weight": 3
+    },
+    "technical_improvements": {
+      "keywords": ["feature", "enhancement", "功能", "改進"],
+      "weight": 2
+    },
+    "bug_fixes": {
+      "keywords": ["bug", "fix", "修復", "錯誤"],
+      "weight": 2
+    },
+    "ui_improvements": {
+      "keywords": ["ui", "design", "interface", "界面", "設計"],
+      "weight": 2
+    },
+    "community_help": {
+      "keywords": ["help", "support", "幫助", "支援"],
+      "weight": 1
+    }
+  },
+  "update_schedule": {
+    "frequency": "weekly",
+    "day": "monday",
+    "time": "09:00",
+    "timezone": "UTC"
+  }
+}

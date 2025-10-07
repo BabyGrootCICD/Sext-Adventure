@@ -1,0 +1,84 @@
+name: Update Contributors
+
+on:
+  schedule:
+    # 每週一早上 9:00 UTC 更新貢獻者數據
+    - cron: '0 9 * * 1'
+  workflow_dispatch: # 允許手動觸發
+  push:
+    branches: [ main, dev ]
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/update-contributors.yml'
+
+jobs:
+  update-contributors:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+    
+    - name: Set up environment variables
+      run: |
+        echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
+        echo "REPO_OWNER=BabyGrootCICD" >> $GITHUB_ENV
+        echo "REPO_NAME=Sext-Adventure" >> $GITHUB_ENV
+    
+    - name: Run contributor tracking script
+      run: |
+        python scripts/track_contributors.py
+    
+    - name: Check for changes
+      id: check-changes
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "has-changes=true" >> $GITHUB_OUTPUT
+        else
+          echo "has-changes=false" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Commit and push changes
+      if: steps.check-changes.outputs.has-changes == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add README.md monthly_report_*.md monthly_stats.json
+        git commit -m "🤖 Auto-update: 更新貢獻者數據和月度報告
+
+        - 更新 README.md 中的貢獻者區塊
+        - 生成月度貢獻報告
+        - 更新貢獻統計數據
+        
+        [skip ci]" || exit 0
+        git push
+    
+    - name: Create summary
+      if: always()
+      run: |
+        echo "## 📊 貢獻者更新摘要" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### ✅ 執行結果" >> $GITHUB_STEP_SUMMARY
+        if [ -f "monthly_stats.json" ]; then
+          echo "- 📈 月度統計已更新" >> $GITHUB_STEP_SUMMARY
+        fi
+        if [ -f "monthly_report_*.md" ]; then
+          echo "- 📋 月度報告已生成" >> $GITHUB_STEP_SUMMARY
+        fi
+        echo "- 📝 README.md 貢獻者區塊已更新" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 🔄 下次更新" >> $GITHUB_STEP_SUMMARY
+        echo "下次自動更新時間：下週一 09:00 UTC" >> $GITHUB_STEP_SUMMARY

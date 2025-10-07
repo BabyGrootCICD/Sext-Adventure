@@ -1,0 +1,126 @@
+name: Priority Management System
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+  issues:
+    types: [opened, edited]
+  schedule:
+    # 每小時檢查一次待處理的 PR 和 Issue
+    - cron: '0 * * * *'
+  workflow_dispatch: # 允許手動觸發
+
+jobs:
+  priority-management:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+    
+    - name: Set up environment variables
+      run: |
+        echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
+        echo "REPO_OWNER=BabyGrootCICD" >> $GITHUB_ENV
+        echo "REPO_NAME=Sext-Adventure" >> $GITHUB_ENV
+    
+    - name: Run priority management
+      run: |
+        python scripts/priority_manager.py
+    
+    - name: Create priority summary
+      if: always()
+      run: |
+        echo "## 🎯 優先級管理摘要" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### ✅ 執行結果" >> $GITHUB_STEP_SUMMARY
+        echo "- 🔍 已檢查所有待處理的 PR 和 Issue" >> $GITHUB_STEP_SUMMARY
+        echo "- 🏷️ 已自動添加優先級標籤" >> $GITHUB_STEP_SUMMARY
+        echo "- 👥 已自動分配審查者和處理者" >> $GITHUB_STEP_SUMMARY
+        echo "- 💬 已添加優先級說明評論" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 🔄 下次檢查" >> $GITHUB_STEP_SUMMARY
+        echo "下次自動檢查時間：1 小時後" >> $GITHUB_STEP_SUMMARY
+
+  branch-access-management:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+    
+    - name: Set up environment variables
+      run: |
+        echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
+        echo "REPO_OWNER=BabyGrootCICD" >> $GITHUB_ENV
+        echo "REPO_NAME=Sext-Adventure" >> $GITHUB_ENV
+    
+    - name: Run branch access management
+      run: |
+        python scripts/branch_access_manager.py
+    
+    - name: Check for changes
+      id: check-changes
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "has-changes=true" >> $GITHUB_OUTPUT
+        else
+          echo "has-changes=false" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Commit and push changes
+      if: steps.check-changes.outputs.has-changes == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add branch_access_report_*.md
+        git commit -m "🤖 Auto-update: 分支存取權限報告
+
+        - 更新分支存取權限配置
+        - 生成存取權限報告
+        - 同步貢獻者等級
+        
+        [skip ci]" || exit 0
+        git push
+    
+    - name: Create branch access summary
+      if: always()
+      run: |
+        echo "## 🔐 分支存取管理摘要" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### ✅ 執行結果" >> $GITHUB_STEP_SUMMARY
+        if [ -f "branch_access_report_*.md" ]; then
+          echo "- 📊 分支存取權限報告已生成" >> $GITHUB_STEP_SUMMARY
+        fi
+        echo "- 🔍 已檢查所有貢獻者的存取權限" >> $GITHUB_STEP_SUMMARY
+        echo "- 🏷️ 已更新分支保護規則" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 🔄 下次更新" >> $GITHUB_STEP_SUMMARY
+        echo "下次自動更新時間：每日 00:00 UTC" >> $GITHUB_STEP_SUMMARY

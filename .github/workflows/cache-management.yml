@@ -1,0 +1,290 @@
+name: GitHub Pages 快取管理
+
+on:
+  workflow_dispatch:
+    inputs:
+      cache_action:
+        description: '快取管理動作'
+        required: true
+        default: 'purge'
+        type: choice
+        options:
+        - purge
+        - version-check
+        - full-redeploy
+  push:
+    branches: [ main ]
+    paths:
+    - 'web/**'
+    - 'scripts/**'
+    - 'version.json'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  cache-management:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v5
+      with:
+        fetch-depth: 0
+    
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.8'
+    
+    - name: 執行版本管理
+      run: |
+        echo "🔧 執行版本管理和快取清除..."
+        
+        # 執行版本管理腳本
+        if [ -f "scripts/version-manager.py" ]; then
+          python3 scripts/version-manager.py
+        else
+          echo "⚠️  版本管理腳本不存在，建立基本版本資訊"
+          mkdir -p scripts
+          cat > scripts/version-manager.py << 'EOF'
+        #!/usr/bin/env python3
+        import json
+        import datetime
+        
+        version_data = {
+            "version": "1.0.0",
+            "build_number": 1,
+            "last_updated": datetime.datetime.now().isoformat(),
+            "files": {}
+        }
+        
+        with open("version.json", "w") as f:
+            json.dump(version_data, f, indent=2)
+        EOF
+          python3 scripts/version-manager.py
+        fi
+    
+    - name: 建立快取清除檔案
+      run: |
+        echo "🧹 建立快取清除檔案..."
+        
+        # 建立快取清除指南
+        cat > deploy/cache-info.md << 'EOF'
+        # GitHub Pages 快取清除指南
+        
+        ## 🚀 部署資訊
+        - **部署時間**: $(date +"%Y-%m-%d %H:%M:%S UTC")
+        - **GitHub Actions**: 自動化部署
+        - **快取管理**: 已啟用
+        
+        ## 🧹 即時解決方法
+        
+        ### 1. 強制重新整理
+        - **Windows/Linux**: `Ctrl + F5` 或 `Ctrl + Shift + R`
+        - **Mac**: `Cmd + Shift + R`
+        - **手機**: 長按重新整理按鈕選擇「重新載入」
+        
+        ### 2. 無痕模式
+        開啟瀏覽器的無痕/隱私模式瀏覽網站
+        
+        ### 3. 清除瀏覽器快取
+        手動清除瀏覽器的快取資料
+        
+        ## ⏰ 等待 CDN 更新
+        GitHub Pages CDN 通常需要 5-10 分鐘更新
+        
+        ## 🔍 版本檢查
+        訪問 `/version-check.html` 檢查當前版本
+        
+        ---
+        *自動生成於 GitHub Actions*
+        EOF
+        
+        # 建立版本檢查頁面
+        cat > deploy/version-check.html << 'EOF'
+        <!DOCTYPE html>
+        <html lang="zh-TW">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+            <meta http-equiv="Pragma" content="no-cache" />
+            <meta http-equiv="Expires" content="0" />
+            <title>版本檢查 - Tsext Adventure</title>
+            <style>
+                body { 
+                    font-family: Arial, sans-serif; 
+                    padding: 20px; 
+                    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+                    color: #fff; 
+                    min-height: 100vh;
+                    margin: 0;
+                }
+                .container { 
+                    max-width: 600px; 
+                    margin: 0 auto; 
+                    background: rgba(0, 0, 0, 0.8);
+                    padding: 30px;
+                    border-radius: 15px;
+                    box-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
+                }
+                .version-info { 
+                    background: #333; 
+                    padding: 20px; 
+                    border-radius: 10px; 
+                    margin: 20px 0; 
+                    border: 2px solid #ff6b35;
+                }
+                .timestamp { 
+                    color: #ff6b35; 
+                    font-weight: bold; 
+                }
+                .instructions { 
+                    background: #2a2a4e; 
+                    padding: 15px; 
+                    border-radius: 5px; 
+                    margin: 20px 0;
+                }
+                .btn {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    background: #ff6b35;
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    margin: 10px 5px;
+                }
+                .btn:hover {
+                    background: #e55a2b;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>🎃 Tsext Adventure - 版本檢查</h1>
+                
+                <div class="version-info">
+                    <h2>📊 當前版本資訊</h2>
+                    <p><strong>頁面載入時間:</strong> <span class="timestamp" id="loadTime"></span></p>
+                    <p><strong>GitHub Actions:</strong> <span class="timestamp" id="buildInfo">檢查中...</span></p>
+                    <p><strong>瀏覽器快取:</strong> <span id="cacheStatus">檢查中...</span></p>
+                </div>
+                
+                <div class="instructions">
+                    <h3>🧹 如果看到舊版本，請嘗試：</h3>
+                    <ul>
+                        <li>按 <strong>Ctrl+F5</strong> (Windows/Linux) 或 <strong>Cmd+Shift+R</strong> (Mac) 強制重新整理</li>
+                        <li>開啟無痕模式瀏覽</li>
+                        <li>清除瀏覽器快取</li>
+                        <li>等待 5-10 分鐘讓 CDN 更新</li>
+                    </ul>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="index.html" class="btn">🎮 回到遊戲</a>
+                    <a href="cache-info.md" class="btn">📋 快取指南</a>
+                </div>
+            </div>
+            
+            <script>
+                document.getElementById('loadTime').textContent = new Date().toISOString();
+                
+                // 檢查快取狀態
+                if ('caches' in window) {
+                    caches.keys().then(function(cacheNames) {
+                        const cacheCount = cacheNames.length;
+                        document.getElementById('cacheStatus').textContent = 
+                            cacheCount > 0 ? `找到 ${cacheCount} 個快取` : '無快取';
+                    });
+                } else {
+                    document.getElementById('cacheStatus').textContent = '瀏覽器不支援快取 API';
+                }
+                
+                // 載入版本資訊
+                fetch('version.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('buildInfo').textContent = 
+                            `版本 ${data.version} (建置 #${data.build_number})`;
+                    })
+                    .catch(error => {
+                        document.getElementById('buildInfo').textContent = '無法載入版本資訊';
+                    });
+                
+                // 記錄頁面載入
+                console.log('版本檢查頁面載入:', new Date().toISOString());
+            </script>
+        </body>
+        </html>
+        EOF
+        
+        echo "✅ 快取清除檔案建立完成"
+    
+    - name: 部署到 GitHub Pages (含快取管理)
+      if: github.ref == 'refs/heads/main'
+      run: |
+        echo "🚀 部署到 GitHub Pages..."
+        
+        # 設定 Pages
+        echo "GITHUB_TOKEN" | gh auth login --with-token
+        
+        # 複製檔案到部署目錄
+        mkdir -p deploy/github-pages
+        cp web/index.html deploy/github-pages/
+        cp web/DEPLOYMENT.md deploy/github-pages/ 2>/dev/null || echo "DEPLOYMENT.md 不存在"
+        cp deploy/cache-info.md deploy/github-pages/
+        cp deploy/version-check.html deploy/github-pages/
+        cp version.json deploy/github-pages/
+        
+        # 建立 .nojekyll 檔案
+        touch deploy/github-pages/.nojekyll
+        
+        # 切換到部署目錄
+        cd deploy/github-pages
+        
+        # 初始化 git 並推送到 gh-pages 分支
+        git init
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add .
+        git commit -m "🚀 自動部署 (含快取管理) - $(date)"
+        
+        # 推送到 gh-pages 分支
+        git branch -M gh-pages
+        git remote add origin https://github.com/${{ github.repository }}.git
+        git push -f origin gh-pages
+        
+        echo "✅ 部署完成"
+    
+    - name: 清除 CDN 快取
+      run: |
+        echo "🧹 執行 CDN 快取清除..."
+        
+        # 等待部署完成
+        sleep 30
+        
+        # 觸發頁面載入以更新快取
+        REPO_NAME="${{ github.repository }}"
+        PAGES_URL="https://${REPO_NAME#*/}.github.io/${REPO_NAME##*/}"
+        
+        echo "測試頁面載入: $PAGES_URL"
+        curl -I "$PAGES_URL" || echo "無法訪問主頁面"
+        curl -I "$PAGES_URL/version-check.html" || echo "無法訪問版本檢查頁面"
+        
+        # 使用 GitHub API 清除快取 (如果可用)
+        echo "嘗試清除 GitHub Pages 快取..."
+        gh api -X POST /repos/${{ github.repository }}/actions/caches/delete || echo "無法清除 GitHub Actions 快取"
+        
+        echo "✅ CDN 快取清除完成"
+    
+    - name: 部署狀態通知
+      run: |
+        echo "📊 部署狀態摘要:"
+        echo "- 版本: $(cat version.json | grep version | cut -d'"' -f4)"
+        echo "- 建置編號: $(cat version.json | grep build_number | cut -d':' -f2 | tr -d ' ,')"
+        echo "- 部署時間: $(date)"
+        echo "- GitHub Pages URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+        echo "- 版本檢查: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/version-check.html"

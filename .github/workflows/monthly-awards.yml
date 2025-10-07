@@ -1,0 +1,134 @@
+name: Monthly Awards and Announcements
+
+on:
+  schedule:
+    # 每月1號早上 9:00 UTC 執行月度評選和公告
+    - cron: '0 9 1 * *'
+  workflow_dispatch: # 允許手動觸發
+  push:
+    branches: [ main, dev ]
+    paths:
+      - 'scripts/monthly_stats.py'
+      - 'scripts/award_system.py'
+      - 'scripts/announcement_system.py'
+      - '.github/workflows/monthly-awards.yml'
+
+jobs:
+  monthly-awards:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+    
+    - name: Set up environment variables
+      run: |
+        echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
+        echo "DISCORD_WEBHOOK_URL=${{ secrets.DISCORD_WEBHOOK_URL }}" >> $GITHUB_ENV
+        echo "REPO_OWNER=BabyGrootCICD" >> $GITHUB_ENV
+        echo "REPO_NAME=Sext-Adventure" >> $GITHUB_ENV
+    
+    - name: Run monthly statistics analysis
+      run: |
+        python scripts/monthly_stats.py
+    
+    - name: Run award system evaluation
+      run: |
+        python scripts/award_system.py
+    
+    - name: Publish monthly announcements
+      run: |
+        python scripts/announcement_system.py
+    
+    - name: Check for changes
+      id: check-changes
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "has-changes=true" >> $GITHUB_OUTPUT
+        else
+          echo "has-changes=false" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Commit and push changes
+      if: steps.check-changes.outputs.has-changes == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add monthly_report_*.md monthly_awards_*.md monthly_analysis_*.json announcement_*.json
+        git commit -m "🤖 Auto-update: 月度獎項評選和公告
+
+        - 生成月度統計報告
+        - 評選月度貢獻獎項
+        - 發布月度公告
+        - 更新貢獻者數據
+        
+        [skip ci]" || exit 0
+        git push
+    
+    - name: Create GitHub Discussion
+      if: always()
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          
+          // 讀取最新的月度報告
+          const reportFiles = fs.readdirSync('.').filter(f => f.startsWith('monthly_report_') && f.endsWith('.md'));
+          const awardFiles = fs.readdirSync('.').filter(f => f.startsWith('monthly_awards_') && f.endsWith('.md'));
+          
+          if (reportFiles.length > 0 && awardFiles.length > 0) {
+            const reportContent = fs.readFileSync(reportFiles[0], 'utf8');
+            const awardContent = fs.readFileSync(awardFiles[0], 'utf8');
+            
+            const discussionBody = `# 🎉 Tsext Adventure 月度貢獻報告
+            
+            ## 📊 月度統計
+            ${reportContent}
+            
+            ## 🏆 月度獎項
+            ${awardContent}
+            
+            ---
+            *此討論由 GitHub Actions 自動生成*
+            `;
+            
+            await github.rest.discussions.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🎉 Tsext Adventure 月度貢獻報告 - ${new Date().toISOString().slice(0, 7)}`,
+              body: discussionBody,
+              category: 'Announcements'
+            });
+          }
+    
+    - name: Create summary
+      if: always()
+      run: |
+        echo "## 🏆 月度獎項評選摘要" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### ✅ 執行結果" >> $GITHUB_STEP_SUMMARY
+        if [ -f "monthly_report_*.md" ]; then
+          echo "- 📊 月度統計報告已生成" >> $GITHUB_STEP_SUMMARY
+        fi
+        if [ -f "monthly_awards_*.md" ]; then
+          echo "- 🏆 月度獎項評選已完成" >> $GITHUB_STEP_SUMMARY
+        fi
+        if [ -f "announcement_*.json" ]; then
+          echo "- 📢 月度公告已發布" >> $GITHUB_STEP_SUMMARY
+        fi
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 🔄 下次執行" >> $GITHUB_STEP_SUMMARY
+        echo "下次自動執行時間：下月1號 09:00 UTC" >> $GITHUB_STEP_SUMMARY

@@ -60,6 +60,7 @@
 3. **Web 版本**：
    - 開啟 `web/index.html` 在瀏覽器運行
    - 或使用部署腳本：`./deploy.sh` (Linux/Mac) 或 `deploy.bat` (Windows)
+   - **快取問題修復**：使用 `./scripts/cache-buster.sh` 清除快取
 
 ## 專案架構
 
@@ -77,6 +78,9 @@ tsext-adventure/
 ├── stories/               # 故事 JSON 檔案
 │   ├── halloween.json     # 萬聖節故事分支
 │   └── common.json        # 通用 pun 和結局資料庫
+├── scripts/                 # 工具腳本
+│   ├── version-manager.py  # 版本管理系統
+│   └── cache-buster.sh     # 快取清除工具
 ├── tests/                 # 測試腳本
 │   └── test_stories.py    # 測試案例
 ├── docs/                  # 文件
@@ -87,7 +91,8 @@ tsext-adventure/
 │   ├── cover-design.md    # 封面設計說明
 │   └── badges/            # 徽章資料夾
 ├── .github/workflows/     # GitHub Actions
-│   └── deploy.yml         # 自動部署
+│   ├── deploy.yml         # 自動部署
+│   └── cache-management.yml # 快取管理工作流程
 ├── itch-deploy/           # itch.io 部署包
 └── CONTRIBUTING.md        # 貢獻指南
 ```
@@ -309,48 +314,42 @@ function doStuff() { /* 功能不明確 */ }
 - [ ] ⚡ **效能良好**：沒有明顯的效能問題
 - [ ] 🎯 **無錯誤**：瀏覽器控制台沒有錯誤
 
-### 🏅 貢獻認可
+## 🌟 貢獻者 (Contributors)
 
-#### 貢獻者等級
-- 🥉 **新手貢獻者**：首次貢獻 (1-2 PR)
-- 🥈 **活躍貢獻者**：持續貢獻 (3-10 PR)  
-- 🥇 **核心貢獻者**：重大功能 (10+ PR)
-- 👑 **維護者**：長期維護專案
+### 🥇 核心貢獻者
+*重大功能開發者*
 
-#### 特殊貢獻獎
-- 🎭 **最佳劇情獎**：最有創意的故事內容
-- 🛠️ **技術創新獎**：最佳技術改進
-- 🐛 **Bug獵人獎**：發現最多問題
-- 🎨 **設計大師獎**：最佳UI/UX改進
-- 🌟 **社區之星**：最熱心幫助新手
+- [@dennislee928](https://github.com/dennislee928) - 9 PRs, 9 Issues - 38 總貢獻
 
-### 📞 獲得幫助
 
-#### 即時討論
-- **Discord**: [Tsext Community](https://discord.gg/tsext) (主要討論區)
-- **GitHub Discussions**: 技術問題和功能討論
-- **Issue Tracker**: Bug回報和功能請求
+## 📊 貢獻統計
 
-#### 導師制度
-新貢獻者可以申請導師協助：
-1. 在 Issue 中標記 `@mentor-request`
-2. 說明你的背景和想貢獻的方向
-3. 我們會安排合適的導師協助你
+### 總體數據
+- **總貢獻者**: 1 人
+- **本月活躍**: 1 人
+- **總 PR 數**: 9 個
+- **總 Issue 數**: 1 個
 
-#### 常見問題 FAQ
-**Q: 我不會程式設計，能貢獻嗎？**  
-A: 當然！你可以貢獻故事內容、測試遊戲、回報問題、翻譯內容等。
+### 貢獻者等級分布
+- 👑 **維護者**: 0 人
+- 🥇 **核心貢獻者**: 1 人
+- 🥈 **活躍貢獻者**: 0 人
+- 🥉 **新手貢獻者**: 0 人
 
-**Q: 我的英文不好，可以用中文貢獻嗎？**  
-A: 完全可以！這是繁體中文專案，中文是主要語言。
+*最後更新: 2025-10-06 22:54:54*
 
-**Q: 需要多久才能審核我的PR？**  
-A: 通常 1-3 天內會有初步回應，複雜功能可能需要更長時間。
+## 🧹 GitHub Pages 快取問題解決方案
 
-**Q: 如何確保我的內容不會與他人衝突？**  
-A: 提交前先 pull 最新代碼，或在 Issues 中先討論大型更改。
+本專案已實作完整的快取管理解決方案，解決 GitHub Pages 部署快取問題：
 
-詳見 [CONTRIBUTING.md](CONTRIBUTING.md) 獲取更多技術細節。
+### 快速修復
+- **使用者**：按 `Ctrl+F5` 強制重新整理
+- **開發者**：執行 `./scripts/cache-buster.sh purge`
+- **版本檢查**：訪問 `/version-check.html`
+
+### 完整文件
+- [📋 快取管理完整指南](CACHE_MANAGEMENT_GUIDE.md)
+- [⚡ 快速修復指南](QUICK_CACHE_FIX.md)
 
 ## 授權
 
