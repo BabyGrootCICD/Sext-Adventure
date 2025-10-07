@@ -2430,8 +2430,327 @@
                 "is_ending": true,
                 "outcome": "🔄 變身結局！你體驗了完全不同的性別身份，發現了全新的自己！\n\n你獲得了『性別大師』的稱號，理解了愛情的所有可能性。",
                 "score": 140
+            },
+            "cemetery_rulers": {
+                "title": "墓地統治者",
+                "description": "你發現這個墓地的真正統治者不是鬼魂，而是一群古老的石像鬼！它們從雕像中甦醒，用低沉的聲音說：「歡迎來到我們的領域，活人。」",
+                "is_ending": true,
+                "outcome": "[石像鬼結局] 你成為了墓地的榮譽統治者！你獲得了「石像鬼朋友」的稱號，學會了與古老生物交流的藝術。",
+                "score": 85
+            },
+            "elf_transformation": {
+                "title": "精靈變身",
+                "description": "吸血鬼的魔法讓你變成了優雅的精靈！你長出了尖耳朵，身體變得更加敏捷。吸血鬼說：「現在你是我最完美的伴侶。」",
+                "is_ending": true,
+                "outcome": "[精靈結局] 你成為了永恆的精靈伴侶！你獲得了「永恆精靈」的稱號，學會了精靈的魔法技巧。",
+                "score": 95
+            },
+            "ticklish_vampire": {
+                "title": "怕癢的吸血鬼",
+                "description": "你發現這個吸血鬼有個弱點 - 他超級怕癢！當你不小心碰到他的脖子時，他開始咯咯笑，完全失去了吸血鬼的威嚴。",
+                "is_ending": true,
+                "outcome": "[搞笑結局] 你發現了吸血鬼的可愛一面！你獲得了「笑聲獵人」的稱號，學會了用幽默化解緊張的技巧。",
+                "score": 60
+            },
+            "reverse_bite": {
+                "title": "反咬一口",
+                "description": "當吸血鬼準備咬你時，你突然反咬他！他驚訝地說：「等等，這不對！應該是我咬你！」你們開始了一場搞笑的「咬戰」。",
+                "is_ending": true,
+                "outcome": "[反咬結局] 你讓吸血鬼體驗了被咬的感覺！你獲得了「反擊大師」的稱號，學會了出人意料的反擊技巧。",
+                "score": 70
+            },
+            "vampire_comedy": {
+                "title": "吸血鬼喜劇",
+                "description": "你開始模仿各種經典的吸血鬼電影橋段，把這個嚴肅的吸血鬼逗得哈哈大笑。「我從來沒見過這麼搞笑的獵物！」他說。",
+                "is_ending": true,
+                "outcome": "[喜劇結局] 你成為了吸血鬼的專屬喜劇演員！你獲得了「搞笑大師」的稱號，學會了用幽默化解危險的技巧。",
+                "score": 75
+            },
+            "fake_drinking": {
+                "title": "假裝喝酒",
+                "description": "你假裝喝下惡魔調酒師的飲料，但實際上偷偷倒掉了。惡魔調酒師沒有發現，繼續為你調製下一杯。",
+                "choices": [
+                    {"option": "A: 繼續假裝", "next_scene": "truth_drink_effect"},
+                    {"option": "B: 坦白真相", "next_scene": "demon_bartender"}
+                ]
+            },
+            "truth_drink_effect": {
+                "title": "誠實飲料效果",
+                "description": "你喝下了一杯會讓人說真話的飲料，現在你無法說謊！你開始告訴大家你內心真正的想法，讓派對變得更加有趣。",
+                "is_ending": true,
+                "outcome": "[誠實結局] 你成為了派對的誠實代表！你獲得了「誠實之心」的稱號，學會了真誠表達的技巧。",
+                "score": 70
+            },
+            "dance_floor_seduction": {
+                "title": "舞池誘惑",
+                "description": "你在舞池中央開始跳舞，吸引了很多人的注意。你的舞姿充滿誘惑，讓周圍的人都為之傾倒。",
+                "is_ending": true,
+                "outcome": "[舞蹈結局] 你成為了派對的焦點！你獲得了「舞池女王」的稱號，學會了誘惑的舞蹈技巧。",
+                "score": 85
+            },
+            "sound_booth": {
+                "title": "音響控制台",
+                "description": "你來到派對的音響控制台，發現可以控制整個派對的音樂。你開始播放你最喜歡的歌曲，改變了整個派對的氣氛。",
+                "is_ending": true,
+                "outcome": "[音樂結局] 你成為了派對的 DJ！你獲得了「派對 DJ」的稱號，學會了控制氣氛的技巧。",
+                "score": 75
+            },
+            "nature_appreciation": {
+                "title": "自然欣賞",
+                "description": "你在魔法森林中靜靜地欣賞自然的美麗，與樹木和動物們建立了深刻的聯繫。你感受到大自然的力量和智慧。",
+                "is_ending": true,
+                "outcome": "[自然結局] 你成為了自然的守護者！你獲得了「自然之友」的稱號，學會了與自然和諧相處的技巧。",
+                "score": 80
+            },
+            "ancient_tree_riddle": {
+                "title": "古老樹木謎題",
+                "description": "你遇到了一棵古老的智慧樹，它給你出了一個謎題。如果你能回答正確，它會給你一個特殊的獎勵。",
+                "choices": [
+                    {"option": "A: 嘗試回答謎題", "next_scene": "forest_trials"},
+                    {"option": "B: 拒絕挑戰", "next_scene": "nature_appreciation"}
+                ]
+            },
+            "desire_spells": {
+                "title": "慾望魔法",
+                "description": "你學會了控制慾望的魔法，可以影響他人的情感和慾望。這是一個強大但危險的能力。",
+                "choices": [
+                    {"option": "A: 謹慎使用魔法", "next_scene": "love_magic_book"},
+                    {"option": "B: 大膽嘗試", "next_scene": "power_hunger"}
+                ]
+            },
+            "love_magic_book": {
+                "title": "愛情魔法書",
+                "description": "你找到了一本古老的愛情魔法書，裡面記載了各種關於愛情的魔法咒語。你開始學習這些神秘的知識。",
+                "is_ending": true,
+                "outcome": "[知識結局] 你成為了愛情魔法的專家！你獲得了「愛情魔法師」的稱號，學會了各種愛情魔法。",
+                "score": 88
+            },
+            "power_hunger": {
+                "title": "權力渴望",
+                "description": "你對魔法的渴望變得越來越強烈，開始追求更強大的力量。這讓你面臨一個重要的選擇。",
+                "is_ending": true,
+                "outcome": "[權力結局] 你成為了強大的魔法師！你獲得了「權力追求者」的稱號，但也承擔了相應的責任。",
+                "score": 85
+            },
+            "library_lessons": {
+                "title": "圖書館課程",
+                "description": "你在被詛咒的圖書館中學習，發現了許多被遺忘的知識。圖書館的靈魂開始教授你古老的智慧。",
+                "is_ending": true,
+                "outcome": "[學習結局] 你成為了知識的守護者！你獲得了「智慧學者」的稱號，學會了古老的知識。",
+                "score": 90
+            },
+            "ghostly_lessons": {
+                "title": "鬼魂課程",
+                "description": "圖書館的鬼魂開始教授你被遺忘的知識，你學會了許多古老的技能和智慧。",
+                "is_ending": true,
+                "outcome": "[鬼魂結局] 你成為了鬼魂的學生！你獲得了「鬼魂學者」的稱號，學會了與鬼魂交流的技巧。",
+                "score": 82
+            },
+            "castle_tour": {
+                "title": "城堡導覽",
+                "description": "吸血鬼帶你參觀他的城堡，介紹各種古老的房間和歷史。「這是我的圖書館，這裡是我收藏的藝術品...」他像個專業導遊一樣。",
+                "choices": [
+                    {"option": "A: 對圖書館感興趣", "next_scene": "cursed_library"},
+                    {"option": "B: 對藝術品感興趣", "next_scene": "vampire_powers"}
+                ]
+            },
+            "hunting_lessons": {
+                "title": "狩獵課程",
+                "description": "吸血鬼決定教你如何狩獵。「首先，你需要學會隱藏氣息...」他開始教授你吸血鬼的狩獵技巧。",
+                "is_ending": true,
+                "outcome": "[狩獵結局] 你學會了吸血鬼的狩獵技巧！你獲得了「狩獵學徒」的稱號，學會了隱藏和追蹤的技巧。",
+                "score": 80
+            },
+            "vampire_service": {
+                "title": "吸血鬼服務",
+                "description": "你決定為吸血鬼提供服務，他對你的忠誠感到滿意。「你將成為我最信任的僕人，」他說。",
+                "is_ending": true,
+                "outcome": "[僕人結局] 你成為了吸血鬼的忠誠僕人！你獲得了「忠誠僕人」的稱號，學會了服侍的技巧。",
+                "score": 65
+            },
+            "vip_lounge": {
+                "title": "VIP 休息室",
+                "description": "你被邀請進入派對的 VIP 休息室，裡面有更豪華的設施和更特別的飲料。這裡的氣氛更加私密和誘人。",
+                "choices": [
+                    {"option": "A: 享受 VIP 待遇", "next_scene": "pleasure_potion"},
+                    {"option": "B: 回到主派對", "next_scene": "underground_party"}
+                ]
+            },
+            "pleasure_potion": {
+                "title": "快樂藥水",
+                "description": "你喝下了一杯快樂藥水，感到前所未有的愉悅和滿足。你開始與周圍的人分享這種快樂的感覺。",
+                "is_ending": true,
+                "outcome": "[快樂結局] 你成為了快樂的傳播者！你獲得了「快樂使者」的稱號，學會了傳播快樂的技巧。",
+                "score": 85
+            },
+            "cocktail_chaos": {
+                "title": "雞尾酒混亂",
+                "description": "你開始調製各種奇怪的雞尾酒，創造出意想不到的效果。有些飲料會讓人飄浮，有些會讓人變色，派對變得更加瘋狂！",
+                "is_ending": true,
+                "outcome": "[調酒結局] 你成為了瘋狂調酒師！你獲得了「瘋狂調酒師」的稱號，學會了創造奇蹟飲料的技巧。",
+                "score": 80
+            },
+            "future_vision_drink": {
+                "title": "未來視覺飲料",
+                "description": "你喝下了一杯能看見未來的飲料，開始預言派對上每個人的未來。你的預言讓大家都對你刮目相看。",
+                "is_ending": true,
+                "outcome": "[預言結局] 你成為了派對的預言家！你獲得了「未來先知」的稱號，學會了洞察未來的技巧。",
+                "score": 90
+            },
+            "soul_drink_effect": {
+                "title": "靈魂飲料效果",
+                "description": "你喝下了一杯能看見靈魂的飲料，現在你能看到每個人的真實靈魂。你開始與靈魂們交流，獲得了深刻的洞察。",
+                "is_ending": true,
+                "outcome": "[靈魂結局] 你成為了靈魂的交流者！你獲得了「靈魂導師」的稱號，學會了與靈魂溝通的技巧。",
+                "score": 95
+            },
+            "forest_law_challenge": {
+                "title": "森林法則挑戰",
+                "description": "森林的守護者向你提出了挑戰，要測試你是否真正理解森林的法則。這是一個關於平衡與和諧的考驗。",
+                "is_ending": true,
+                "outcome": "[平衡結局] 你通過了森林法則的考驗！你獲得了「森林守護者」的稱號，學會了平衡與和諧的智慧。",
+                "score": 90
+            },
+            "triple_trial": {
+                "title": "三重考驗",
+                "description": "你面臨三個不同的考驗：智慧、勇氣和愛心。每個考驗都會測試你的不同能力。",
+                "choices": [
+                    {"option": "A: 智慧考驗", "next_scene": "cursed_library"},
+                    {"option": "B: 勇氣考驗", "next_scene": "vampire_castle"},
+                    {"option": "C: 愛心考驗", "next_scene": "heart_to_heart"}
+                ]
+            },
+            "wine_explanation": {
+                "title": "酒類解釋",
+                "description": "吸血鬼向你解釋各種特殊酒類的效果和歷史，你學到了許多關於吸血鬼文化的知識。",
+                "is_ending": true,
+                "outcome": "[知識結局] 你成為了酒類專家！你獲得了「酒類學者」的稱號，學會了品酒的技巧。",
+                "score": 75
+            },
+            "ultimate_brew": {
+                "title": "終極釀造",
+                "description": "你幫助調酒師創造了一種前所未有的終極飲料，這種飲料具有神奇的效果。",
+                "is_ending": true,
+                "outcome": "[創造結局] 你成為了終極調酒師！你獲得了「創造大師」的稱號，學會了創造奇蹟的技巧。",
+                "score": 95
+            },
+            "cooling_down": {
+                "title": "冷卻下來",
+                "description": "派對變得過於激烈，你決定讓大家冷靜下來。你開始播放舒緩的音樂，創造更輕鬆的氣氛。",
+                "is_ending": true,
+                "outcome": "[冷靜結局] 你成為了氣氛調節師！你獲得了「冷靜使者」的稱號，學會了控制氣氛的技巧。",
+                "score": 70
+            },
+            "shared_ritual": {
+                "title": "共享儀式",
+                "description": "你參與了一個古老的共享儀式，與其他人建立了深刻的聯繫。這個儀式讓你們的靈魂產生了共鳴。",
+                "is_ending": true,
+                "outcome": "[共享結局] 你成為了儀式的參與者！你獲得了「靈魂共鳴」的稱號，學會了與他人建立深刻聯繫的技巧。",
+                "score": 88
+            },
+            "resurrection_attempt": {
+                "title": "復活嘗試",
+                "description": "你嘗試復活一個古老的靈魂，但這個過程充滿了危險。你需要決定是否繼續這個危險的嘗試。",
+                "choices": [
+                    {"option": "A: 繼續嘗試", "next_scene": "death_beauty"},
+                    {"option": "B: 放棄嘗試", "next_scene": "ancient_cemetery"}
+                ]
+            },
+            "death_beauty": {
+                "title": "死亡之美",
+                "description": "你發現死亡也有其美麗的一面，古老的靈魂向你展示了生命與死亡的循環之美。",
+                "is_ending": true,
+                "outcome": "[美麗結局] 你理解了死亡的美麗！你獲得了「死亡哲學家」的稱號，學會了欣賞生命的循環。",
+                "score": 85
+            },
+            "revenge_plot": {
+                "title": "復仇計劃",
+                "description": "你開始策劃一個復仇計劃，但隨著時間的推移，你開始質疑這個計劃是否正確。",
+                "is_ending": true,
+                "outcome": "[復仇結局] 你執行了復仇計劃！你獲得了「復仇者」的稱號，但也承擔了復仇的後果。",
+                "score": 60
+            },
+            "hunter_reveal": {
+                "title": "獵人揭露",
+                "description": "你的真實身份被揭露了 - 你是一個吸血鬼獵人！現在你面臨著一個重要的選擇。",
+                "choices": [
+                    {"option": "A: 完成獵人任務", "next_scene": "vampire_transformation"},
+                    {"option": "B: 放棄獵人身份", "next_scene": "vampire_bite_seduction"}
+                ]
+            },
+            "antidote_quest": {
+                "title": "解藥任務",
+                "description": "你開始尋找解藥來逆轉某種魔法效果，這個任務讓你踏上了一段充滿挑戰的旅程。",
+                "is_ending": true,
+                "outcome": "[解藥結局] 你成功找到了解藥！你獲得了「解藥獵人」的稱號，學會了尋找解決方案的技巧。",
+                "score": 80
+            },
+            "phoenix_healing": {
+                "title": "鳳凰治療",
+                "description": "你遇到了傳說中的鳳凰，它用神聖的火焰治癒了你的傷痛，並賦予你新的力量。",
+                "is_ending": true,
+                "outcome": "[鳳凰結局] 你獲得了鳳凰的祝福！你獲得了「鳳凰之子」的稱號，學會了神聖的治療魔法。",
+                "score": 100
+            },
+            "cemetery_exploration": {
+                "title": "墓地探索",
+                "description": "你在古老的墓地中漫步，月光透過墓碑投下神秘的影子。突然，你聽到遠處傳來輕柔的歌聲，引導你走向墓地的深處。",
+                "choices": [
+                    {"option": "A: 跟隨歌聲", "next_scene": "ghost_story_victoria"},
+                    {"option": "B: 探索其他區域", "next_scene": "cemetery_rulers"}
+                ]
             }
         };
+
+        // DEFAULT 安全網場景引用系統
+        const DEFAULT_FALLBACK_SCENES = {
+            // 通用安全網場景
+            'default_fallback': {
+                'title': '神秘的分岔路',
+                'description': '你來到了一個神秘的分岔路口，前方有多條道路等待著你的選擇。每條道路都通往不同的冒險。',
+                'choices': [
+                    {'option': 'A: 回到主選單', 'next_scene': 'start'},
+                    {'option': 'B: 繼續探索', 'next_scene': 'explorer'}
+                ]
+            },
+            // 錯誤場景安全網
+            'error_recovery': {
+                'title': '遊戲恢復',
+                'description': '看起來遊戲遇到了一些技術問題，但不用擔心！你可以選擇重新開始或繼續你的冒險。',
+                'choices': [
+                    {'option': 'A: 重新開始遊戲', 'next_scene': 'start'},
+                    {'option': 'B: 返回上一個場景', 'next_scene': 'start'}
+                ]
+            },
+            // 未定義場景安全網
+            'undefined_scene': {
+                'title': '未知領域',
+                'description': '你發現自己來到了一個未知的領域，這裡充滿了神秘和可能性。也許這是開發者為你準備的驚喜？',
+                'is_ending': true,
+                'outcome': '[探索結局] 你成為了未知領域的探索者！你獲得了「神秘探索者」的稱號，學會了適應未知環境的技巧。',
+                'score': 75
+            }
+        };
+
+        // 場景引用安全檢查函數
+        function safeGetScene(sceneId) {
+            if (!sceneId) {
+                console.warn('場景 ID 為空，使用預設場景');
+                return DEFAULT_FALLBACK_SCENES.error_recovery;
+            }
+            
+            // 檢查場景是否存在
+            if (scenes[sceneId]) {
+                return scenes[sceneId];
+            }
+            
+            // 檢查是否為未定義場景
+            console.warn(`場景 "${sceneId}" 未定義，使用安全網場景`);
+            return DEFAULT_FALLBACK_SCENES.undefined_scene;
+        }
+
+        // 合併所有場景（包括安全網場景）
+        Object.assign(scenes, DEFAULT_FALLBACK_SCENES);
 
         // 載入遊戲資料
         function loadGameData() {
@@ -3010,14 +3329,23 @@
 
         // 顯示場景
         function displayScene(sceneId) {
-            const scene = storyData[sceneId];
+            // 使用安全檢查函數獲取場景
+            const scene = safeGetScene(sceneId);
             if (!scene) {
-                alert('找不到場景資料！');
+                console.error('無法獲取場景資料，使用錯誤恢復場景');
+                const errorScene = DEFAULT_FALLBACK_SCENES.error_recovery;
+                displaySceneContent(errorScene);
                 return;
             }
 
-            gameState.visitedScenes.add(sceneId);
-            gameState.allScenesVisited.add(sceneId);
+            gameState.currentScene = sceneId;
+            displaySceneContent(scene);
+        }
+
+        // 顯示場景內容的核心函數
+        function displaySceneContent(scene) {
+            gameState.visitedScenes.add(gameState.currentScene);
+            gameState.allScenesVisited.add(gameState.currentScene);
 
             let html = `
                 <div class="scene-title">🎃 ${scene.title} 🎃</div>
@@ -3027,10 +3355,10 @@
             if (scene.is_ending) {
                 gameState.score += scene.score || 0;
                 gameState.totalScore += scene.score || 0;
-                gameState.allEndingsUnlocked.add(sceneId);
+                gameState.allEndingsUnlocked.add(gameState.currentScene);
                 
                 // 檢查成就
-                checkAchievements(sceneId);
+                checkAchievements(gameState.currentScene);
 
                 html += `
                     <div class="ending">
@@ -3059,6 +3387,20 @@
 
         // 做出選擇
         function makeChoice(nextScene) {
+            // 使用安全檢查確保場景存在
+            if (!nextScene) {
+                console.warn('選擇的場景為空，使用預設場景');
+                displayScene('error_recovery');
+                return;
+            }
+            
+            // 檢查場景是否存在
+            if (!scenes[nextScene] && !DEFAULT_FALLBACK_SCENES[nextScene]) {
+                console.warn(`場景 "${nextScene}" 不存在，使用安全網場景`);
+                displayScene('undefined_scene');
+                return;
+            }
+            
             displayScene(nextScene);
         }
 
