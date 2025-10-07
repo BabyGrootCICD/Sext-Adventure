@@ -5,24 +5,24 @@
     "days": 30
   },
   "overall_stats": {
-    "total_prs": 10,
-    "merged_prs": 10,
-    "total_issues": 15,
+    "total_prs": 11,
+    "merged_prs": 11,
+    "total_issues": 16,
     "active_contributors": 1,
     "pr_merge_rate": 100.0,
-    "avg_prs_per_contributor": 10.0
+    "avg_prs_per_contributor": 11.0
   },
   "contributor_stats": {
     "dennislee928": {
-      "prs": 10,
-      "issues": 15,
-      "merged_prs": 10,
+      "prs": 11,
+      "issues": 16,
+      "merged_prs": 11,
       "story_content": 2,
-      "technical_improvements": 8,
+      "technical_improvements": 9,
       "bug_fixes": 0,
       "ui_improvements": 0,
       "community_help": 0,
-      "total_score": 65.0
+      "total_score": 71.0
     }
   },
   "category_analysis": {
@@ -32,8 +32,8 @@
       "contributors": 1
     },
     "technical_improvements": {
-      "prs": 8,
-      "issues": 15,
+      "prs": 9,
+      "issues": 16,
       "contributors": 1
     },
     "bug_fixes": {
@@ -51,13 +51,13 @@
     "pr_trend": "decreasing",
     "issue_trend": "decreasing",
     "daily_stats": {
+      "2025-10-07": {
+        "prs": 1,
+        "issues": 6
+      },
       "2025-10-06": {
         "prs": 10,
         "issues": 10
-      },
-      "2025-10-07": {
-        "prs": 0,
-        "issues": 5
       }
     },
     "most_active_day": [
@@ -73,6 +73,12 @@
       "dennislee928"
     ],
     "high_impact_contributions": [
+      {
+        "author": "dennislee928",
+        "title": "Dev",
+        "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/16",
+        "impact_score": 1.0
+      },
       {
         "author": "dennislee928",
         "title": "Dev",

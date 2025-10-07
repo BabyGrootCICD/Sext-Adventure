@@ -8,12 +8,12 @@
 ## 📈 總體統計
 
 ### 核心指標
-- **總 Pull Requests**: 10 個
-- **已合併 PR**: 10 個
-- **總 Issues**: 15 個
+- **總 Pull Requests**: 11 個
+- **已合併 PR**: 11 個
+- **總 Issues**: 16 個
 - **活躍貢獻者**: 1 人
 - **PR 合併率**: 100.0%
-- **平均每人 PR 數**: 10.0 個
+- **平均每人 PR 數**: 11.0 個
 
 ### 趨勢分析
 - **PR 趨勢**: decreasing
@@ -23,7 +23,7 @@
 ## 🏆 貢獻者排行榜
 
 ### 總貢獻分數 Top 10
-1. **@dennislee928** - 65.0 分 (10 PRs, 15 Issues)
+1. **@dennislee928** - 71.0 分 (11 PRs, 16 Issues)
 
 ## 📊 類別分析
 
@@ -32,7 +32,7 @@
 - **貢獻者**: 1 人
 
 ### 技術改進
-- **PR 數**: 8 個
+- **PR 數**: 9 個
 - **貢獻者**: 1 人
 
 ### Bug 修復
@@ -45,11 +45,11 @@
 
 ## 🎯 高影響力貢獻
 
+- **[Dev](https://github.com/BabyGrootCICD/Sext-Adventure/pull/16)** by @dennislee928 (影響力: 1.0)
 - **[Dev](https://github.com/BabyGrootCICD/Sext-Adventure/pull/10)** by @dennislee928 (影響力: 1.0)
 - **[Update halloween.json](https://github.com/BabyGrootCICD/Sext-Adventure/pull/9)** by @dennislee928 (影響力: 1.0)
 - **[Add new achievements and endings for cats, ghosts, and pumpkins](https://github.com/BabyGrootCICD/Sext-Adventure/pull/8)** by @dennislee928 (影響力: 1.0)
 - **[Dev](https://github.com/BabyGrootCICD/Sext-Adventure/pull/7)** by @dennislee928 (影響力: 1.0)
-- **[Enhance UI and expand story content](https://github.com/BabyGrootCICD/Sext-Adventure/pull/6)** by @dennislee928 (影響力: 1.0)
 
 ## 🌟 本月亮點
 
@@ -61,9 +61,9 @@
 ### 貢獻者詳細統計
 | 貢獻者 | PRs | Issues | 故事內容 | 技術改進 | Bug修復 | UI改進 | 總分 |
 |--------|-----|--------|----------|----------|---------|--------|------|
-| @dennislee928 | 10 | 15 | 2 | 8 | 0 | 0 | 65.0 |
+| @dennislee928 | 11 | 16 | 2 | 9 | 0 | 0 | 71.0 |
 
 ---
 
-*報告生成時間: 2025-10-07 03:40:07*  
+*報告生成時間: 2025-10-07 04:10:29*  
 *Tsext Adventure 貢獻者追蹤系統*
