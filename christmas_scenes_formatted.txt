@@ -1,0 +1,321 @@
+            "christmas_entrance": {
+                "title": "聖誕魔法莊園入口",
+                "description": "你來到一個被白雪覆蓋的魔法莊園，到處都是閃爍的聖誕燈飾和薑餅人裝飾。空氣中瀰漫著肉桂和熱可可的香氣。\n\n一個穿著性感聖誕裝的精靈接待員對你眨眼：「歡迎來到『聖誕極樂莊園』！這裡有六個特別區域，每一個都充滿了... 節日的驚喜。你想先去哪裡呢？」",
+                "choices": [
+                    {"option": "A: 聖誕老人工作坊 - 「我想見見聖誕老人」", "next_scene": "santa_workshop"},
+                    {"option": "B: 雪地溫泉 - 「在雪中泡溫泉聽起來很棒」", "next_scene": "snow_hot_spring"},
+                    {"option": "C: 薑餅屋村莊 - 「那些薑餅屋看起來很可愛」", "next_scene": "gingerbread_village"},
+                    {"option": "D: 馴鹿馬廄 - 「我想騎馴鹿！」", "next_scene": "reindeer_stable"},
+                    {"option": "E: 冰雕宮殿 - 「那座冰宮好美」", "next_scene": "ice_palace"},
+                    {"option": "F: 聖誕市集 - 「我想逛逛市集」", "next_scene": "christmas_market"}
+                ]
+            },
+            "santa_workshop": {
+                "title": "聖誕老人的秘密工作坊",
+                "description": "你推開工作坊的門，裡面溫暖而忙碌。一個身材健壯、穿著緊身紅色衣服的性感聖誕老人正在檢查禮物清單。\n\n「喔呵呵！」他用低沉磁性的聲音說，「你來得正好。我正需要有人幫我... 測試一些特別的禮物。你願意當我的小助手嗎？」",
+                "choices": [
+                    {"option": "A: 「我很樂意幫忙！」", "next_scene": "santa_helper"},
+                    {"option": "B: 「什麼樣的特別禮物？」", "next_scene": "special_gifts"},
+                    {"option": "C: 「你看起來不像傳統的聖誕老人」", "next_scene": "sexy_santa"}
+                ]
+            },
+            "santa_helper": {
+                "title": "聖誕老人的小助手",
+                "description": "聖誕老人帶你到工作坊深處，那裡有各種神奇的玩具和裝置。「這些都是成人專用的聖誕禮物，」他解釋道，「需要有人幫我測試效果。」\n\n他拿出一個閃閃發光的項圈：「這是『服從項圈』，戴上它的人會變得非常... 聽話。想試試嗎？」",
+                "choices": [
+                    {"option": "A: 勇敢地戴上項圈", "next_scene": "obedience_collar"},
+                    {"option": "B: 「讓我先看看其他禮物」", "next_scene": "gift_exploration"},
+                    {"option": "C: 「不如你戴上試試？」", "next_scene": "santa_submissive"}
+                ]
+            },
+            "obedience_collar": {
+                "title": "服從的快樂",
+                "description": "你戴上項圈的瞬間，感到一陣溫暖的魔法流遍全身。你發現自己無法拒絕聖誕老人的任何要求，但這種感覺並不可怕，反而讓你感到放鬆和愉悅。\n\n「很好，」聖誕老人滿意地說，「現在，跪下來，讓我看看你有多聽話。」你發現自己的身體自動服從了命令。",
+                "is_ending": true,
+                "outcome": "[服從結局] 你成為了聖誕老人最聽話的小助手！\n\n你獲得了「聖誕奴隸」的稱號，學會了服從的藝術。聖誕老人承諾每年聖誕節都會給你特別的「獎勵」。",
+                "score": 85
+            },
+            "gift_exploration": {
+                "title": "禮物探索",
+                "description": "聖誕老人帶你參觀各種神奇的成人玩具：會自動調整的束縛裝置、能讀心的按摩棒、永不融化的冰塊... 每一件都充滿了魔法和創意。\n\n「選一個你最喜歡的，」他說，「我會親自示範如何使用。」",
+                "choices": [
+                    {"option": "A: 選擇束縛裝置", "next_scene": "bondage_gift"},
+                    {"option": "B: 選擇讀心按摩棒", "next_scene": "mind_reading_toy"},
+                    {"option": "C: 選擇魔法冰塊", "next_scene": "magic_ice"}
+                ]
+            },
+            "santa_submissive": {
+                "title": "角色反轉",
+                "description": "聖誕老人驚訝地看著你，然後大笑起來：「有趣！很少有人敢對我提出這樣的要求。」他思考了一會兒，然後說：「好吧，今年我就當一次聽話的聖誕老人。」\n\n他戴上項圈，你發現這個強壯的男人突然變得溫順而順從。「主人，請吩咐。」他低聲說。",
+                "is_ending": true,
+                "outcome": "[支配結局] 你成為了聖誕老人的主人！\n\n你獲得了「聖誕主宰」的稱號，學會了支配的技巧。從此每年聖誕節，聖誕老人都會來服侍你。",
+                "score": 95
+            },
+            "special_gifts": {
+                "title": "特別的禮物",
+                "description": "聖誕老人神秘地笑著，帶你到一個隱藏的房間。裡面陳列著各種奇特的禮物：發光的項圈、魔法羽毛、會震動的拐杖糖...\n\n「這些都是給特別乖的孩子準備的，」他說，「你今年乖嗎？」",
+                "choices": [
+                    {"option": "A: 「我非常乖！」", "next_scene": "good_child_reward"},
+                    {"option": "B: 「我有點頑皮...」", "next_scene": "naughty_list"},
+                    {"option": "C: 「這取決於你的定義」", "next_scene": "playful_negotiation"}
+                ]
+            },
+            "sexy_santa": {
+                "title": "性感聖誕老人的秘密",
+                "description": "聖誕老人哈哈大笑：「觀察力不錯！我確實不是傳統的聖誕老人。我是... 成人版的聖誕老人，專門給成年人送特別的禮物。」\n\n他靠近你，低聲說：「而你，看起來正是需要特別禮物的人。告訴我，你最深層的慾望是什麼？」",
+                "choices": [
+                    {"option": "A: 誠實地說出你的慾望", "next_scene": "desire_fulfillment"},
+                    {"option": "B: 「我想要你」", "next_scene": "santa_romance"},
+                    {"option": "C: 「我想成為你的助手」", "next_scene": "santa_apprentice"}
+                ]
+            },
+            "snow_hot_spring": {
+                "title": "雪地中的溫泉",
+                "description": "你來到一個被雪包圍的露天溫泉，蒸汽在寒冷的空氣中升起，創造出夢幻般的景象。溫泉旁有幾個更衣室和休息區。\n\n一個穿著薄紗浴袍的雪精靈向你走來：「歡迎來到極樂溫泉。這裡的水有特殊的魔法效果... 你想單獨享受，還是想要有人陪伴？」",
+                "choices": [
+                    {"option": "A: 「我想單獨享受」", "next_scene": "solo_spring"},
+                    {"option": "B: 「有人陪伴聽起來不錯」", "next_scene": "spring_companion"},
+                    {"option": "C: 「這水有什麼魔法效果？」", "next_scene": "magic_water"}
+                ]
+            },
+            "solo_spring": {
+                "title": "獨自的享受",
+                "description": "你脫下衣服，慢慢浸入溫暖的泉水中。溫泉的魔法開始發揮作用，你感到全身的緊張都在融化，一種前所未有的放鬆感襲來。\n\n突然，你注意到溫泉底部有一些發光的石頭，它們似乎在回應你的情緒...",
+                "choices": [
+                    {"option": "A: 觸摸發光的石頭", "next_scene": "magic_stones"},
+                    {"option": "B: 繼續享受溫泉", "next_scene": "deep_relaxation"},
+                    {"option": "C: 探索溫泉的其他區域", "next_scene": "hidden_grotto"}
+                ]
+            },
+            "spring_companion": {
+                "title": "溫泉伴侶",
+                "description": "雪精靈微笑著脫下浴袍，露出完美的身體。她優雅地滑入溫泉，坐在你旁邊。「讓我幫你放鬆，」她輕聲說，開始為你按摩肩膀。\n\n她的觸摸帶著魔法的溫暖，讓你感到無比舒適。「你知道嗎？」她在你耳邊低語，「這個溫泉會放大你的感官...」",
+                "choices": [
+                    {"option": "A: 讓她繼續按摩", "next_scene": "sensual_massage"},
+                    {"option": "B: 「我也想幫你按摩」", "next_scene": "mutual_pleasure"},
+                    {"option": "C: 「告訴我更多關於這個溫泉的事」", "next_scene": "spring_secrets"}
+                ]
+            },
+            "magic_water": {
+                "title": "魔法之水的秘密",
+                "description": "雪精靈解釋道：「這個溫泉的水來自北極的魔法冰川，它能夠放大你的感官，讓你體驗到平常十倍的快感。同時，它還能實現你內心深處的幻想...」\n\n「不過，」她警告道，「效果因人而異。有些人會看到幻象，有些人會感受到強烈的情緒。你準備好體驗了嗎？」",
+                "choices": [
+                    {"option": "A: 「我準備好了！」", "next_scene": "magic_experience"},
+                    {"option": "B: 「聽起來有點危險...」", "next_scene": "safe_alternative"},
+                    {"option": "C: 「我想先看看別人的反應」", "next_scene": "observe_others"}
+                ]
+            },
+            "gingerbread_village": {
+                "title": "魔法薑餅屋村莊",
+                "description": "你來到一個由真實大小的薑餅屋組成的村莊，每座房子都散發著誘人的香氣。村莊中央有一個巨大的薑餅人，他突然動了起來！\n\n「歡迎來到甜蜜村莊！」薑餅人用溫暖的聲音說，「我是村長。這裡的一切都是可以吃的... 包括我。想嚐嚐看嗎？」",
+                "choices": [
+                    {"option": "A: 「我想嚐嚐你」", "next_scene": "taste_gingerbread"},
+                    {"option": "B: 「帶我參觀村莊」", "next_scene": "village_tour"},
+                    {"option": "C: 「這裡有其他居民嗎？」", "next_scene": "candy_residents"}
+                ]
+            },
+            "taste_gingerbread": {
+                "title": "甜蜜的誘惑",
+                "description": "薑餅人笑著說：「大膽！我喜歡。」他伸出手臂，「從這裡開始吧。」你輕輕咬了一口他的手指，驚訝地發現味道好極了 - 溫暖、香甜，帶著肉桂和薑的香氣。\n\n「感覺如何？」他問道，「想要更多嗎？每吃一口，你就會感受到更強烈的快感...」",
+                "choices": [
+                    {"option": "A: 繼續品嚐", "next_scene": "sweet_addiction"},
+                    {"option": "B: 「這會有什麼後果？」", "next_scene": "gingerbread_effects"},
+                    {"option": "C: 「讓我餵你」", "next_scene": "mutual_tasting"}
+                ]
+            },
+            "village_tour": {
+                "title": "村莊導覽",
+                "description": "薑餅人帶你參觀村莊。你看到糖果手杖路燈、棉花糖雲朵、巧克力噴泉... 每個角落都充滿了甜蜜的驚喜。\n\n「這是糖果工坊，」他指著一座特別大的房子，「那裡製作各種魔法糖果。想進去看看嗎？」",
+                "choices": [
+                    {"option": "A: 參觀糖果工坊", "next_scene": "candy_workshop"},
+                    {"option": "B: 繼續參觀其他地方", "next_scene": "chocolate_fountain"},
+                    {"option": "C: 「我想在這裡住下來」", "next_scene": "village_resident"}
+                ]
+            },
+            "candy_residents": {
+                "title": "糖果居民",
+                "description": "薑餅人介紹道：「當然有！這裡住著各種糖果人：棉花糖女孩、巧克力騎士、軟糖雙胞胎... 每個人都很友善，也很... 甜蜜。」\n\n正說著，一個性感的棉花糖女孩飄了過來：「新來的客人？要不要來我家坐坐？我的身體又軟又甜...」",
+                "choices": [
+                    {"option": "A: 跟棉花糖女孩走", "next_scene": "cotton_candy_girl"},
+                    {"option": "B: 「我想見見巧克力騎士」", "next_scene": "chocolate_knight"},
+                    {"option": "C: 「軟糖雙胞胎聽起來有趣」", "next_scene": "gummy_twins"}
+                ]
+            },
+            "reindeer_stable": {
+                "title": "魔法馴鹿馬廄",
+                "description": "你來到一個溫暖的馬廄，裡面有九隻美麗的馴鹿。一個穿著緊身皮革的馴鹿訓練師正在照顧它們。\n\n「你好！」她熱情地說，「想騎馴鹿嗎？或者... 你更想被騎？」她調皮地眨眨眼。",
+                "choices": [
+                    {"option": "A: 「我想騎馴鹿飛行」", "next_scene": "reindeer_flight"},
+                    {"option": "B: 「被騎？什麼意思？」", "next_scene": "role_play"},
+                    {"option": "C: 「我想學習訓練馴鹿」", "next_scene": "trainer_apprentice"}
+                ]
+            },
+            "reindeer_flight": {
+                "title": "飛翔的快感",
+                "description": "訓練師幫你選了一隻特別溫順的馴鹿。「這是魯道夫的表弟，叫做羅密歐，」她說，「他很喜歡載漂亮的客人飛行。」\n\n你騎上馴鹿，它開始奔跑，然後... 飛了起來！寒冷的夜風吹拂著你的臉，下方的雪景美得令人屏息。",
+                "choices": [
+                    {"option": "A: 享受飛行", "next_scene": "sky_romance"},
+                    {"option": "B: 要求飛得更高", "next_scene": "extreme_flight"},
+                    {"option": "C: 「我們去哪裡？」", "next_scene": "secret_destination"}
+                ]
+            },
+            "role_play": {
+                "title": "角色扮演遊戲",
+                "description": "訓練師笑著解釋：「我們這裡有特別的角色扮演服務。你可以扮演馴鹿，我來訓練你... 或者反過來。這是很多客人最喜歡的項目。」\n\n她拿出一套馴鹿裝備：耳朵、尾巴、鈴鐺... 「想試試嗎？」",
+                "choices": [
+                    {"option": "A: 扮演馴鹿", "next_scene": "reindeer_roleplay"},
+                    {"option": "B: 扮演訓練師", "next_scene": "trainer_roleplay"},
+                    {"option": "C: 「我們一起扮演馴鹿」", "next_scene": "double_reindeer"}
+                ]
+            },
+            "trainer_apprentice": {
+                "title": "訓練師學徒",
+                "description": "訓練師興奮地說：「太好了！我正需要一個助手。訓練馴鹿需要耐心、技巧，還有... 特殊的溝通方式。」\n\n她開始教你如何與馴鹿建立聯繫，如何理解它們的需求。「馴鹿很敏感，」她說，「你需要用心去感受它們。」",
+                "choices": [
+                    {"option": "A: 專心學習", "next_scene": "master_trainer"},
+                    {"option": "B: 「你能示範一下嗎？」", "next_scene": "training_demonstration"},
+                    {"option": "C: 嘗試自己訓練", "next_scene": "first_training"}
+                ]
+            },
+            "ice_palace": {
+                "title": "永恆的冰雕宮殿",
+                "description": "你走進一座完全由冰製成的宮殿，陽光透過冰牆折射出七彩的光芒。宮殿中央坐著一位美麗的冰雪女王。\n\n「歡迎，」她的聲音如同冰晶般清脆，「很少有人能找到這裡。你是來尋求什麼的？力量？快樂？還是... 永恆？」",
+                "choices": [
+                    {"option": "A: 「我尋求力量」", "next_scene": "ice_power"},
+                    {"option": "B: 「我尋求快樂」", "next_scene": "ice_pleasure"},
+                    {"option": "C: 「我尋求永恆」", "next_scene": "ice_eternity"}
+                ]
+            },
+            "ice_power": {
+                "title": "冰雪的力量",
+                "description": "冰雪女王站起來，她的長裙如同瀑布般流動。「力量... 很好的選擇。但力量需要代價。」她伸出手，一道冰藍色的光芒射向你。\n\n你感到寒冷的力量流入身體，你的手指開始凝結冰霜。「現在你擁有了冰雪的力量，」她說，「但你的心也會變得冰冷。你確定要繼續嗎？」",
+                "choices": [
+                    {"option": "A: 「我接受代價」", "next_scene": "ice_transformation"},
+                    {"option": "B: 「有沒有其他方式？」", "next_scene": "alternative_power"},
+                    {"option": "C: 「讓我溫暖你的心」", "next_scene": "melt_queen"}
+                ]
+            },
+            "ice_pleasure": {
+                "title": "冰冷的快樂",
+                "description": "冰雪女王微笑了，這是她第一次露出表情。「快樂... 我已經很久沒有感受過了。也許你能教我什麼是快樂？」\n\n她走近你，冰冷的手指撫摸你的臉頰。「冰與火的結合會產生什麼呢？」",
+                "choices": [
+                    {"option": "A: 擁抱冰雪女王", "next_scene": "ice_embrace"},
+                    {"option": "B: 「讓我溫暖你」", "next_scene": "warming_queen"},
+                    {"option": "C: 「我們一起探索快樂」", "next_scene": "mutual_discovery"}
+                ]
+            },
+            "ice_eternity": {
+                "title": "永恆的誘惑",
+                "description": "冰雪女王的眼睛閃爍著興趣。「永恆... 你知道永恆意味著什麼嗎？意味著永遠不會改變，永遠停留在這一刻。」\n\n她站起來，宮殿開始發光。「我可以給你永恆，但你將成為冰雕，永遠保持現在的美麗。你願意嗎？」",
+                "choices": [
+                    {"option": "A: 接受永恆", "next_scene": "eternal_ice"},
+                    {"option": "B: 「我想要不同的永恆」", "next_scene": "living_eternity"},
+                    {"option": "C: 「永恆太孤獨了」", "next_scene": "companion_eternity"}
+                ]
+            },
+            "christmas_market": {
+                "title": "魔法聖誕市集",
+                "description": "你來到一個熱鬧的聖誕市集，到處都是攤位：賣熱紅酒的、賣手工藝品的、賣魔法玩具的... 空氣中充滿了歡笑和音樂。\n\n一個神秘的攤販向你招手：「來看看我的特別商品！這些可不是普通的聖誕禮物...」",
+                "choices": [
+                    {"option": "A: 去看神秘攤販", "next_scene": "mystery_vendor"},
+                    {"option": "B: 品嚐熱紅酒", "next_scene": "mulled_wine"},
+                    {"option": "C: 探索市集", "next_scene": "market_exploration"}
+                ]
+            },
+            "mystery_vendor": {
+                "title": "神秘商人的寶物",
+                "description": "攤販掀開布簾，露出各種奇特的物品：會自己動的羽毛、永不熄滅的蠟燭、能讀心的水晶球...\n\n「這些都是有魔法的，」他低聲說，「選一個，但要小心... 每件物品都會改變你的命運。」",
+                "choices": [
+                    {"option": "A: 選擇魔法羽毛", "next_scene": "magic_feather"},
+                    {"option": "B: 選擇讀心水晶球", "next_scene": "crystal_ball"},
+                    {"option": "C: 選擇魔法蠟燭", "next_scene": "magic_candle"}
+                ]
+            },
+            "mulled_wine": {
+                "title": "魔法熱紅酒",
+                "description": "你來到熱紅酒攤位，老闆是一個友善的矮人。「試試我的特調！」他遞給你一杯冒著熱氣的紅酒，「這可是加了魔法香料的。」\n\n你喝了一口，立刻感到全身溫暖，一種奇妙的感覺湧上心頭...",
+                "choices": [
+                    {"option": "A: 再喝一杯", "next_scene": "wine_effects"},
+                    {"option": "B: 「這酒有什麼特別的？」", "next_scene": "wine_secret"},
+                    {"option": "C: 和矮人聊天", "next_scene": "dwarf_friendship"}
+                ]
+            },
+            "market_exploration": {
+                "title": "市集探險",
+                "description": "你在市集中漫步，發現了許多有趣的攤位。突然，你聽到美妙的音樂，循聲走去，看到一個小舞台，上面有人在表演...",
+                "choices": [
+                    {"option": "A: 觀看表演", "next_scene": "market_performance"},
+                    {"option": "B: 繼續探索", "next_scene": "hidden_alley"},
+                    {"option": "C: 加入表演", "next_scene": "join_performance"}
+                ]
+            },
+            "good_child_reward": {
+                "title": "乖孩子的獎勵",
+                "description": "聖誕老人滿意地點頭：「很好！乖孩子應該得到特別的獎勵。」他拿出一個精美的禮物盒，「打開它吧。」\n\n你打開盒子，裡面是一個閃閃發光的項鍊。當你戴上它時，感到一陣溫暖的魔法包圍著你，你的身體變得更加敏感...",
+                "is_ending": true,
+                "outcome": "[乖孩子結局] 你獲得了聖誕老人的特別獎勵！\n\n你獲得了「聖誕寵兒」的稱號，每年聖誕節都會收到特別的魔法禮物。項鍊讓你永遠保持純真和快樂。",
+                "score": 80
+            },
+            "naughty_list": {
+                "title": "頑皮名單",
+                "description": "聖誕老人嚴肅地看著你：「頑皮的孩子... 需要特別的懲罰。」但他的眼神中閃爍著玩味的光芒。\n\n他拿出一根糖果手杖，「轉過身去，讓我教訓教訓你這個頑皮的孩子。」你發現自己既緊張又期待...",
+                "is_ending": true,
+                "outcome": "[頑皮結局] 你被列入了聖誕老人的頑皮名單！\n\n你獲得了「聖誕頑童」的稱號，學會了享受懲罰的快感。聖誕老人承諾每年都會給你「特別的教訓」。",
+                "score": 90
+            },
+            "bondage_gift": {
+                "title": "束縛的藝術",
+                "description": "聖誕老人拿起魔法繩索，開始展示專業的束縛技巧。繩索在他手中如同活物般纏繞著你，每一個結都恰到好處，既安全又美麗。\n\n「束縛不僅是限制，」他解釋道，「更是一種信任和親密的表達。」你在繩索中感到前所未有的安全感和放鬆。",
+                "is_ending": true,
+                "outcome": "[束縛結局] 你學會了束縛的藝術！\n\n你獲得了「繩索大師」的稱號，掌握了專業的束縛技巧。聖誕老人成為你的導師，每年都會教你新的技巧。",
+                "score": 88
+            },
+            "mind_reading_toy": {
+                "title": "讀心的快樂",
+                "description": "你選擇了讀心按摩棒，聖誕老人微笑著啟動它。這個神奇的玩具立刻開始讀取你的想法，精確地知道你想要什麼、喜歡什麼。\n\n它的震動模式完美地配合你的慾望，帶給你難以置信的快感。「它會永遠記住你的喜好，」聖誕老人說，「這是我最得意的發明。」",
+                "is_ending": true,
+                "outcome": "[讀心結局] 你獲得了完美的讀心玩具！\n\n你獲得了「心靈感應者」的稱號，學會了傾聽內心的聲音。這個玩具將永遠陪伴你，給你完美的快樂。",
+                "score": 92
+            },
+            "magic_ice": {
+                "title": "冰與火的交融",
+                "description": "聖誕老人拿起魔法冰塊，它們在他手中閃爍著藍色的光芒。「這些冰塊永不融化，但會根據你的體溫調整溫度，」他解釋道。\n\n他開始用冰塊在你身上滑動，冰冷的觸感和你的體溫形成強烈對比，創造出令人顫抖的快感。",
+                "is_ending": true,
+                "outcome": "[冰火結局] 你體驗了冰與火的完美結合！\n\n你獲得了「溫度掌控者」的稱號，學會了用溫差創造極致快感的技巧。魔法冰塊成為你的寶物。",
+                "score": 85
+            },
+            "sensual_massage": {
+                "title": "感官按摩",
+                "description": "雪精靈的手指在你身上游走，溫泉的魔法讓每一次觸摸都被放大十倍。你感到前所未有的放鬆和愉悅，身體的每個細胞都在歌唱。\n\n「放鬆，」她輕聲說，「讓魔法帶你去更高的境界。」你閉上眼睛，完全沉浸在這種極致的享受中。",
+                "is_ending": true,
+                "outcome": "[按摩結局] 你體驗了極致的感官按摩！\n\n你獲得了「感官大師」的稱號，學會了放大感官享受的技巧。雪精靈成為你的專屬按摩師。",
+                "score": 87
+            },
+            "sweet_addiction": {
+                "title": "甜蜜成癮",
+                "description": "你無法停止品嚐薑餅人，每一口都帶來更強烈的快感。薑餅人笑著說：「別擔心，我會再長出來的。」\n\n隨著你吃得越多，你感到自己也在慢慢變成薑餅... 但這種感覺並不可怕，反而讓你感到甜蜜和滿足。",
+                "is_ending": true,
+                "outcome": "[甜蜜結局] 你成為了薑餅村莊的一員！\n\n你獲得了「糖果人」的稱號，學會了甜蜜的魔法。你現在也是可以吃的，而且永遠不會真正消失。",
+                "score": 83
+            },
+            "sky_romance": {
+                "title": "天空中的浪漫",
+                "description": "在雲端之上，馴鹿穩穩地飛行著。你和訓練師坐在馴鹿背上，欣賞著下方的雪景和星空。\n\n「這是我最喜歡的地方，」她說，「在這裡，我們可以遠離一切，只有我們兩個... 和這片美麗的天空。」她靠近你，在月光下吻了你。",
+                "is_ending": true,
+                "outcome": "[天空結局] 你在雲端找到了浪漫！\n\n你獲得了「天空戀人」的稱號，學會了在高空中享受愛情的技巧。馴鹿成為你們愛情的見證。",
+                "score": 90
+            },
+            "ice_embrace": {
+                "title": "冰雪的擁抱",
+                "description": "你擁抱冰雪女王，驚訝地發現她的身體並不像想像中那麼冰冷。在你的溫暖下，她開始融化... 不是物理上的融化，而是心靈上的。\n\n「這種感覺...」她驚訝地說，「我已經幾百年沒有感受過溫暖了。」她緊緊抱住你，冰宮開始綻放出溫暖的光芒。",
+                "is_ending": true,
+                "outcome": "[融冰結局] 你融化了冰雪女王的心！\n\n你獲得了「融冰者」的稱號，學會了用愛溫暖冰冷的心。冰雪女王成為你的伴侶，冰宮變成你們溫暖的家。",
+                "score": 95
+            },
+            "magic_feather": {
+                "title": "魔法羽毛的秘密",
+                "description": "你選擇了魔法羽毛，它在你手中輕輕顫動。商人說：「這根羽毛會自己找到最敏感的地方，帶來難以置信的快感。」\n\n羽毛開始在空中飛舞，輕撫你的皮膚。每一次觸碰都帶來電流般的刺激，你發現自己無法控制地顫抖...",
+                "is_ending": true,
+                "outcome": "[羽毛結局] 你獲得了魔法羽毛！\n\n你獲得了「羽毛使者」的稱號，學會了用最輕柔的觸碰帶來最強烈的快感。羽毛成為你最珍貴的寶物。",
+                "score": 86
+            }
