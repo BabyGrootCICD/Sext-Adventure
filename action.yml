@@ -1,0 +1,62 @@
+name: 'Community Pulse Reporter'
+description: '自動生成社群貢獻報告與排行榜 | Generates monthly contribution reports and leaderboards for open source projects'
+author: 'Tsext Adventure Team'
+
+branding:
+  icon: 'activity'
+  color: 'purple'
+
+inputs:
+  github_token:
+    description: 'GitHub Token to fetch repository data (use secrets.GITHUB_TOKEN)'
+    required: true
+  
+  repo_owner:
+    description: 'Repository owner (organization or username)'
+    required: false
+    default: ${{ github.repository_owner }}
+  
+  repo_name:
+    description: 'Repository name'
+    required: false
+    default: ${{ github.event.repository.name }}
+  
+  interval:
+    description: 'Time range for analysis (e.g., "30" for last 30 days, "last_month" for last month)'
+    required: false
+    default: '30'
+  
+  output_file:
+    description: 'Path to save the community report (Markdown format)'
+    required: false
+    default: 'COMMUNITY_REPORT.md'
+  
+  include_stats:
+    description: 'Include detailed statistics in the report (true/false)'
+    required: false
+    default: 'true'
+
+outputs:
+  report_file:
+    description: 'Path to the generated community report'
+  
+  total_contributors:
+    description: 'Total number of contributors in the period'
+  
+  total_prs:
+    description: 'Total number of pull requests'
+  
+  total_issues:
+    description: 'Total number of issues'
+
+runs:
+  using: 'docker'
+  image: 'action.Dockerfile'
+  env:
+    GITHUB_TOKEN: ${{ inputs.github_token }}
+    REPO_OWNER: ${{ inputs.repo_owner }}
+    REPO_NAME: ${{ inputs.repo_name }}
+    INTERVAL: ${{ inputs.interval }}
+    OUTPUT_FILE: ${{ inputs.output_file }}
+    INCLUDE_STATS: ${{ inputs.include_stats }}
+
