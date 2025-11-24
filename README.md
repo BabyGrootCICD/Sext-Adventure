@@ -9,6 +9,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/dennislee928/tsext-adventure.svg?style=social)](https://github.com/dennislee928/tsext-adventure/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Downloads](https://img.shields.io/github/downloads/dennislee928/tsext-adventure/total.svg)](https://github.com/dennislee928/tsext-adventure/releases)
+[![GitHub Action](https://img.shields.io/badge/GitHub%20Action-Community%20Pulse%20Reporter-blue?logo=github-actions)](./ACTION_README.md)
 
 ## 專案描述
 
@@ -24,6 +25,49 @@
 [🌐 線上試玩 Demo](https://dennislee928.github.io/tsext-adventure/)  
 [🎮 itch.io 版本](https://dennislee928.itch.io/tsext-adventure-halloween-haunt)  
 *(直接在瀏覽器中試玩，無需下載！)*
+
+---
+
+## 🚀 新功能：Community Pulse Reporter GitHub Action
+
+**本專案現在也是一個 GitHub Action！**
+
+我們將專案中的貢獻者追蹤系統重構為可重用的 GitHub Action，現在任何開源專案都可以使用它來：
+
+### ✨ 主要功能
+- 📊 **自動分析貢獻數據** - 追蹤 PRs、Issues、Commits
+- 🏆 **生成貢獻者排行榜** - 激勵社群參與
+- 📝 **自動生成 Markdown 報告** - 美觀且易讀
+- ⚙️ **靈活配置** - 自定義時間範圍和輸出格式
+
+### 🎯 快速使用
+
+在你的專案中添加 `.github/workflows/community-report.yml`：
+
+```yaml
+name: Community Report
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # 每月 1 號
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dennislee928/Sext-Adventure@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          interval: '30'
+          output_file: 'COMMUNITY_REPORT.md'
+```
+
+### 📖 完整文檔
+
+詳細使用說明請查看：**[ACTION_README.md](./ACTION_README.md)**
+
+---
 
 ## 為什麼玩這個遊戲？
 - **搞笑元素**：每條故事路徑都融入萬聖節 pun，例如 "Why don't witches wear panties? So they can grip the broom better!" 或 "I'm light as a feather, and I can see you're stiff as a board."
@@ -78,9 +122,14 @@ tsext-adventure/
 ├── stories/               # 故事 JSON 檔案
 │   ├── halloween.json     # 萬聖節故事分支
 │   └── common.json        # 通用 pun 和結局資料庫
-├── scripts/                 # 工具腳本
-│   ├── version-manager.py  # 版本管理系統
-│   └── cache-buster.sh     # 快取清除工具
+├── scripts/                    # 工具腳本
+│   ├── community_reporter/     # 🆕 Community Pulse Reporter 模組
+│   │   ├── __init__.py         # 模組初始化
+│   │   ├── github_client.py    # GitHub API 客戶端
+│   │   ├── analyzer.py         # 貢獻分析器
+│   │   └── reporter.py         # 報告生成器
+│   ├── version-manager.py      # 版本管理系統
+│   └── cache-buster.sh         # 快取清除工具
 ├── tests/                 # 測試腳本
 │   └── test_stories.py    # 測試案例
 ├── docs/                  # 文件
@@ -90,10 +139,16 @@ tsext-adventure/
 ├── images/                # 圖像資源
 │   ├── cover-design.md    # 封面設計說明
 │   └── badges/            # 徽章資料夾
-├── .github/workflows/     # GitHub Actions
-│   ├── deploy.yml         # 自動部署
-│   └── cache-management.yml # 快取管理工作流程
+├── .github/workflows/          # GitHub Actions
+│   ├── deploy.yml              # 自動部署
+│   ├── cache-management.yml    # 快取管理工作流程
+│   └── community-pulse-report.yml  # 🆕 社群報告生成
 ├── itch-deploy/           # itch.io 部署包
+├── action.yml             # 🆕 GitHub Action 配置
+├── action.Dockerfile      # 🆕 Action Docker 環境
+├── action_entrypoint.py   # 🆕 Action 入口程式
+├── ACTION_README.md       # 🆕 Action 使用文檔
+├── test_action_local.sh   # 🆕 本地測試腳本
 └── CONTRIBUTING.md        # 貢獻指南
 ```
 
@@ -350,6 +405,33 @@ function doStuff() { /* 功能不明確 */ }
 ### 完整文件
 - [📋 快取管理完整指南](CACHE_MANAGEMENT_GUIDE.md)
 - [⚡ 快速修復指南](QUICK_CACHE_FIX.md)
+
+---
+
+## 🎭 專案雙重功能 | Dual-Purpose Project
+
+本專案擁有兩個獨立但互補的功能：
+
+### 1️⃣ Tsext Adventure 遊戲
+一個有趣的萬聖節主題文字冒險遊戲，適合所有喜歡互動小說和成人幽默的玩家。
+
+- 🎮 [線上遊玩](https://dennislee928.github.io/tsext-adventure/)
+- 📖 遊戲說明請見上方章節
+
+### 2️⃣ Community Pulse Reporter Action
+一個強大的 GitHub Action，可幫助開源專案維護者追蹤和激勵社群貢獻。
+
+- 📊 [Action 完整文檔](./ACTION_README.md)
+- 🚀 [使用範例](./.github/workflows/community-pulse-report.yml)
+- 🔧 [本地測試](./test_action_local.sh)
+
+### 為什麼是雙重功能？
+
+我們在開發遊戲的過程中，建立了一個強大的貢獻者追蹤系統來管理社群參與。意識到這個系統對其他開源專案也很有價值後，我們決定將其重構為可重用的 GitHub Action，讓更多專案受益！
+
+**這是一個展示如何從專案內部工具演化成通用解決方案的絕佳案例。** 🌟
+
+---
 
 ## 授權
 
