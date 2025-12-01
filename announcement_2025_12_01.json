@@ -1,0 +1,392 @@
+{
+  "announcement": "# 🎉 Tsext Adventure 月度貢獻報告 - 2025-12\n\n## 📊 本月亮點\n\n我們很高興地宣布，在過去 30 天中，Tsext Adventure 專案取得了令人矚目的進展！\n\n### 🚀 核心數據\n- **活躍貢獻者**: 1 人\n- **Pull Requests**: 13 個 (合併率: 100.0%)\n- **Issues**: 1 個\n- **平均每人貢獻**: 13.0 個 PR\n\n## 🏆 月度獲獎者\n\n恭喜以下獲獎者！你們的貢獻讓 Tsext Adventure 變得更加精彩：\n\n🏆 **🎭 最佳劇情獎**: @dennislee928\n🏆 **🛠️ 技術創新獎**: @dennislee928\n🏆 **🔥 持續貢獻獎**: @dennislee928\n🏆 **🤝 協作英雄獎**: @dennislee928\n\n## 🌟 特別感謝\n\n感謝所有在本月為專案做出貢獻的開發者們！每一位貢獻者都是 Tsext Adventure 社區的重要一員。\n\n### 所有貢獻者\n1. **@dennislee928** - 66.0 分 (13 PRs, 1 Issues)\n\n## 🎯 下月展望\n\n讓我們繼續攜手前進，為 Tsext Adventure 創造更多精彩內容：\n\n- 🎭 **故事內容**: 更多創意劇情和場景\n- 🛠️ **技術改進**: 持續優化遊戲體驗\n- 🐛 **問題修復**: 積極解決用戶反饋\n- 🎨 **UI/UX**: 提升界面設計和用戶體驗\n- 🌟 **社區建設**: 加強開發者之間的協作\n\n## 📚 相關連結\n\n- [📊 完整月度報告](https://github.com/BabyGrootCICD/Sext-Adventure/blob/main/monthly_report_2025_12.md)\n- [🏆 詳細獎項報告](https://github.com/BabyGrootCICD/Sext-Adventure/blob/main/monthly_awards_2025_12.md)\n- [🎮 線上遊戲](https://babygrootcicd.github.io/Sext-Adventure/)\n- [📖 貢獻指南](https://github.com/BabyGrootCICD/Sext-Adventure/blob/main/CONTRIBUTING.md)\n\n---\n\n*公告發布時間: 2025-12-01 09:32:58*  \n*Tsext Adventure 自動公告系統*\n\n#TsextAdventure #開源 #遊戲開發 #社區貢獻\n",
+  "monthly_report": "# 📊 Tsext Adventure 月度貢獻報告\n\n## 📅 報告期間\n**開始日期**: 2025-11-01  \n**結束日期**: 2025-12-01  \n**分析天數**: 30 天\n\n## 📈 總體統計\n\n### 核心指標\n- **總 Pull Requests**: 13 個\n- **已合併 PR**: 13 個\n- **總 Issues**: 1 個\n- **活躍貢獻者**: 1 人\n- **PR 合併率**: 100.0%\n- **平均每人 PR 數**: 13.0 個\n\n### 趨勢分析\n- **PR 趨勢**: decreasing\n- **Issue 趨勢**: increasing\n- **最活躍日期**: 2025-10-06\n\n## 🏆 貢獻者排行榜\n\n### 總貢獻分數 Top 10\n1. **@dennislee928** - 66.0 分 (13 PRs, 1 Issues)\n\n## 📊 類別分析\n\n### 故事內容\n- **PR 數**: 3 個\n- **貢獻者**: 1 人\n\n### 技術改進\n- **PR 數**: 10 個\n- **貢獻者**: 1 人\n\n### Bug 修復\n- **PR 數**: 0 個\n- **貢獻者**: 0 人\n\n### UI 改進\n- **PR 數**: 0 個\n- **貢獻者**: 0 人\n\n## 🎯 高影響力貢獻\n\n- **[Feature contributor tool](https://github.com/BabyGrootCICD/Sext-Adventure/pull/18)** by @dennislee928 (影響力: 1.0)\n- **[Add Christmas scenes data and progress files](https://github.com/BabyGrootCICD/Sext-Adventure/pull/17)** by @dennislee928 (影響力: 1.0)\n- **[Dev](https://github.com/BabyGrootCICD/Sext-Adventure/pull/16)** by @dennislee928 (影響力: 1.0)\n- **[Dev](https://github.com/BabyGrootCICD/Sext-Adventure/pull/10)** by @dennislee928 (影響力: 1.0)\n- **[Update halloween.json](https://github.com/BabyGrootCICD/Sext-Adventure/pull/9)** by @dennislee928 (影響力: 1.0)\n\n## 🌟 本月亮點\n\n### 首次貢獻者\n- @dennislee928\n\n## 📋 詳細數據\n\n### 貢獻者詳細統計\n| 貢獻者 | PRs | Issues | 故事內容 | 技術改進 | Bug修復 | UI改進 | 總分 |\n|--------|-----|--------|----------|----------|---------|--------|------|\n| @dennislee928 | 13 | 1 | 3 | 10 | 0 | 0 | 66.0 |\n\n---\n\n*報告生成時間: 2025-12-01 09:32:56*  \n*Tsext Adventure 貢獻者追蹤系統*\n",
+  "award_report": "# 🏆 Tsext Adventure 月度貢獻獎獲獎者\n\n## 📅 評選期間\n**開始日期**: 2025-11-01  \n**結束日期**: 2025-12-01  \n**評選天數**: 30 天\n\n## 📊 本期統計\n- **總貢獻者**: 1 人\n- **總 PR 數**: 13 個\n- **總 Issue 數**: 1 個\n- **PR 合併率**: 100.0%\n\n## 🎉 獲獎者名單\n\n### 🎭 最佳劇情獎\n**獲獎者**: @dennislee928\n**評選標準**: 最有創意的故事內容\n**評選分數**: 15.60\n**故事內容 PR**: 3 個\n\n### 🛠️ 技術創新獎\n**獲獎者**: @dennislee928\n**評選標準**: 最佳技術改進\n**評選分數**: 39.50\n**技術改進 PR**: 10 個\n\n### 🔥 持續貢獻獎\n**獲獎者**: @dennislee928\n**評選標準**: 最持續穩定的貢獻者\n**評選分數**: 16.00\n**總貢獻數**: 14 個\n\n### 🤝 協作英雄獎\n**獲獎者**: @dennislee928\n**評選標準**: 最善於協作的貢獻者\n**評選分數**: 9.60\n**貢獻多樣性**: 2 種類型\n\n## 🙏 特別感謝\n\n感謝所有在本月為 Tsext Adventure 做出貢獻的開發者們！\n\n### 所有貢獻者\n- **@dennislee928** - 66.0 分 (13 PRs, 1 Issues)\n\n## 🎯 下月目標\n\n讓我們繼續努力，為 Tsext Adventure 創造更多精彩內容！\n\n- 🎭 更多創意故事內容\n- 🛠️ 持續技術改進\n- 🐛 積極修復問題\n- 🎨 優化用戶體驗\n- 🌟 加強社區互動\n\n---\n\n*評選時間: 2025-12-01 09:32:58*  \n*Tsext Adventure 自動評選系統*\n",
+  "publish_results": {
+    "discord": false,
+    "github_discussion": false,
+    "github_issue": false
+  },
+  "analysis": {
+    "period": {
+      "start_date": "2025-11-01",
+      "end_date": "2025-12-01",
+      "days": 30
+    },
+    "overall_stats": {
+      "total_prs": 13,
+      "merged_prs": 13,
+      "total_issues": 1,
+      "active_contributors": 1,
+      "pr_merge_rate": 100.0,
+      "avg_prs_per_contributor": 13.0
+    },
+    "contributor_stats": {
+      "dennislee928": {
+        "prs": 13,
+        "issues": 1,
+        "merged_prs": 13,
+        "story_content": 3,
+        "technical_improvements": 10,
+        "bug_fixes": 0,
+        "ui_improvements": 0,
+        "community_help": 0,
+        "total_score": 66.0
+      }
+    },
+    "category_analysis": {
+      "story_content": {
+        "prs": 3,
+        "issues": 0,
+        "contributors": 1
+      },
+      "technical_improvements": {
+        "prs": 10,
+        "issues": 1,
+        "contributors": 1
+      },
+      "bug_fixes": {
+        "prs": 0,
+        "issues": 0,
+        "contributors": 0
+      },
+      "ui_improvements": {
+        "prs": 0,
+        "issues": 0,
+        "contributors": 0
+      }
+    },
+    "trend_analysis": {
+      "pr_trend": "decreasing",
+      "issue_trend": "increasing",
+      "daily_stats": {
+        "2025-11-24": {
+          "prs": 1,
+          "issues": 1
+        },
+        "2025-10-08": {
+          "prs": 1,
+          "issues": 0
+        },
+        "2025-10-07": {
+          "prs": 1,
+          "issues": 0
+        },
+        "2025-10-06": {
+          "prs": 10,
+          "issues": 0
+        }
+      },
+      "most_active_day": [
+        "2025-10-06",
+        {
+          "prs": 10,
+          "issues": 0
+        }
+      ]
+    },
+    "achievement_analysis": {
+      "first_time_contributors": [
+        "dennislee928"
+      ],
+      "high_impact_contributions": [
+        {
+          "author": "dennislee928",
+          "title": "Feature contributor tool",
+          "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/18",
+          "impact_score": 1.0
+        },
+        {
+          "author": "dennislee928",
+          "title": "Add Christmas scenes data and progress files",
+          "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/17",
+          "impact_score": 1.0
+        },
+        {
+          "author": "dennislee928",
+          "title": "Dev",
+          "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/16",
+          "impact_score": 1.0
+        },
+        {
+          "author": "dennislee928",
+          "title": "Dev",
+          "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/10",
+          "impact_score": 1.0
+        },
+        {
+          "author": "dennislee928",
+          "title": "Update halloween.json",
+          "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/9",
+          "impact_score": 1.0
+        },
+        {
+          "author": "dennislee928",
+          "title": "Add new achievements and endings for cats, ghosts, and pumpkins",
+          "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/8",
+          "impact_score": 1.0
+        },
+        {
+          "author": "dennislee928",
+          "title": "Dev",
+          "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/7",
+          "impact_score": 1.0
+        },
+        {
+          "author": "dennislee928",
+          "title": "Enhance UI and expand story content",
+          "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/6",
+          "impact_score": 1.0
+        },
+        {
+          "author": "dennislee928",
+          "title": "Update deploy.yml",
+          "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/5",
+          "impact_score": 1.0
+        },
+        {
+          "author": "dennislee928",
+          "title": "Dev",
+          "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/4",
+          "impact_score": 1.0
+        },
+        {
+          "author": "dennislee928",
+          "title": "Update deploy.yml",
+          "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/3",
+          "impact_score": 1.0
+        },
+        {
+          "author": "dennislee928",
+          "title": "Dev",
+          "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/2",
+          "impact_score": 1.0
+        },
+        {
+          "author": "dennislee928",
+          "title": "Initial project structure and core files",
+          "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/1",
+          "impact_score": 1.0
+        }
+      ],
+      "consistency_scores": {},
+      "collaboration_scores": {}
+    }
+  },
+  "awards": {
+    "period": {
+      "start_date": "2025-11-01",
+      "end_date": "2025-12-01",
+      "days": 30
+    },
+    "awards": {
+      "best_story": {
+        "winner": "dennislee928",
+        "score": 15.600000000000001,
+        "details": {
+          "score": 15.600000000000001,
+          "story_count": 3,
+          "total_contributions": 14
+        },
+        "category": "best_story"
+      },
+      "technical_innovation": {
+        "winner": "dennislee928",
+        "score": 39.5,
+        "details": {
+          "score": 39.5,
+          "tech_count": 10,
+          "merged_prs": 13
+        },
+        "category": "technical_innovation"
+      },
+      "consistency_champion": {
+        "winner": "dennislee928",
+        "score": 16.0,
+        "details": {
+          "score": 16.0,
+          "total_contributions": 14,
+          "merge_rate": 1.0
+        },
+        "category": "consistency_champion"
+      },
+      "collaboration_hero": {
+        "winner": "dennislee928",
+        "score": 9.600000000000001,
+        "details": {
+          "score": 9.600000000000001,
+          "diversity_score": 2,
+          "total_score": 66.0
+        },
+        "category": "collaboration_hero"
+      }
+    },
+    "report": "# 🏆 Tsext Adventure 月度貢獻獎獲獎者\n\n## 📅 評選期間\n**開始日期**: 2025-11-01  \n**結束日期**: 2025-12-01  \n**評選天數**: 30 天\n\n## 📊 本期統計\n- **總貢獻者**: 1 人\n- **總 PR 數**: 13 個\n- **總 Issue 數**: 1 個\n- **PR 合併率**: 100.0%\n\n## 🎉 獲獎者名單\n\n### 🎭 最佳劇情獎\n**獲獎者**: @dennislee928\n**評選標準**: 最有創意的故事內容\n**評選分數**: 15.60\n**故事內容 PR**: 3 個\n\n### 🛠️ 技術創新獎\n**獲獎者**: @dennislee928\n**評選標準**: 最佳技術改進\n**評選分數**: 39.50\n**技術改進 PR**: 10 個\n\n### 🔥 持續貢獻獎\n**獲獎者**: @dennislee928\n**評選標準**: 最持續穩定的貢獻者\n**評選分數**: 16.00\n**總貢獻數**: 14 個\n\n### 🤝 協作英雄獎\n**獲獎者**: @dennislee928\n**評選標準**: 最善於協作的貢獻者\n**評選分數**: 9.60\n**貢獻多樣性**: 2 種類型\n\n## 🙏 特別感謝\n\n感謝所有在本月為 Tsext Adventure 做出貢獻的開發者們！\n\n### 所有貢獻者\n- **@dennislee928** - 66.0 分 (13 PRs, 1 Issues)\n\n## 🎯 下月目標\n\n讓我們繼續努力，為 Tsext Adventure 創造更多精彩內容！\n\n- 🎭 更多創意故事內容\n- 🛠️ 持續技術改進\n- 🐛 積極修復問題\n- 🎨 優化用戶體驗\n- 🌟 加強社區互動\n\n---\n\n*評選時間: 2025-12-01 09:32:58*  \n*Tsext Adventure 自動評選系統*\n",
+    "analysis": {
+      "period": {
+        "start_date": "2025-11-01",
+        "end_date": "2025-12-01",
+        "days": 30
+      },
+      "overall_stats": {
+        "total_prs": 13,
+        "merged_prs": 13,
+        "total_issues": 1,
+        "active_contributors": 1,
+        "pr_merge_rate": 100.0,
+        "avg_prs_per_contributor": 13.0
+      },
+      "contributor_stats": {
+        "dennislee928": {
+          "prs": 13,
+          "issues": 1,
+          "merged_prs": 13,
+          "story_content": 3,
+          "technical_improvements": 10,
+          "bug_fixes": 0,
+          "ui_improvements": 0,
+          "community_help": 0,
+          "total_score": 66.0
+        }
+      },
+      "category_analysis": {
+        "story_content": {
+          "prs": 3,
+          "issues": 0,
+          "contributors": 1
+        },
+        "technical_improvements": {
+          "prs": 10,
+          "issues": 1,
+          "contributors": 1
+        },
+        "bug_fixes": {
+          "prs": 0,
+          "issues": 0,
+          "contributors": 0
+        },
+        "ui_improvements": {
+          "prs": 0,
+          "issues": 0,
+          "contributors": 0
+        }
+      },
+      "trend_analysis": {
+        "pr_trend": "decreasing",
+        "issue_trend": "increasing",
+        "daily_stats": {
+          "2025-11-24": {
+            "prs": 1,
+            "issues": 1
+          },
+          "2025-10-08": {
+            "prs": 1,
+            "issues": 0
+          },
+          "2025-10-07": {
+            "prs": 1,
+            "issues": 0
+          },
+          "2025-10-06": {
+            "prs": 10,
+            "issues": 0
+          }
+        },
+        "most_active_day": [
+          "2025-10-06",
+          {
+            "prs": 10,
+            "issues": 0
+          }
+        ]
+      },
+      "achievement_analysis": {
+        "first_time_contributors": [
+          "dennislee928"
+        ],
+        "high_impact_contributions": [
+          {
+            "author": "dennislee928",
+            "title": "Feature contributor tool",
+            "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/18",
+            "impact_score": 1.0
+          },
+          {
+            "author": "dennislee928",
+            "title": "Add Christmas scenes data and progress files",
+            "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/17",
+            "impact_score": 1.0
+          },
+          {
+            "author": "dennislee928",
+            "title": "Dev",
+            "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/16",
+            "impact_score": 1.0
+          },
+          {
+            "author": "dennislee928",
+            "title": "Dev",
+            "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/10",
+            "impact_score": 1.0
+          },
+          {
+            "author": "dennislee928",
+            "title": "Update halloween.json",
+            "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/9",
+            "impact_score": 1.0
+          },
+          {
+            "author": "dennislee928",
+            "title": "Add new achievements and endings for cats, ghosts, and pumpkins",
+            "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/8",
+            "impact_score": 1.0
+          },
+          {
+            "author": "dennislee928",
+            "title": "Dev",
+            "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/7",
+            "impact_score": 1.0
+          },
+          {
+            "author": "dennislee928",
+            "title": "Enhance UI and expand story content",
+            "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/6",
+            "impact_score": 1.0
+          },
+          {
+            "author": "dennislee928",
+            "title": "Update deploy.yml",
+            "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/5",
+            "impact_score": 1.0
+          },
+          {
+            "author": "dennislee928",
+            "title": "Dev",
+            "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/4",
+            "impact_score": 1.0
+          },
+          {
+            "author": "dennislee928",
+            "title": "Update deploy.yml",
+            "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/3",
+            "impact_score": 1.0
+          },
+          {
+            "author": "dennislee928",
+            "title": "Dev",
+            "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/2",
+            "impact_score": 1.0
+          },
+          {
+            "author": "dennislee928",
+            "title": "Initial project structure and core files",
+            "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/1",
+            "impact_score": 1.0
+          }
+        ],
+        "consistency_scores": {},
+        "collaboration_scores": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "period": {
+    "start_date": "2025-11-01",
+    "end_date": "2025-12-01",
+    "days": 30
+  },
+  "overall_stats": {
+    "total_prs": 13,
+    "merged_prs": 13,
+    "total_issues": 1,
+    "active_contributors": 1,
+    "pr_merge_rate": 100.0,
+    "avg_prs_per_contributor": 13.0
+  },
+  "contributor_stats": {
+    "dennislee928": {
+      "prs": 13,
+      "issues": 1,
+      "merged_prs": 13,
+      "story_content": 3,
+      "technical_improvements": 10,
+      "bug_fixes": 0,
+      "ui_improvements": 0,
+      "community_help": 0,
+      "total_score": 66.0
+    }
+  },
+  "category_analysis": {
+    "story_content": {
+      "prs": 3,
+      "issues": 0,
+      "contributors": 1
+    },
+    "technical_improvements": {
+      "prs": 10,
+      "issues": 1,
+      "contributors": 1
+    },
+    "bug_fixes": {
+      "prs": 0,
+      "issues": 0,
+      "contributors": 0
+    },
+    "ui_improvements": {
+      "prs": 0,
+      "issues": 0,
+      "contributors": 0
+    }
+  },
+  "trend_analysis": {
+    "pr_trend": "decreasing",
+    "issue_trend": "increasing",
+    "daily_stats": {
+      "2025-11-24": {
+        "prs": 1,
+        "issues": 1
+      },
+      "2025-10-08": {
+        "prs": 1,
+        "issues": 0
+      },
+      "2025-10-07": {
+        "prs": 1,
+        "issues": 0
+      },
+      "2025-10-06": {
+        "prs": 10,
+        "issues": 0
+      }
+    },
+    "most_active_day": [
+      "2025-10-06",
+      {
+        "prs": 10,
+        "issues": 0
+      }
+    ]
+  },
+  "achievement_analysis": {
+    "first_time_contributors": [
+      "dennislee928"
+    ],
+    "high_impact_contributions": [
+      {
+        "author": "dennislee928",
+        "title": "Feature contributor tool",
+        "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/18",
+        "impact_score": 1.0
+      },
+      {
+        "author": "dennislee928",
+        "title": "Add Christmas scenes data and progress files",
+        "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/17",
+        "impact_score": 1.0
+      },
+      {
+        "author": "dennislee928",
+        "title": "Dev",
+        "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/16",
+        "impact_score": 1.0
+      },
+      {
+        "author": "dennislee928",
+        "title": "Dev",
+        "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/10",
+        "impact_score": 1.0
+      },
+      {
+        "author": "dennislee928",
+        "title": "Update halloween.json",
+        "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/9",
+        "impact_score": 1.0
+      },
+      {
+        "author": "dennislee928",
+        "title": "Add new achievements and endings for cats, ghosts, and pumpkins",
+        "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/8",
+        "impact_score": 1.0
+      },
+      {
+        "author": "dennislee928",
+        "title": "Dev",
+        "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/7",
+        "impact_score": 1.0
+      },
+      {
+        "author": "dennislee928",
+        "title": "Enhance UI and expand story content",
+        "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/6",
+        "impact_score": 1.0
+      },
+      {
+        "author": "dennislee928",
+        "title": "Update deploy.yml",
+        "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/5",
+        "impact_score": 1.0
+      },
+      {
+        "author": "dennislee928",
+        "title": "Dev",
+        "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/4",
+        "impact_score": 1.0
+      },
+      {
+        "author": "dennislee928",
+        "title": "Update deploy.yml",
+        "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/3",
+        "impact_score": 1.0
+      },
+      {
+        "author": "dennislee928",
+        "title": "Dev",
+        "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/2",
+        "impact_score": 1.0
+      },
+      {
+        "author": "dennislee928",
+        "title": "Initial project structure and core files",
+        "url": "https://github.com/BabyGrootCICD/Sext-Adventure/pull/1",
+        "impact_score": 1.0
+      }
+    ],
+    "consistency_scores": {},
+    "collaboration_scores": {}
+  }
+}
